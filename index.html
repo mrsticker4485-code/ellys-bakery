@@ -167,14 +167,44 @@
   nav ul{list-style:none;display:flex;gap:30px;margin:0;padding:0;}
   nav ul a{
     text-decoration:none;font-size:16.5px;font-weight:600;color:var(--ink-soft);
+    text-shadow:0 1px 0 rgba(255,255,255,.7);
     transition:color .2s;
   }
   nav ul a:hover{color:var(--rose-deep);}
   .nav-cta{
-    background:var(--rose-deep);color:#fff!important;
-    padding:9px 18px;border-radius:30px;font-size:14px;font-weight:600;
+    position:relative;
+    background:linear-gradient(155deg,var(--rose-mid),var(--rose-deep) 60%);
+    color:#fff!important;
+    padding:10px 22px;border-radius:30px;font-size:15px;font-weight:700;
+    letter-spacing:.02em;
+    box-shadow:
+      inset 0 1.5px 0 rgba(255,255,255,.55),
+      inset 0 -3px 5px rgba(0,0,0,.3),
+      0 3px 10px rgba(156,79,86,.5);
+    text-shadow:0 1px 1px rgba(0,0,0,.3);
+    overflow:hidden;
+    animation:ctaGlowPulse 2.6s ease-in-out infinite;
   }
-  .nav-toggle{display:none;background:none;border:0;font-size:22px;cursor:pointer;color:var(--ink);}
+  .nav-cta::before{
+    content:"";position:absolute;top:0;left:-60%;width:40%;height:100%;
+    background:linear-gradient(120deg,transparent,rgba(255,255,255,.75),transparent);
+    transform:skewX(-20deg);
+    animation:ctaShimmer 2.6s ease-in-out infinite;
+  }
+  @keyframes ctaShimmer{
+    0%{left:-60%;}
+    55%{left:130%;}
+    100%{left:130%;}
+  }
+  @keyframes ctaGlowPulse{
+    0%,100%{box-shadow:inset 0 1.5px 0 rgba(255,255,255,.55), inset 0 -3px 5px rgba(0,0,0,.3), 0 3px 10px rgba(156,79,86,.5), 0 0 0px rgba(189,148,64,0);}
+    50%{box-shadow:inset 0 1.5px 0 rgba(255,255,255,.55), inset 0 -3px 5px rgba(0,0,0,.3), 0 3px 10px rgba(156,79,86,.5), 0 0 18px 4px rgba(189,148,64,.55);}
+  }
+  @media (prefers-reduced-motion: reduce){.nav-cta{animation:none;} .nav-cta::before{animation:none;display:none;}}
+  .nav-toggle{
+    display:none;background:none;border:0;font-size:24px;cursor:pointer;color:var(--rose-deep);
+    text-shadow:0 1px 0 rgba(255,255,255,.7), 0 2px 3px rgba(156,79,86,.35);
+  }
 
   @media (max-width:760px){
     nav ul.links{
