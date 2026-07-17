@@ -75,10 +75,10 @@
     backdrop-filter:blur(5px) saturate(1.1);
     border-bottom:1px solid rgba(157,79,86,.18);
     overflow:hidden;
-    min-height:118px;
+    min-height:168px;
   }
   .header-strip{
-    position:absolute;inset:0;z-index:-1;overflow:hidden;
+    position:absolute;inset:0;overflow:hidden;z-index:0;
   }
   .header-strip .track{
     display:flex;height:100%;width:max-content;
@@ -101,7 +101,6 @@
   .logo-cluster-wrap{
     perspective:700px;
     width:126px;height:126px;flex-shrink:0;
-    margin:-4px 0;
   }
   .logo-cluster{
     width:100%;height:100%;position:relative;
@@ -112,6 +111,7 @@
     position:absolute;width:62px;height:62px;left:50%;top:50%;
     margin:-31px 0 0 -31px;
     border-radius:50%;overflow:hidden;
+    backface-visibility:visible;
     box-shadow:0 6px 14px rgba(60,20,20,.4), inset 0 0 0 1.5px rgba(255,255,255,.35);
   }
   .logo-cluster .face:nth-child(1){transform:rotateY(0deg) translateZ(53px);}
@@ -165,6 +165,7 @@
   .review-text{font-size:14.5px;color:var(--ink-soft);line-height:1.55;flex-grow:1;}
   .review-name{font-family:'Fraunces',serif;font-weight:600;font-size:14.5px;color:var(--rose-deep);}
   nav.wrap{
+    position:relative;z-index:1;
     display:flex;align-items:center;justify-content:space-between;
     padding-top:14px;padding-bottom:14px;
   }
@@ -478,7 +479,14 @@
   </div>
 
   <!-- ABOUT -->
-  <section class="about" id="about">
+  <section class="about bakery-pattern" id="about">
+    <div class="photo-slideshow">
+      <img src="cake-chocolate-ganache.jpg" alt="" style="animation-duration:15s;animation-delay:0s;">
+      <img src="baklava-rolls.jpg" alt="" style="animation-duration:15s;animation-delay:3s;">
+      <img src="ghormeh-sabzi.jpg" alt="" style="animation-duration:15s;animation-delay:6s;">
+      <img src="swiss-roll-strawberry.jpg" alt="" style="animation-duration:15s;animation-delay:9s;">
+      <img src="fesenjan.jpg" alt="" style="animation-duration:15s;animation-delay:12s;">
+    </div>
     <div class="wrap about-grid">
       <div class="about-visual" style="background:none;">
         <img src="birthday-cake-strawberry.jpg" alt="Fresh cake from Elly's Bakery" style="width:100%;height:100%;object-fit:cover;border-radius:24px;">
@@ -628,7 +636,14 @@
   </div>
 
   <!-- GALLERY -->
-  <section class="gallery" id="gallery">
+  <section class="gallery bakery-pattern" id="gallery">
+    <div class="photo-slideshow">
+      <img src="latifeh-cake.jpg" alt="" style="animation-duration:15s;animation-delay:0s;">
+      <img src="zereshk-polo-morgh.jpg" alt="" style="animation-duration:15s;animation-delay:3s;">
+      <img src="cream-roll.jpg" alt="" style="animation-duration:15s;animation-delay:6s;">
+      <img src="kashke-bademjan.jpg" alt="" style="animation-duration:15s;animation-delay:9s;">
+      <img src="cake-berry-drip.jpg" alt="" style="animation-duration:15s;animation-delay:12s;">
+    </div>
     <div class="wrap">
       <div class="section-head">
         <div class="eyebrow">From Our Kitchen</div>
