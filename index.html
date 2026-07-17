@@ -98,40 +98,23 @@
   }
   @media (prefers-reduced-motion: reduce){.header-strip .track{animation:none;}}
 
-  .logo-cluster-wrap{
-    perspective:700px;
-    width:126px;height:126px;flex-shrink:0;
+  .logo-wrap{
+    perspective:900px;
+    width:140px;height:140px;flex-shrink:0;
   }
-  .logo-cluster{
+  .logo-spin{
     display:block;
-    width:100%;height:100%;position:relative;
+    width:100%;height:100%;object-fit:contain;
+    border-radius:50%;
+    background:none;
+    animation:logoSpin 12s linear infinite;
     transform-style:preserve-3d;
-    animation:clusterSpin 18s linear infinite;
   }
-  .logo-cluster .face{
-    position:absolute;width:62px;height:62px;left:50%;top:50%;
-    margin:-31px 0 0 -31px;
-    border-radius:50%;overflow:hidden;
-    backface-visibility:visible;
-    box-shadow:0 6px 14px rgba(60,20,20,.4), inset 0 0 0 1.5px rgba(255,255,255,.35);
+  @keyframes logoSpin{
+    from{transform:rotateY(0deg);}
+    to{transform:rotateY(360deg);}
   }
-  .logo-cluster .face:nth-child(1){transform:rotateY(0deg) translateZ(53px);}
-  .logo-cluster .face:nth-child(2){transform:rotateY(72deg) translateZ(53px);}
-  .logo-cluster .face:nth-child(3){transform:rotateY(144deg) translateZ(53px);}
-  .logo-cluster .face:nth-child(4){transform:rotateY(216deg) translateZ(53px);}
-  .logo-cluster .face:nth-child(5){transform:rotateY(288deg) translateZ(53px);}
-  .logo-cluster .face img{
-    width:100%;height:100%;object-fit:cover;
-    filter:
-      drop-shadow(1px 1px 0.5px rgba(255,255,255,.75))
-      drop-shadow(-1.5px -1.5px 1.5px rgba(40,10,10,.6))
-      saturate(1.35) contrast(1.22);
-  }
-  @keyframes clusterSpin{
-    from{transform:rotateX(10deg) rotateY(0deg);}
-    to{transform:rotateX(10deg) rotateY(360deg);}
-  }
-  @media (prefers-reduced-motion: reduce){.logo-cluster{animation:none;}}
+  @media (prefers-reduced-motion: reduce){.logo-spin{animation:none;}}
   /* ---------- Bakery decorative background pattern ---------- */
   .bakery-pattern{position:relative;overflow:hidden;}
   .photo-slideshow{position:absolute;inset:0;pointer-events:none;z-index:0;overflow:hidden;}
@@ -418,13 +401,7 @@
   </div></div>
   <nav class="wrap">
     <a href="#top" class="brand">
-      <span class="logo-cluster-wrap"><span class="logo-cluster">
-        <span class="face"><img src="logo.png" alt="Elly's Bakery logo"></span>
-        <span class="face"><img src="logo.png" alt=""></span>
-        <span class="face"><img src="logo.png" alt=""></span>
-        <span class="face"><img src="logo.png" alt=""></span>
-        <span class="face"><img src="logo.png" alt=""></span>
-      </span></span> Elly's Bakery
+      <span class="logo-wrap"><img src="logo.png" alt="Elly's Bakery logo" class="logo-spin"></span> Elly's Bakery
     </a>
     <button class="nav-toggle" aria-label="Toggle menu" onclick="document.querySelector('.links').classList.toggle('open')">☰</button>
     <ul class="links">
