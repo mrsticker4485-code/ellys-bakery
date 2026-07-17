@@ -71,54 +71,57 @@
   /* ---------- Nav ---------- */
   header{
     position:sticky;top:0;z-index:50;
-    background:rgba(251,245,238,.92);
-    backdrop-filter:blur(6px);
-    border-bottom:1px solid rgba(157,79,86,.14);
+    background:rgba(251,245,238,.55);
+    backdrop-filter:blur(5px) saturate(1.1);
+    border-bottom:1px solid rgba(157,79,86,.18);
     overflow:hidden;
+    min-height:118px;
   }
-  .header-bg{
-    position:absolute;inset:0;z-index:-1;
+  .header-strip{
+    position:absolute;inset:0;z-index:-1;overflow:hidden;
   }
-  .header-bg span{
-    position:absolute;inset:0;
-    background-size:cover;background-position:center;
-    opacity:0;
-    animation:headerFade 32s infinite;
+  .header-strip .track{
+    display:flex;height:100%;width:max-content;
+    animation:stripScroll 38s linear infinite;
   }
-  .header-bg span:nth-child(1){background-image:url('baklava-rolls.jpg');animation-delay:0s;}
-  .header-bg span:nth-child(2){background-image:url('swiss-roll-strawberry.jpg');animation-delay:4s;}
-  .header-bg span:nth-child(3){background-image:url('ghormeh-sabzi.jpg');animation-delay:8s;}
-  .header-bg span:nth-child(4){background-image:url('birthday-cake-strawberry.jpg');animation-delay:12s;}
-  .header-bg span:nth-child(5){background-image:url('baghali-polo-mahicheh.jpg');animation-delay:16s;}
-  .header-bg span:nth-child(6){background-image:url('chocolate-cake.jpg');animation-delay:20s;}
-  .header-bg span:nth-child(7){background-image:url('fesenjan.jpg');animation-delay:24s;}
-  .header-bg span:nth-child(8){background-image:url('latifeh-cake.jpg');animation-delay:28s;}
-  @keyframes headerFade{
-    0%{opacity:0;} 3%{opacity:.16;} 11%{opacity:.16;} 14%{opacity:0;} 100%{opacity:0;}
+  .header-strip .track img{
+    height:100%;width:auto;flex-shrink:0;object-fit:cover;
+    opacity:.4;filter:saturate(1.15);
   }
-  @media (prefers-reduced-motion: reduce){.header-bg span{animation:none;opacity:0;}}
+  .header-strip::after{
+    content:"";position:absolute;inset:0;
+    background:linear-gradient(180deg,rgba(251,245,238,.15),rgba(251,245,238,.55) 70%);
+  }
+  @keyframes stripScroll{
+    from{transform:translateX(0);}
+    to{transform:translateX(-50%);}
+  }
+  @media (prefers-reduced-motion: reduce){.header-strip .track{animation:none;}}
+
   .logo-spin-wrap{
-    perspective:600px;
-    width:52px;height:52px;flex-shrink:0;
+    perspective:900px;
+    width:130px;height:130px;flex-shrink:0;
+    margin:-8px 0;
   }
   .logo-spin{
-    width:100%;height:100%;border-radius:50%;object-fit:contain;
-    background:#fff;
-    box-shadow:0 2px 8px rgba(156,79,86,.35), inset 0 0 0 2px rgba(189,148,64,.4);
+    width:100%;height:100%;object-fit:contain;
+    filter:drop-shadow(0 10px 16px rgba(60,20,20,.45)) saturate(1.35) contrast(1.18) brightness(1.04);
     animation:logoSpin 9s linear infinite;
     transform-style:preserve-3d;
   }
   @keyframes logoSpin{
-    from{transform:rotateY(0deg);}
-    to{transform:rotateY(360deg);}
+    0%{transform:rotateY(0deg) translateZ(0);}
+    50%{transform:rotateY(180deg) translateZ(14px);}
+    100%{transform:rotateY(360deg) translateZ(0);}
   }
   @media (prefers-reduced-motion: reduce){.logo-spin{animation:none;}}
   /* ---------- Bakery decorative background pattern ---------- */
-  .bakery-pattern{position:relative;}
-  .bakery-pattern::before{
-    content:"";position:absolute;inset:0;pointer-events:none;opacity:.06;z-index:0;
-    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cg fill='none' stroke='%239c4f56' stroke-width='1.6'%3E%3Cpath d='M20 30c8-10 24-10 32 0'/%3E%3Ccircle cx='20' cy='27' r='3'/%3E%3Ccircle cx='52' cy='27' r='3'/%3E%3Cpath d='M100 20l4 14 14 4-14 4-4 14-4-14-14-4 14-4z'/%3E%3Cpath d='M140 60c0 10-16 10-16 0s16-10 16 0z'/%3E%3Cpath d='M20 100c6 4 6 12 0 16-6-4-6-12 0-16z'/%3E%3Cpath d='M90 110c10 0 10 16 0 16s-10-16 0-16z'/%3E%3Cpath d='M150 120l3 10 10 3-10 3-3 10-3-10-10-3 10-3z'/%3E%3Cpath d='M50 150c8-8 24-8 32 0'/%3E%3C/g%3E%3C/svg%3E");
-    background-size:180px 180px;
+  .bakery-pattern{position:relative;overflow:hidden;}
+  .bakery-pattern .deco-photos{position:absolute;inset:0;pointer-events:none;z-index:0;overflow:hidden;}
+  .bakery-pattern .deco-photos img{
+    position:absolute;border-radius:50%;object-fit:cover;
+    opacity:.28;filter:saturate(1.2) contrast(1.05);
+    box-shadow:0 20px 40px rgba(90,50,40,.15);
   }
   .bakery-pattern > .wrap{position:relative;z-index:1;}
   .review-grid{
@@ -139,9 +142,10 @@
     padding-top:14px;padding-bottom:14px;
   }
   .brand{
-    display:flex;align-items:center;gap:10px;
-    font-family:'Fraunces',serif;font-weight:600;font-size:20px;
+    display:flex;align-items:center;gap:14px;
+    font-family:'Fraunces',serif;font-weight:600;font-size:27px;
     text-decoration:none;color:var(--ink);
+    text-shadow:0 1px 0 rgba(255,255,255,.6), 0 2px 3px rgba(156,79,86,.25);
   }
   .brand .mark{
     width:34px;height:34px;border-radius:50%;
@@ -356,7 +360,33 @@
 <body>
 
 <header>
-  <div class="header-bg"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+  <div class="header-strip"><div class="track">
+    <img src="baklava-rolls.jpg" alt="">
+    <img src="swiss-roll-strawberry.jpg" alt="">
+    <img src="ghormeh-sabzi.jpg" alt="">
+    <img src="birthday-cake-strawberry.jpg" alt="">
+    <img src="baghali-polo-mahicheh.jpg" alt="">
+    <img src="chocolate-cake.jpg" alt="">
+    <img src="fesenjan.jpg" alt="">
+    <img src="latifeh-cake.jpg" alt="">
+    <img src="pistachio-cookies.jpg" alt="">
+    <img src="kofteh-tabrizi.jpg" alt="">
+    <img src="thumbprint-cookies.jpg" alt="">
+    <img src="zereshk-polo-morgh.jpg" alt="">
+    <!-- duplicate set for seamless loop -->
+    <img src="baklava-rolls.jpg" alt="">
+    <img src="swiss-roll-strawberry.jpg" alt="">
+    <img src="ghormeh-sabzi.jpg" alt="">
+    <img src="birthday-cake-strawberry.jpg" alt="">
+    <img src="baghali-polo-mahicheh.jpg" alt="">
+    <img src="chocolate-cake.jpg" alt="">
+    <img src="fesenjan.jpg" alt="">
+    <img src="latifeh-cake.jpg" alt="">
+    <img src="pistachio-cookies.jpg" alt="">
+    <img src="kofteh-tabrizi.jpg" alt="">
+    <img src="thumbprint-cookies.jpg" alt="">
+    <img src="zereshk-polo-morgh.jpg" alt="">
+  </div></div>
   <nav class="wrap">
     <a href="#top" class="brand">
       <span class="logo-spin-wrap"><img src="logo.png" alt="Elly's Bakery logo" class="logo-spin"></span> Elly's Bakery
@@ -452,6 +482,11 @@
 
   <!-- MENU -->
   <section id="menu" class="bakery-pattern">
+    <div class="deco-photos">
+      <img src="baklava-rolls.jpg" alt="" style="width:230px;height:230px;top:-60px;left:-50px;transform:rotate(-8deg);">
+      <img src="cake-chocolate-ganache.jpg" alt="" style="width:190px;height:190px;top:40%;right:-70px;transform:rotate(10deg);">
+      <img src="thumbprint-cookies.jpg" alt="" style="width:170px;height:170px;bottom:-50px;left:12%;transform:rotate(6deg);">
+    </div>
     <div class="wrap">
       <div class="section-head">
         <div class="eyebrow">What We Make</div>
@@ -612,6 +647,11 @@
 
   <!-- REVIEWS -->
   <section id="reviews" class="bakery-pattern" style="background:var(--pistachio-pale);">
+    <div class="deco-photos">
+      <img src="ash-reshteh.jpg" alt="" style="width:200px;height:200px;top:-50px;right:5%;transform:rotate(-6deg);">
+      <img src="cookie-assortment.jpg" alt="" style="width:180px;height:180px;bottom:-40px;left:-40px;transform:rotate(9deg);">
+      <img src="cake-raspberry-cone.jpg" alt="" style="width:160px;height:160px;top:45%;left:45%;transform:rotate(4deg);opacity:.18;">
+    </div>
     <div class="wrap">
       <div class="section-head">
         <div class="eyebrow">What Customers Say</div>
@@ -669,6 +709,11 @@
 
   <!-- HOW TO ORDER -->
   <section id="order" class="bakery-pattern">
+    <div class="deco-photos">
+      <img src="mirza-ghasemi.jpg" alt="" style="width:210px;height:210px;top:-55px;left:8%;transform:rotate(7deg);">
+      <img src="napoleon-cream-puff.jpg" alt="" style="width:190px;height:190px;bottom:-60px;right:-40px;transform:rotate(-9deg);">
+      <img src="chocolate-roulade.jpg" alt="" style="width:150px;height:150px;top:35%;right:30%;transform:rotate(5deg);opacity:.16;">
+    </div>
     <div class="wrap">
       <div class="section-head">
         <div class="eyebrow">Simple &amp; Direct</div>
