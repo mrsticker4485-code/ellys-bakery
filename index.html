@@ -99,33 +99,22 @@
   @media (prefers-reduced-motion: reduce){.header-strip .track{animation:none;}}
 
   .logo-wrap{
-    perspective:700px;
-    width:130px;height:130px;flex-shrink:0;
+    perspective:900px;
+    width:168px;height:168px;flex-shrink:0;
   }
-  .cube{
+  .logo-spin{
     display:block;
-    width:100%;height:100%;position:relative;
+    width:100%;height:100%;object-fit:contain;
+    border-radius:50%;
+    background:none;
+    animation:logoSpin 12s linear infinite;
     transform-style:preserve-3d;
-    animation:cubeSpin 14s linear infinite;
   }
-  .cube .cf{
-    position:absolute;width:130px;height:130px;
-    display:flex;align-items:center;justify-content:center;
-    backface-visibility:visible;
-    box-shadow:inset 0 0 0 1px rgba(0,0,0,.08);
+  @keyframes logoSpin{
+    from{transform:rotateY(0deg);}
+    to{transform:rotateY(360deg);}
   }
-  .cube .cf img{width:100%;height:100%;object-fit:cover;}
-  .cube .cf-front{background:#fff;transform:translateZ(65px);}
-  .cube .cf-back{background:#fff;transform:rotateY(180deg) translateZ(65px);}
-  .cube .cf-right{background:linear-gradient(135deg,#c07b7f,#9c4f56);transform:rotateY(90deg) translateZ(65px);}
-  .cube .cf-left{background:linear-gradient(135deg,#c07b7f,#9c4f56);transform:rotateY(-90deg) translateZ(65px);}
-  .cube .cf-top{background:linear-gradient(135deg,#e7cfa0,#bd9440);transform:rotateX(90deg) translateZ(65px);}
-  .cube .cf-bottom{background:linear-gradient(135deg,#e7cfa0,#bd9440);transform:rotateX(-90deg) translateZ(65px);}
-  @keyframes cubeSpin{
-    from{transform:rotateX(-18deg) rotateY(0deg);}
-    to{transform:rotateX(-18deg) rotateY(360deg);}
-  }
-  @media (prefers-reduced-motion: reduce){.cube{animation:none;}}
+  @media (prefers-reduced-motion: reduce){.logo-spin{animation:none;}}
   /* ---------- Bakery decorative background pattern ---------- */
   .bakery-pattern{position:relative;overflow:hidden;}
   .photo-slideshow{position:absolute;inset:0;pointer-events:none;z-index:0;overflow:hidden;}
@@ -412,14 +401,7 @@
   </div></div>
   <nav class="wrap">
     <a href="#top" class="brand">
-      <span class="logo-wrap"><span class="cube">
-        <span class="cf cf-front"><img src="logo.png" alt="Elly's Bakery logo"></span>
-        <span class="cf cf-back"><img src="logo.png" alt=""></span>
-        <span class="cf cf-right"></span>
-        <span class="cf cf-left"></span>
-        <span class="cf cf-top"></span>
-        <span class="cf cf-bottom"></span>
-      </span></span> Elly's Bakery
+      <span class="logo-wrap"><img src="logo.png" alt="Elly's Bakery logo" class="logo-spin"></span> Elly's Bakery
     </a>
     <button class="nav-toggle" aria-label="Toggle menu" onclick="document.querySelector('.links').classList.toggle('open')">☰</button>
     <ul class="links">
