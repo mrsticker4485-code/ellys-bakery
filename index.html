@@ -74,7 +74,6 @@
     background:rgba(251,245,238,.55);
     backdrop-filter:blur(5px) saturate(1.1);
     border-bottom:1px solid rgba(157,79,86,.18);
-    overflow:hidden;
     min-height:108px;
   }
   .header-strip{
@@ -100,14 +99,28 @@
 
   .logo-wrap{
     perspective:700px;
-    width:82px;height:82px;flex-shrink:0;
+    width:128px;height:128px;flex-shrink:0;
+    margin:-14px 0;
+    position:relative;z-index:5;
+  }
+  .logo-disc{
+    display:block;width:100%;height:100%;position:relative;
+    transform-style:preserve-3d;
+    animation:logoSpin 12s linear infinite;
+  }
+  .logo-disc .rim{
+    display:block;position:absolute;inset:0;border-radius:50%;
+    background:linear-gradient(155deg,#e7c766,#8a6521 70%);
+    transform:translateZ(-4px);
+    box-shadow:0 3px 8px rgba(0,0,0,.35);
   }
   .logo-spin{
     display:block;
     width:100%;height:100%;object-fit:contain;
     border-radius:50%;
-    animation:logoSpin 12s linear infinite;
-    transform-style:preserve-3d;
+    position:relative;
+    transform:translateZ(4px);
+    box-shadow:0 2px 6px rgba(0,0,0,.25);
   }
   @keyframes logoSpin{
     from{transform:rotateY(0deg);}
@@ -157,6 +170,14 @@
     font-family:'Fraunces',serif;font-weight:600;font-size:27px;
     text-decoration:none;color:var(--ink);
     text-shadow:0 1px 0 rgba(255,255,255,.6), 0 2px 3px rgba(156,79,86,.25);
+  }
+  .brand-text{
+    font-weight:800;
+    text-shadow:
+      0 1px 0 rgba(255,255,255,.85),
+      0 2px 0 rgba(255,255,255,.5),
+      0 3px 4px rgba(156,79,86,.4),
+      0 -1px 0 rgba(120,20,20,.25);
   }
   .brand .mark{
     width:34px;height:34px;border-radius:50%;
@@ -437,7 +458,7 @@
   </div></div>
   <nav class="wrap">
     <a href="#top" class="brand">
-      <span class="logo-wrap"><img src="logo.png" alt="Elly's Bakery logo" class="logo-spin"></span> Elly's Bakery
+      <span class="logo-wrap"><span class="logo-disc"><span class="rim"></span><img src="logo.png" alt="Elly's Bakery logo" class="logo-spin"></span></span> <span class="brand-text">Elly's Bakery</span>
     </a>
     <button class="nav-toggle" aria-label="Toggle menu" onclick="document.querySelector('.links').classList.toggle('open')">☰</button>
     <ul class="links">
