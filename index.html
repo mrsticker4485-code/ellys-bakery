@@ -104,25 +104,48 @@
     margin:-8px 0;
   }
   .logo-spin{
-    width:100%;height:100%;object-fit:contain;
-    filter:drop-shadow(0 10px 16px rgba(60,20,20,.45)) saturate(1.35) contrast(1.18) brightness(1.04);
+    width:100%;height:100%;
+    display:flex;align-items:center;justify-content:center;
+    clip-path:polygon(25% 6%, 75% 6%, 100% 50%, 75% 94%, 25% 94%, 0% 50%);
+    background:linear-gradient(135deg,#f3e2df 0%,#bd9440 45%,#9c4f56 100%);
+    box-shadow:
+      inset 3px 3px 6px rgba(255,255,255,.55),
+      inset -5px -5px 9px rgba(60,20,20,.45);
     animation:logoSpin 9s linear infinite;
     transform-style:preserve-3d;
   }
+  .logo-spin img{
+    width:82%;height:82%;object-fit:contain;
+    filter:
+      drop-shadow(1px 1px 0.5px rgba(255,255,255,.65))
+      drop-shadow(-1.5px -1.5px 1.5px rgba(50,15,15,.5))
+      saturate(1.3) contrast(1.15);
+  }
   @keyframes logoSpin{
     0%{transform:rotateY(0deg) translateZ(0);}
-    50%{transform:rotateY(180deg) translateZ(14px);}
+    50%{transform:rotateY(180deg) translateZ(16px);}
     100%{transform:rotateY(360deg) translateZ(0);}
   }
   @media (prefers-reduced-motion: reduce){.logo-spin{animation:none;}}
   /* ---------- Bakery decorative background pattern ---------- */
   .bakery-pattern{position:relative;overflow:hidden;}
-  .bakery-pattern .deco-photos{position:absolute;inset:0;pointer-events:none;z-index:0;overflow:hidden;}
-  .bakery-pattern .deco-photos img{
-    position:absolute;border-radius:50%;object-fit:cover;
-    opacity:.28;filter:saturate(1.2) contrast(1.05);
-    box-shadow:0 20px 40px rgba(90,50,40,.15);
+  .photo-slideshow{position:absolute;inset:0;pointer-events:none;z-index:0;overflow:hidden;}
+  .photo-slideshow img{
+    position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+    opacity:0;filter:saturate(1.15) contrast(1.05);
+    animation-name:slideCycle;animation-timing-function:ease-in-out;animation-iteration-count:infinite;
   }
+  .photo-slideshow::after{
+    content:"";position:absolute;inset:0;background:inherit;
+  }
+  @keyframes slideCycle{
+    0%{opacity:0;}
+    4%{opacity:.4;}
+    16%{opacity:.4;}
+    20%{opacity:0;}
+    100%{opacity:0;}
+  }
+  @media (prefers-reduced-motion: reduce){.photo-slideshow img{animation:none;opacity:0;}}
   .bakery-pattern > .wrap{position:relative;z-index:1;}
   .review-grid{
     display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-bottom:44px;
@@ -389,7 +412,7 @@
   </div></div>
   <nav class="wrap">
     <a href="#top" class="brand">
-      <span class="logo-spin-wrap"><img src="logo.png" alt="Elly's Bakery logo" class="logo-spin"></span> Elly's Bakery
+      <span class="logo-spin-wrap"><span class="logo-spin"><img src="logo.png" alt="Elly's Bakery logo"></span></span> Elly's Bakery
     </a>
     <button class="nav-toggle" aria-label="Toggle menu" onclick="document.querySelector('.links').classList.toggle('open')">☰</button>
     <ul class="links">
@@ -482,10 +505,12 @@
 
   <!-- MENU -->
   <section id="menu" class="bakery-pattern">
-    <div class="deco-photos">
-      <img src="baklava-rolls.jpg" alt="" style="width:230px;height:230px;top:-60px;left:-50px;transform:rotate(-8deg);">
-      <img src="cake-chocolate-ganache.jpg" alt="" style="width:190px;height:190px;top:40%;right:-70px;transform:rotate(10deg);">
-      <img src="thumbprint-cookies.jpg" alt="" style="width:170px;height:170px;bottom:-50px;left:12%;transform:rotate(6deg);">
+    <div class="photo-slideshow">
+      <img src="baklava-rolls.jpg" alt="" style="animation-duration:15s;animation-delay:0s;">
+      <img src="cake-chocolate-ganache.jpg" alt="" style="animation-duration:15s;animation-delay:3s;">
+      <img src="thumbprint-cookies.jpg" alt="" style="animation-duration:15s;animation-delay:6s;">
+      <img src="ghormeh-sabzi.jpg" alt="" style="animation-duration:15s;animation-delay:9s;">
+      <img src="birthday-cake-strawberry.jpg" alt="" style="animation-duration:15s;animation-delay:12s;">
     </div>
     <div class="wrap">
       <div class="section-head">
@@ -647,10 +672,12 @@
 
   <!-- REVIEWS -->
   <section id="reviews" class="bakery-pattern" style="background:var(--pistachio-pale);">
-    <div class="deco-photos">
-      <img src="ash-reshteh.jpg" alt="" style="width:200px;height:200px;top:-50px;right:5%;transform:rotate(-6deg);">
-      <img src="cookie-assortment.jpg" alt="" style="width:180px;height:180px;bottom:-40px;left:-40px;transform:rotate(9deg);">
-      <img src="cake-raspberry-cone.jpg" alt="" style="width:160px;height:160px;top:45%;left:45%;transform:rotate(4deg);opacity:.18;">
+    <div class="photo-slideshow">
+      <img src="ash-reshteh.jpg" alt="" style="animation-duration:15s;animation-delay:0s;">
+      <img src="cookie-assortment.jpg" alt="" style="animation-duration:15s;animation-delay:3s;">
+      <img src="cake-raspberry-cone.jpg" alt="" style="animation-duration:15s;animation-delay:6s;">
+      <img src="kofteh-tabrizi.jpg" alt="" style="animation-duration:15s;animation-delay:9s;">
+      <img src="swiss-rolls-trio.jpg" alt="" style="animation-duration:15s;animation-delay:12s;">
     </div>
     <div class="wrap">
       <div class="section-head">
@@ -709,10 +736,12 @@
 
   <!-- HOW TO ORDER -->
   <section id="order" class="bakery-pattern">
-    <div class="deco-photos">
-      <img src="mirza-ghasemi.jpg" alt="" style="width:210px;height:210px;top:-55px;left:8%;transform:rotate(7deg);">
-      <img src="napoleon-cream-puff.jpg" alt="" style="width:190px;height:190px;bottom:-60px;right:-40px;transform:rotate(-9deg);">
-      <img src="chocolate-roulade.jpg" alt="" style="width:150px;height:150px;top:35%;right:30%;transform:rotate(5deg);opacity:.16;">
+    <div class="photo-slideshow">
+      <img src="mirza-ghasemi.jpg" alt="" style="animation-duration:15s;animation-delay:0s;">
+      <img src="napoleon-cream-puff.jpg" alt="" style="animation-duration:15s;animation-delay:3s;">
+      <img src="chocolate-roulade.jpg" alt="" style="animation-duration:15s;animation-delay:6s;">
+      <img src="baghali-polo-mahicheh.jpg" alt="" style="animation-duration:15s;animation-delay:9s;">
+      <img src="pistachio-cream-cookies.jpg" alt="" style="animation-duration:15s;animation-delay:12s;">
     </div>
     <div class="wrap">
       <div class="section-head">
