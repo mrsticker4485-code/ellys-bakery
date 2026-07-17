@@ -74,7 +74,66 @@
     background:rgba(251,245,238,.92);
     backdrop-filter:blur(6px);
     border-bottom:1px solid rgba(157,79,86,.14);
+    overflow:hidden;
   }
+  .header-bg{
+    position:absolute;inset:0;z-index:-1;
+  }
+  .header-bg span{
+    position:absolute;inset:0;
+    background-size:cover;background-position:center;
+    opacity:0;
+    animation:headerFade 32s infinite;
+  }
+  .header-bg span:nth-child(1){background-image:url('baklava-rolls.jpg');animation-delay:0s;}
+  .header-bg span:nth-child(2){background-image:url('swiss-roll-strawberry.jpg');animation-delay:4s;}
+  .header-bg span:nth-child(3){background-image:url('ghormeh-sabzi.jpg');animation-delay:8s;}
+  .header-bg span:nth-child(4){background-image:url('birthday-cake-strawberry.jpg');animation-delay:12s;}
+  .header-bg span:nth-child(5){background-image:url('baghali-polo-mahicheh.jpg');animation-delay:16s;}
+  .header-bg span:nth-child(6){background-image:url('chocolate-cake.jpg');animation-delay:20s;}
+  .header-bg span:nth-child(7){background-image:url('fesenjan.jpg');animation-delay:24s;}
+  .header-bg span:nth-child(8){background-image:url('latifeh-cake.jpg');animation-delay:28s;}
+  @keyframes headerFade{
+    0%{opacity:0;} 3%{opacity:.16;} 11%{opacity:.16;} 14%{opacity:0;} 100%{opacity:0;}
+  }
+  @media (prefers-reduced-motion: reduce){.header-bg span{animation:none;opacity:0;}}
+  .logo-spin-wrap{
+    perspective:600px;
+    width:52px;height:52px;flex-shrink:0;
+  }
+  .logo-spin{
+    width:100%;height:100%;border-radius:50%;object-fit:contain;
+    background:#fff;
+    box-shadow:0 2px 8px rgba(156,79,86,.35), inset 0 0 0 2px rgba(189,148,64,.4);
+    animation:logoSpin 9s linear infinite;
+    transform-style:preserve-3d;
+  }
+  @keyframes logoSpin{
+    from{transform:rotateY(0deg);}
+    to{transform:rotateY(360deg);}
+  }
+  @media (prefers-reduced-motion: reduce){.logo-spin{animation:none;}}
+  /* ---------- Bakery decorative background pattern ---------- */
+  .bakery-pattern{position:relative;}
+  .bakery-pattern::before{
+    content:"";position:absolute;inset:0;pointer-events:none;opacity:.06;z-index:0;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cg fill='none' stroke='%239c4f56' stroke-width='1.6'%3E%3Cpath d='M20 30c8-10 24-10 32 0'/%3E%3Ccircle cx='20' cy='27' r='3'/%3E%3Ccircle cx='52' cy='27' r='3'/%3E%3Cpath d='M100 20l4 14 14 4-14 4-4 14-4-14-14-4 14-4z'/%3E%3Cpath d='M140 60c0 10-16 10-16 0s16-10 16 0z'/%3E%3Cpath d='M20 100c6 4 6 12 0 16-6-4-6-12 0-16z'/%3E%3Cpath d='M90 110c10 0 10 16 0 16s-10-16 0-16z'/%3E%3Cpath d='M150 120l3 10 10 3-10 3-3 10-3-10-10-3 10-3z'/%3E%3Cpath d='M50 150c8-8 24-8 32 0'/%3E%3C/g%3E%3C/svg%3E");
+    background-size:180px 180px;
+  }
+  .bakery-pattern > .wrap{position:relative;z-index:1;}
+  .review-grid{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-bottom:44px;
+  }
+  @media (max-width:900px){.review-grid{grid-template-columns:1fr 1fr;}}
+  @media (max-width:620px){.review-grid{grid-template-columns:1fr;}}
+  .review-card{
+    background:#fff;border-radius:18px;padding:24px;
+    box-shadow:0 8px 24px rgba(90,50,40,.07);
+    display:flex;flex-direction:column;gap:12px;
+  }
+  .review-stars{color:var(--gold);font-size:15px;letter-spacing:2px;}
+  .review-text{font-size:14.5px;color:var(--ink-soft);line-height:1.55;flex-grow:1;}
+  .review-name{font-family:'Fraunces',serif;font-weight:600;font-size:14.5px;color:var(--rose-deep);}
   nav.wrap{
     display:flex;align-items:center;justify-content:space-between;
     padding-top:14px;padding-bottom:14px;
@@ -297,15 +356,17 @@
 <body>
 
 <header>
+  <div class="header-bg"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
   <nav class="wrap">
     <a href="#top" class="brand">
-      <img src="logo.png" alt="Elly's Bakery logo" style="width:52px;height:52px;object-fit:contain;"> Elly's Bakery
+      <span class="logo-spin-wrap"><img src="logo.png" alt="Elly's Bakery logo" class="logo-spin"></span> Elly's Bakery
     </a>
     <button class="nav-toggle" aria-label="Toggle menu" onclick="document.querySelector('.links').classList.toggle('open')">☰</button>
     <ul class="links">
       <li><a href="#menu">Menu</a></li>
       <li><a href="#catering">Persian Catering</a></li>
       <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#reviews">Reviews</a></li>
       <li><a href="#order">How to Order</a></li>
       <li><a href="#contact" class="nav-cta">Order Now</a></li>
     </ul>
@@ -390,7 +451,7 @@
   </div>
 
   <!-- MENU -->
-  <section id="menu">
+  <section id="menu" class="bakery-pattern">
     <div class="wrap">
       <div class="section-head">
         <div class="eyebrow">What We Make</div>
@@ -543,8 +604,71 @@
     </div>
   </section>
 
+  <div class="termeh-divider">
+    <div class="line"></div>
+    <svg viewBox="0 0 24 24" fill="none" stroke="#bd9440" stroke-width="1.4"><path d="M12 3c4 3 4 9 0 15-4-6-4-12 0-15z"/><circle cx="12" cy="4.5" r="1"/></svg>
+    <div class="line"></div>
+  </div>
+
+  <!-- REVIEWS -->
+  <section id="reviews" class="bakery-pattern" style="background:var(--pistachio-pale);">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">What Customers Say</div>
+        <h2>Reviews</h2>
+        <p>Real words from real customers on Google.</p>
+      </div>
+      <div class="review-grid">
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <div class="review-text">Great bakery! Fresh products, friendly staff, and everything I've tried has been delicious. Definitely one of my new favorite spots.</div>
+          <div class="review-name">Kimia M.</div>
+        </div>
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <div class="review-text">Amazing local bakery! Everything was delicious and beautifully made. The cake exceeded my expectations — it looked stunning and tasted even better. Customer service was friendly and made the whole process easy.</div>
+          <div class="review-name">Sara A.</div>
+        </div>
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <div class="review-text">Thank you for making my experience so special. Everything was fresh, beautiful, and made with so much care. I'll definitely be a returning customer.</div>
+          <div class="review-name">Shima H.</div>
+        </div>
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <div class="review-text">The baklava at Elly's Bakery was absolutely delicious! Fresh, flaky, and perfectly balanced with just the right amount of sweetness. Highly recommend!</div>
+          <div class="review-name">ZH N.</div>
+        </div>
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <div class="review-text">Some of the best pastries I've had in years — fresh and homemade. Definitely be back for some more.</div>
+          <div class="review-name">Shepherd T.</div>
+        </div>
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <div class="review-text">Great homemade pastries and affordable prices. Highly recommended.</div>
+          <div class="review-name">Hamidreza H.</div>
+        </div>
+      </div>
+      <div style="max-width:520px;margin:0 auto 40px;text-align:center;">
+        <a class="btn btn-dark" href="https://www.google.com/maps/place/Elly's+Bakery+Katy/@29.7914047,-95.8984604,13z/data=!3m1!4b1!4m6!3m5!1s0x8641213897d2fc41:0xb9b2459ed8b1a0be!8m2!3d29.7913366!4d-95.8572605!16s%2Fg%2F11z795_06d" target="_blank" rel="noopener">See &amp; Leave a Google Review</a>
+      </div>
+      <div style="max-width:560px;margin:0 auto;background:#fff;border-radius:20px;padding:32px;box-shadow:0 10px 30px rgba(0,0,0,.06);">
+        <h3 style="font-size:19px;font-style:italic;margin-bottom:6px;">Or leave feedback here</h3>
+        <p style="color:var(--ink-soft);font-size:14px;margin-bottom:20px;">This goes straight to our inbox — we read every message.</p>
+        <form action="https://formsubmit.co/YOUR-EMAIL-HERE" method="POST" style="display:grid;gap:14px;">
+          <input type="text" name="name" placeholder="Your name" required style="padding:12px 14px;border-radius:10px;border:1px solid rgba(156,79,86,.25);font-family:inherit;font-size:14.5px;">
+          <textarea name="review" placeholder="Tell us about your experience..." rows="4" required style="padding:12px 14px;border-radius:10px;border:1px solid rgba(156,79,86,.25);font-family:inherit;font-size:14.5px;resize:vertical;"></textarea>
+          <input type="hidden" name="_subject" value="New review from Elly's Bakery website">
+          <input type="hidden" name="_captcha" value="true">
+          <button type="submit" class="btn btn-primary" style="justify-self:start;border:none;cursor:pointer;">Send Feedback</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
   <!-- HOW TO ORDER -->
-  <section id="order">
+  <section id="order" class="bakery-pattern">
     <div class="wrap">
       <div class="section-head">
         <div class="eyebrow">Simple &amp; Direct</div>
