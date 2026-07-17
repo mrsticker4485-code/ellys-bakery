@@ -145,7 +145,7 @@
     display:flex;flex-direction:column;gap:12px;
   }
   .review-stars{color:var(--gold);font-size:15px;letter-spacing:2px;}
-  .review-text{font-size:14.5px;color:var(--ink-soft);line-height:1.55;flex-grow:1;}
+  .review-text{font-size:16px;font-weight:500;color:var(--ink-soft);line-height:1.6;flex-grow:1;}
   .review-name{font-family:'Fraunces',serif;font-weight:600;font-size:14.5px;color:var(--rose-deep);}
   nav.wrap{
     position:relative;z-index:1;
@@ -166,7 +166,7 @@
   }
   nav ul{list-style:none;display:flex;gap:30px;margin:0;padding:0;}
   nav ul a{
-    text-decoration:none;font-size:14.5px;font-weight:500;color:var(--ink-soft);
+    text-decoration:none;font-size:16.5px;font-weight:600;color:var(--ink-soft);
     transition:color .2s;
   }
   nav ul a:hover{color:var(--rose-deep);}
@@ -238,7 +238,7 @@
     backdrop-filter:blur(4px);
   }
   .hero-badge ul{list-style:none;margin:0;padding:0;display:grid;gap:14px;}
-  .hero-badge li{display:flex;gap:12px;align-items:flex-start;font-size:14.5px;color:#f2e2df;}
+  .hero-badge li{display:flex;gap:12px;align-items:flex-start;font-size:16px;font-weight:500;color:#f2e2df;}
   .hero-badge li b{display:block;color:var(--cream);font-family:'Fraunces',serif;font-size:15.5px;font-weight:600;}
   .hero-badge svg{flex-shrink:0;margin-top:2px;}
 
@@ -246,7 +246,7 @@
   section{padding:76px 0;}
   .section-head{max-width:640px;margin:0 auto 46px;text-align:center;}
   .section-head h2{font-size:clamp(28px,4vw,40px);margin-top:10px;font-style:italic;}
-  .section-head p{color:var(--ink-soft);margin-top:14px;font-size:16px;}
+  .section-head p{color:var(--ink-soft);margin-top:14px;font-size:17.5px;font-weight:500;}
 
   /* ---------- About ---------- */
   .about{background:var(--pistachio-pale);}
@@ -295,10 +295,10 @@
   .menu-item .name{font-weight:600;font-size:15.5px;}
   .menu-item .name .unit{font-weight:500;font-size:13px;color:var(--ink-soft);}
   .menu-item .name-fa{font-size:13.5px;color:var(--rose-deep);margin-top:2px;font-weight:600;}
-  .menu-item .desc{color:var(--ink-soft);font-size:13.5px;margin-top:3px;}
+  .menu-item .desc{color:var(--ink-soft);font-size:15.5px;font-weight:500;margin-top:3px;}
   .menu-item .price{font-weight:600;color:var(--rose-deep);font-size:15.5px;white-space:nowrap;}
   .menu-note{
-    margin-top:36px;text-align:center;color:var(--ink-soft);font-size:14.5px;
+    margin-top:36px;text-align:center;color:var(--ink-soft);font-size:16px;font-weight:500;
     background:var(--rose-pale);padding:18px 24px;border-radius:14px;
   }
 
@@ -324,7 +324,7 @@
   .g8::before{background:linear-gradient(155deg,#5e2a2f,#38181b);}
   .g-photo{background-size:cover;background-position:center;}
   .g-photo::before{content:none;}
-  .gallery-note{text-align:center;margin-top:28px;color:var(--ink-soft);font-size:14px;}
+  .gallery-note{text-align:center;margin-top:28px;color:var(--ink-soft);font-size:16px;font-weight:500;}
 
   /* ---------- How to order ---------- */
   .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;}
@@ -336,7 +336,7 @@
     font-family:'Fraunces',serif;font-style:italic;font-size:20px;
   }
   .step h3{font-size:18px;font-style:italic;margin-bottom:8px;}
-  .step p{color:var(--ink-soft);font-size:14.5px;margin:0;}
+  .step p{color:var(--ink-soft);font-size:16px;font-weight:500;margin:0;}
 
   /* ---------- Contact / footer ---------- */
   .contact{
@@ -354,7 +354,7 @@
     background:rgba(251,245,238,.08);border:1px solid rgba(251,245,238,.25);
     border-radius:20px;padding:30px;display:grid;gap:18px;
   }
-  .contact-row{display:flex;gap:14px;align-items:flex-start;font-size:14.5px;}
+  .contact-row{display:flex;gap:14px;align-items:flex-start;font-size:16px;font-weight:500;}
   .contact-row b{display:block;font-family:'Fraunces',serif;font-size:15.5px;font-weight:600;}
   .contact-row a{color:var(--cream);text-decoration:underline;text-underline-offset:3px;}
 
@@ -405,7 +405,6 @@
     <button class="nav-toggle" aria-label="Toggle menu" onclick="document.querySelector('.links').classList.toggle('open')">☰</button>
     <ul class="links">
       <li><a href="#menu">Menu</a></li>
-      <li><a href="#catering">Persian Catering</a></li>
       <li><a href="#gallery">Gallery</a></li>
       <li><a href="#reviews">Reviews</a></li>
       <li><a href="#order">How to Order</a></li>
@@ -471,7 +470,7 @@
       <div>
         <div class="eyebrow">Our Story</div>
         <h2>Two kitchens, one table</h2>
-        <p style="margin-top:16px;color:var(--ink-soft);font-size:16px;">
+        <p style="margin-top:16px;color:var(--ink-soft);font-size:17.5px;font-weight:500;">
           Elly's Bakery started as a home kitchen in Katy filling orders one cake at a time. Today we bake celebration cakes, cookies, and rolled pastries alongside a full menu of traditional Persian dishes — from saffron rice to slow-simmered khoresht — so you can order dessert and dinner from the same place.
         </p>
         <div class="about-list">
