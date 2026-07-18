@@ -70,11 +70,10 @@
 
   /* ---------- Nav ---------- */
   header{
-    position:sticky;top:0;z-index:50;
+    position:relative;z-index:50;
     background:rgba(251,245,238,.55);
     backdrop-filter:blur(5px) saturate(1.1);
     border-bottom:1px solid rgba(157,79,86,.18);
-    min-height:108px;
   }
   .header-strip{
     position:absolute;inset:0;overflow:hidden;z-index:0;
@@ -99,13 +98,13 @@
 
   .logo-wrap{
     perspective:700px;
-    width:232px;height:232px;flex-shrink:0;
-    margin:-51px 0;
+    width:128px;height:128px;flex-shrink:0;
+    margin:0;
     position:relative;z-index:5;
   }
   .logo-wrap::before{
-    content:"";position:absolute;inset:-8%;border-radius:50%;
-    background:radial-gradient(closest-side, rgba(251,245,238,.98) 55%, rgba(251,245,238,.75) 75%, rgba(251,245,238,0) 100%);
+    content:"";position:absolute;inset:0;border-radius:50%;
+    background:radial-gradient(closest-side, rgba(251,245,238,.98) 55%, rgba(251,245,238,.75) 78%, rgba(251,245,238,0) 100%);
     z-index:0;
   }
   .logo-bg-slide{
@@ -257,6 +256,7 @@
     nav ul.links a{display:block;padding:14px 24px;border-top:1px solid rgba(157,79,86,.08);}
     .nav-toggle{display:block;}
     .nav-cta{display:none;}
+    .logo-wrap{width:96px;height:96px;}
   }
 
   /* ---------- Hero ---------- */
