@@ -99,17 +99,9 @@
 
   .logo-wrap{
     perspective:700px;
-    width:128px;height:128px;flex-shrink:0;
+    width:158px;height:158px;flex-shrink:0;
     margin:-14px 0;
     position:relative;z-index:5;
-    border-radius:50%;
-    overflow:hidden;
-    padding:5px;
-    background:linear-gradient(155deg,#f3dfa0,#bd9440 45%,#7a5a20 100%);
-    box-shadow:
-      inset 0 2px 3px rgba(255,255,255,.7),
-      inset 0 -3px 5px rgba(60,35,10,.6),
-      0 3px 8px rgba(60,20,20,.4);
   }
   .logo-bg-slide{
     position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
@@ -132,7 +124,6 @@
     display:block;
     width:100%;height:100%;object-fit:contain;
     border-radius:50%;
-    animation:logoSpin 12s linear infinite;
     backface-visibility:visible;
   }
   @keyframes logoSpin{
@@ -472,34 +463,7 @@
   </div></div>
   <nav class="wrap">
     <a href="#top" class="brand">
-      <span class="logo-wrap">
-        <img class="logo-bg-slide" src="swiss-roll-strawberry.jpg" alt="" style="animation-duration:300s;animation-delay:0s;">
-        <img class="logo-bg-slide" src="ghormeh-sabzi.jpg" alt="" style="animation-duration:300s;animation-delay:12s;">
-        <img class="logo-bg-slide" src="birthday-cake-strawberry.jpg" alt="" style="animation-duration:300s;animation-delay:24s;">
-        <img class="logo-bg-slide" src="zereshk-polo-morgh.jpg" alt="" style="animation-duration:300s;animation-delay:36s;">
-        <img class="logo-bg-slide" src="pistachio-cookies.jpg" alt="" style="animation-duration:300s;animation-delay:48s;">
-        <img class="logo-bg-slide" src="fesenjan.jpg" alt="" style="animation-duration:300s;animation-delay:60s;">
-        <img class="logo-bg-slide" src="butter-cookies-chocolate.jpg" alt="" style="animation-duration:300s;animation-delay:72s;">
-        <img class="logo-bg-slide" src="khoresht-bademjan.jpg" alt="" style="animation-duration:300s;animation-delay:84s;">
-        <img class="logo-bg-slide" src="chocolate-cake.jpg" alt="" style="animation-duration:300s;animation-delay:96s;">
-        <img class="logo-bg-slide" src="baghali-polo-mahicheh.jpg" alt="" style="animation-duration:300s;animation-delay:108s;">
-        <img class="logo-bg-slide" src="baklava-rolls.jpg" alt="" style="animation-duration:300s;animation-delay:120s;">
-        <img class="logo-bg-slide" src="kofteh-tabrizi.jpg" alt="" style="animation-duration:300s;animation-delay:132s;">
-        <img class="logo-bg-slide" src="pistachio-cream-cookies.jpg" alt="" style="animation-duration:300s;animation-delay:144s;">
-        <img class="logo-bg-slide" src="mirza-ghasemi.jpg" alt="" style="animation-duration:300s;animation-delay:156s;">
-        <img class="logo-bg-slide" src="cake-berry-drip.jpg" alt="" style="animation-duration:300s;animation-delay:168s;">
-        <img class="logo-bg-slide" src="kashke-bademjan.jpg" alt="" style="animation-duration:300s;animation-delay:180s;">
-        <img class="logo-bg-slide" src="cake-blue-ombre-raspberry.jpg" alt="" style="animation-duration:300s;animation-delay:192s;">
-        <img class="logo-bg-slide" src="ash-reshteh.jpg" alt="" style="animation-duration:300s;animation-delay:204s;">
-        <img class="logo-bg-slide" src="cake-raspberry-cone.jpg" alt="" style="animation-duration:300s;animation-delay:216s;">
-        <img class="logo-bg-slide" src="salad-olivier.jpg" alt="" style="animation-duration:300s;animation-delay:228s;">
-        <img class="logo-bg-slide" src="chocolate-roulade.jpg" alt="" style="animation-duration:300s;animation-delay:240s;">
-        <img class="logo-bg-slide" src="cookie-assortment.jpg" alt="" style="animation-duration:300s;animation-delay:252s;">
-        <img class="logo-bg-slide" src="cream-roll.jpg" alt="" style="animation-duration:300s;animation-delay:264s;">
-        <img class="logo-bg-slide" src="flower-jam-cookies.jpg" alt="" style="animation-duration:300s;animation-delay:276s;">
-        <img class="logo-bg-slide" src="napoleon-cream-puff.jpg" alt="" style="animation-duration:300s;animation-delay:288s;">
-        <span class="logo-disc"><img src="logo.png" alt="Elly's Bakery logo" class="logo-spin"></span>
-      </span> <span class="brand-text">Elly's Bakery</span>
+      <span class="logo-wrap"><img src="logo.png" alt="Elly's Bakery logo" class="logo-spin"></span> <span class="brand-text">Elly's Bakery</span>
     </a>
     <button class="nav-toggle" aria-label="Toggle menu" onclick="document.querySelector('.links').classList.toggle('open')">☰</button>
     <ul class="links">
@@ -554,14 +518,7 @@
   </div>
 
   <!-- ABOUT -->
-  <section class="about bakery-pattern" id="about">
-    <div class="photo-slideshow">
-      <img src="cake-chocolate-ganache.jpg" alt="" style="animation-duration:15s;animation-delay:0s;">
-      <img src="baklava-rolls.jpg" alt="" style="animation-duration:15s;animation-delay:3s;">
-      <img src="ghormeh-sabzi.jpg" alt="" style="animation-duration:15s;animation-delay:6s;">
-      <img src="swiss-roll-strawberry.jpg" alt="" style="animation-duration:15s;animation-delay:9s;">
-      <img src="fesenjan.jpg" alt="" style="animation-duration:15s;animation-delay:12s;">
-    </div>
+  <section class="about" id="about" style="background:#fff;">
     <div class="wrap about-grid">
       <div class="about-visual" style="background:none;">
         <img src="birthday-cake-strawberry.jpg" alt="Fresh cake from Elly's Bakery" style="width:100%;height:100%;object-fit:cover;border-radius:24px;">
@@ -597,14 +554,7 @@
   </div>
 
   <!-- MENU -->
-  <section id="menu" class="bakery-pattern">
-    <div class="photo-slideshow">
-      <img src="baklava-rolls.jpg" alt="" style="animation-duration:15s;animation-delay:0s;">
-      <img src="cake-chocolate-ganache.jpg" alt="" style="animation-duration:15s;animation-delay:3s;">
-      <img src="thumbprint-cookies.jpg" alt="" style="animation-duration:15s;animation-delay:6s;">
-      <img src="ghormeh-sabzi.jpg" alt="" style="animation-duration:15s;animation-delay:9s;">
-      <img src="birthday-cake-strawberry.jpg" alt="" style="animation-duration:15s;animation-delay:12s;">
-    </div>
+  <section id="menu" style="background:#fff;">
     <div class="wrap">
       <div class="section-head">
         <div class="eyebrow">What We Make</div>
@@ -711,14 +661,7 @@
   </div>
 
   <!-- GALLERY -->
-  <section class="gallery bakery-pattern" id="gallery">
-    <div class="photo-slideshow">
-      <img src="latifeh-cake.jpg" alt="" style="animation-duration:15s;animation-delay:0s;">
-      <img src="zereshk-polo-morgh.jpg" alt="" style="animation-duration:15s;animation-delay:3s;">
-      <img src="cream-roll.jpg" alt="" style="animation-duration:15s;animation-delay:6s;">
-      <img src="kashke-bademjan.jpg" alt="" style="animation-duration:15s;animation-delay:9s;">
-      <img src="cake-berry-drip.jpg" alt="" style="animation-duration:15s;animation-delay:12s;">
-    </div>
+  <section class="gallery" id="gallery" style="background:#fff;">
     <div class="wrap">
       <div class="section-head">
         <div class="eyebrow">From Our Kitchen</div>
@@ -770,14 +713,7 @@
   </div>
 
   <!-- REVIEWS -->
-  <section id="reviews" class="bakery-pattern" style="background:var(--pistachio-pale);">
-    <div class="photo-slideshow">
-      <img src="ash-reshteh.jpg" alt="" style="animation-duration:15s;animation-delay:0s;">
-      <img src="cookie-assortment.jpg" alt="" style="animation-duration:15s;animation-delay:3s;">
-      <img src="cake-raspberry-cone.jpg" alt="" style="animation-duration:15s;animation-delay:6s;">
-      <img src="kofteh-tabrizi.jpg" alt="" style="animation-duration:15s;animation-delay:9s;">
-      <img src="swiss-rolls-trio.jpg" alt="" style="animation-duration:15s;animation-delay:12s;">
-    </div>
+  <section id="reviews" style="background:#fff;">
     <div class="wrap">
       <div class="section-head">
         <div class="eyebrow">What Customers Say</div>
@@ -834,14 +770,7 @@
   </section>
 
   <!-- HOW TO ORDER -->
-  <section id="order" class="bakery-pattern">
-    <div class="photo-slideshow">
-      <img src="mirza-ghasemi.jpg" alt="" style="animation-duration:15s;animation-delay:0s;">
-      <img src="napoleon-cream-puff.jpg" alt="" style="animation-duration:15s;animation-delay:3s;">
-      <img src="chocolate-roulade.jpg" alt="" style="animation-duration:15s;animation-delay:6s;">
-      <img src="baghali-polo-mahicheh.jpg" alt="" style="animation-duration:15s;animation-delay:9s;">
-      <img src="pistachio-cream-cookies.jpg" alt="" style="animation-duration:15s;animation-delay:12s;">
-    </div>
+  <section id="order" style="background:#fff;">
     <div class="wrap">
       <div class="section-head">
         <div class="eyebrow">Simple &amp; Direct</div>
@@ -898,9 +827,10 @@
         <div class="contact-row" style="justify-content:center;flex-direction:column;align-items:center;text-align:center;gap:8px;">
           <img src="instagram-qr.png" alt="Scan to follow Elly's Bakery on Instagram" style="width:130px;height:130px;border-radius:12px;">
           <span style="font-size:13px;color:#f0dcd9;">Scan to follow us on Instagram</span>
+        </div>
         <div class="contact-row">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#bd9440" stroke-width="1.8"><path d="M12 21c4.4-4 7-7.6 7-11a7 7 0 1 0-14 0c0 3.4 2.6 7 7 11z"/><circle cx="12" cy="10" r="2.4"/></svg>
-          <div><b>Location</b>Katy, Texas — pickup only</div>
+          <div><b>Location</b>Katy, Texas — pickup only<br><a href="https://www.google.com/maps/place/Elly's+Bakery+Katy/@29.7914047,-95.8984604,13z/data=!3m1!4b1!4m6!3m5!1s0x8641213897d2fc41:0xb9b2459ed8b1a0be!8m2!3d29.7913366!4d-95.8572605!16s%2Fg%2F11z795_06d" target="_blank" rel="noopener">Get Directions on Google Maps</a></div>
         </div>
         <div class="contact-row">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#bd9440" stroke-width="1.8"><path d="M4 4h16v16H4z"/><path d="M4 9h16"/></svg>
