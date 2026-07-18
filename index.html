@@ -103,6 +103,7 @@
     margin:-14px 0;
     position:relative;z-index:5;
     border-radius:50%;
+    overflow:hidden;
     padding:5px;
     background:linear-gradient(155deg,#f3dfa0,#bd9440 45%,#7a5a20 100%);
     box-shadow:
@@ -110,8 +111,22 @@
       inset 0 -3px 5px rgba(60,35,10,.6),
       0 3px 8px rgba(60,20,20,.4);
   }
+  .logo-bg-slide{
+    position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+    opacity:0;
+    animation-name:logoBgCycle;animation-timing-function:ease-in-out;animation-iteration-count:infinite;
+  }
+  @keyframes logoBgCycle{
+    0%{opacity:0;}
+    0.3%{opacity:1;}
+    3.7%{opacity:1;}
+    4%{opacity:0;}
+    100%{opacity:0;}
+  }
+  @media (prefers-reduced-motion: reduce){.logo-bg-slide{animation:none;opacity:0;}}
   .logo-disc{
     display:block;width:100%;height:100%;position:relative;border-radius:50%;overflow:hidden;
+    z-index:1;
   }
   .logo-spin{
     display:block;
@@ -457,7 +472,34 @@
   </div></div>
   <nav class="wrap">
     <a href="#top" class="brand">
-      <span class="logo-wrap"><span class="logo-disc"><img src="logo.png" alt="Elly's Bakery logo" class="logo-spin"></span></span> <span class="brand-text">Elly's Bakery</span>
+      <span class="logo-wrap">
+        <img class="logo-bg-slide" src="swiss-roll-strawberry.jpg" alt="" style="animation-duration:300s;animation-delay:0s;">
+        <img class="logo-bg-slide" src="ghormeh-sabzi.jpg" alt="" style="animation-duration:300s;animation-delay:12s;">
+        <img class="logo-bg-slide" src="birthday-cake-strawberry.jpg" alt="" style="animation-duration:300s;animation-delay:24s;">
+        <img class="logo-bg-slide" src="zereshk-polo-morgh.jpg" alt="" style="animation-duration:300s;animation-delay:36s;">
+        <img class="logo-bg-slide" src="pistachio-cookies.jpg" alt="" style="animation-duration:300s;animation-delay:48s;">
+        <img class="logo-bg-slide" src="fesenjan.jpg" alt="" style="animation-duration:300s;animation-delay:60s;">
+        <img class="logo-bg-slide" src="butter-cookies-chocolate.jpg" alt="" style="animation-duration:300s;animation-delay:72s;">
+        <img class="logo-bg-slide" src="khoresht-bademjan.jpg" alt="" style="animation-duration:300s;animation-delay:84s;">
+        <img class="logo-bg-slide" src="chocolate-cake.jpg" alt="" style="animation-duration:300s;animation-delay:96s;">
+        <img class="logo-bg-slide" src="baghali-polo-mahicheh.jpg" alt="" style="animation-duration:300s;animation-delay:108s;">
+        <img class="logo-bg-slide" src="baklava-rolls.jpg" alt="" style="animation-duration:300s;animation-delay:120s;">
+        <img class="logo-bg-slide" src="kofteh-tabrizi.jpg" alt="" style="animation-duration:300s;animation-delay:132s;">
+        <img class="logo-bg-slide" src="pistachio-cream-cookies.jpg" alt="" style="animation-duration:300s;animation-delay:144s;">
+        <img class="logo-bg-slide" src="mirza-ghasemi.jpg" alt="" style="animation-duration:300s;animation-delay:156s;">
+        <img class="logo-bg-slide" src="cake-berry-drip.jpg" alt="" style="animation-duration:300s;animation-delay:168s;">
+        <img class="logo-bg-slide" src="kashke-bademjan.jpg" alt="" style="animation-duration:300s;animation-delay:180s;">
+        <img class="logo-bg-slide" src="cake-blue-ombre-raspberry.jpg" alt="" style="animation-duration:300s;animation-delay:192s;">
+        <img class="logo-bg-slide" src="ash-reshteh.jpg" alt="" style="animation-duration:300s;animation-delay:204s;">
+        <img class="logo-bg-slide" src="cake-raspberry-cone.jpg" alt="" style="animation-duration:300s;animation-delay:216s;">
+        <img class="logo-bg-slide" src="salad-olivier.jpg" alt="" style="animation-duration:300s;animation-delay:228s;">
+        <img class="logo-bg-slide" src="chocolate-roulade.jpg" alt="" style="animation-duration:300s;animation-delay:240s;">
+        <img class="logo-bg-slide" src="cookie-assortment.jpg" alt="" style="animation-duration:300s;animation-delay:252s;">
+        <img class="logo-bg-slide" src="cream-roll.jpg" alt="" style="animation-duration:300s;animation-delay:264s;">
+        <img class="logo-bg-slide" src="flower-jam-cookies.jpg" alt="" style="animation-duration:300s;animation-delay:276s;">
+        <img class="logo-bg-slide" src="napoleon-cream-puff.jpg" alt="" style="animation-duration:300s;animation-delay:288s;">
+        <span class="logo-disc"><img src="logo.png" alt="Elly's Bakery logo" class="logo-spin"></span>
+      </span> <span class="brand-text">Elly's Bakery</span>
     </a>
     <button class="nav-toggle" aria-label="Toggle menu" onclick="document.querySelector('.links').classList.toggle('open')">☰</button>
     <ul class="links">
