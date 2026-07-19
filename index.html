@@ -70,10 +70,11 @@
 
   /* ---------- Nav ---------- */
   header{
-    position:relative;z-index:50;
+    position:sticky;top:0;z-index:50;
     background:rgba(251,245,238,.55);
     backdrop-filter:blur(5px) saturate(1.1);
     border-bottom:1px solid rgba(157,79,86,.18);
+    min-height:108px;
   }
   .header-strip{
     position:absolute;inset:0;overflow:hidden;z-index:0;
@@ -94,18 +95,13 @@
     from{transform:translateX(0);}
     to{transform:translateX(-50%);}
   }
-  @media (prefers-reduced-motion: reduce){.header-strip .track{animation:none;}}
+
 
   .logo-wrap{
     perspective:700px;
-    width:128px;height:128px;flex-shrink:0;
-    margin:0;
+    width:158px;height:158px;flex-shrink:0;
+    margin:-14px 0;
     position:relative;z-index:5;
-  }
-  .logo-wrap::before{
-    content:"";position:absolute;inset:0;border-radius:50%;
-    background:radial-gradient(closest-side, rgba(251,245,238,.98) 55%, rgba(251,245,238,.75) 78%, rgba(251,245,238,0) 100%);
-    z-index:0;
   }
   .logo-bg-slide{
     position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
@@ -127,8 +123,8 @@
   .logo-spin{
     display:block;
     width:100%;height:100%;object-fit:contain;
+    border-radius:50%;
     backface-visibility:visible;
-    position:relative;z-index:1;
   }
   @keyframes logoSpin{
     from{transform:rotateY(0deg);}
@@ -256,7 +252,6 @@
     nav ul.links a{display:block;padding:14px 24px;border-top:1px solid rgba(157,79,86,.08);}
     .nav-toggle{display:block;}
     .nav-cta{display:none;}
-    .logo-wrap{width:96px;height:96px;}
   }
 
   /* ---------- Hero ---------- */
@@ -433,7 +428,8 @@
 
   .sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);}
   a:focus-visible, button:focus-visible{outline:2px solid var(--gold);outline-offset:2px;}
-  @media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important;}}
+  @media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important;}
+    .header-strip .track{animation:stripScroll 38s linear infinite!important;}}
 </style>
 </head>
 <body>
@@ -599,8 +595,8 @@
             <div class="menu-item"><div><div class="name">Thumbprint Cookies <span class="unit">(lbs)</span></div><div class="name-fa fa-text">کوکی مربایی</div></div><div class="price">$25</div></div>
             <div class="menu-item"><div><div class="name">Butter Cookies, Chocolate Dipped <span class="unit">(lbs)</span></div><div class="name-fa fa-text">کوکی کره‌ای با روکش شکلات</div></div><div class="price">$25</div></div>
             <div class="menu-item"><div><div class="name">Napoleon Cookies <span class="unit">(each)</span></div><div class="name-fa fa-text">شیرینی ناپلئون</div></div><div class="price">$6</div></div>
-            <div class="menu-item"><div><div class="name">Cream Puffs <span class="unit">(lbs)</span></div><div class="name-fa fa-text">شو (پاف خامه‌ای)</div></div><div class="price">$35</div></div>
-            <div class="menu-item"><div><div class="name">Cream-Filled Donuts <span class="unit">(each)</span></div><div class="name-fa fa-text">نون خامه‌ای</div></div><div class="price">$3</div></div>
+            <div class="menu-item"><div><div class="name">Cream Puffs <span class="unit">(lbs)</span></div><div class="name-fa fa-text">نون خامه‌ای</div></div><div class="price">$35</div></div>
+            <div class="menu-item"><div><div class="name">Pirashki (Cream-Filled) <span class="unit">(each)</span></div><div class="name-fa fa-text">پیراشکی</div></div><div class="price">$3</div></div>
           </div>
         </div>
         <div class="menu-note">Custom flavors, sizes, and designs available — text us a photo of what you have in mind. Text to order: <a href="sms:+18327998204" style="color:var(--rose-deep);font-weight:600;">(832) 799-8204</a></div>
