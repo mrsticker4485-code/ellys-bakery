@@ -352,8 +352,24 @@
   }
   .menu-cat-head h3{font-size:21px;font-style:italic;color:var(--rose-deep);white-space:nowrap;}
   .menu-cat-head .fa{font-size:15.5px;color:var(--ink-soft);font-family:'Inter';}
-  .menu-items{display:grid;grid-template-columns:1fr 1fr;gap:20px 40px;}
-  @media (max-width:700px){.menu-items{grid-template-columns:1fr;}}
+  .menu-items{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:22px;}
+  .menu-card{
+    display:flex;flex-direction:column;border-radius:16px;overflow:hidden;
+    background:#fff;box-shadow:0 6px 18px rgba(90,50,40,.08);
+  }
+  .menu-card .photo{
+    width:100%;aspect-ratio:1/1;background-size:cover;background-position:center;
+  }
+  .menu-card .photo.no-photo{
+    background:linear-gradient(155deg,var(--pistachio-pale),var(--rose-pale));
+    display:flex;align-items:center;justify-content:center;
+  }
+  .menu-card .photo.no-photo svg{opacity:.5;}
+  .menu-card .info{padding:12px 14px 14px;}
+  .menu-card .name-fa{font-size:16px;color:var(--rose-deep);font-weight:600;margin-bottom:2px;}
+  .menu-card .name{font-weight:600;font-size:16px;color:var(--ink);}
+  .menu-card .name .unit{font-weight:500;font-size:13.5px;color:var(--ink-soft);display:block;}
+  .menu-card .price{margin-top:6px;font-weight:700;color:var(--rose-deep);font-size:16px;}
   .menu-item{display:flex;justify-content:space-between;gap:16px;}
   .menu-item .name{font-weight:600;font-size:17.5px;}
   .menu-item .name .unit{font-weight:500;font-size:14.5px;color:var(--ink-soft);}
@@ -467,11 +483,20 @@
     </a>
     <button class="nav-toggle" aria-label="Toggle menu" onclick="document.querySelector('.links').classList.toggle('open')">☰</button>
     <ul class="links">
-      <li><a href="#menu">Menu</a></li>
-      <li><a href="#gallery">Gallery</a></li>
-      <li><a href="#reviews">Reviews</a></li>
-      <li><a href="#order">How to Order</a></li>
-      <li><a href="#contact" class="nav-cta">Order Now</a></li>
+      <li><a href="#menu" data-i18n="nav_menu">Menu</a></li>
+      <li><a href="#gallery" data-i18n="nav_gallery">Gallery</a></li>
+      <li><a href="#reviews" data-i18n="nav_reviews">Reviews</a></li>
+      <li><a href="#order" data-i18n="nav_order2">How to Order</a></li>
+      <li><a href="#contact" class="nav-cta" data-i18n="nav_order">Order Now</a></li>
+      <li>
+        <select id="langSwitch" onchange="setLang(this.value)" style="border-radius:20px;padding:8px 12px;border:1.5px solid var(--rose-deep);background:#fff;color:var(--ink);font-weight:600;font-size:15px;cursor:pointer;">
+          <option value="en">English</option>
+          <option value="fa">فارسی</option>
+          <option value="prs">دری</option>
+          <option value="ar">العربية</option>
+          <option value="es">Español</option>
+        </select>
+      </li>
     </ul>
   </nav>
 </header>
@@ -484,27 +509,27 @@
     <div class="wrap">
       <div>
         <div class="farsi">با عشق پخته شده — baked with love, from our kitchen to yours</div>
-        <h1>Home-baked treats &amp; <span>Persian</span> feasts, made in Katy</h1>
-        <p class="sub">Elly's Bakery is a home bakery &amp; catering kitchen in Katy, Texas — custom cakes and pastries alongside full traditional Persian meals, made fresh to order. We make it, you pick it up.</p>
+        <h1 data-i18n="hero_h1">Home-baked treats &amp; <span>Persian</span> feasts, made in Katy</h1>
+        <p class="sub" data-i18n="hero_sub">Elly's Bakery is a home bakery &amp; catering kitchen in Katy, Texas — custom cakes and pastries alongside full traditional Persian meals, made fresh to order. We make it, you pick it up.</p>
         <div class="hero-ctas">
-          <a class="btn btn-primary" href="https://www.instagram.com/ellysbakery_tx/" target="_blank" rel="noopener">DM on Instagram</a>
-          <a class="btn btn-ghost" href="sms:+18327998204">Text (832) 799-8204</a>
-          <a class="btn btn-ghost" href="tel:+18327998204">Call (832) 799-8204</a>
+          <a class="btn btn-primary" href="https://www.instagram.com/ellysbakery_tx/" target="_blank" rel="noopener" data-i18n="cta_dm">DM on Instagram</a>
+          <a class="btn btn-ghost" href="sms:+18327998204" data-i18n="cta_text">Text (832) 799-8204</a>
+          <a class="btn btn-ghost" href="tel:+18327998204" data-i18n="cta_call">Call (832) 799-8204</a>
         </div>
       </div>
       <div class="hero-badge">
         <ul>
           <li>
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#bd9440" stroke-width="1.8"><path d="M12 21s-7-4.5-9.3-9C1 8.5 3 5 6.5 5c2 0 3.3 1.2 5.5 3.4C14.2 6.2 15.5 5 17.5 5 21 5 23 8.5 21.3 12c-2.3 4.5-9.3 9-9.3 9z"/></svg>
-            <div><b>Home bakery, made fresh</b>Custom cakes, pastries &amp; Persian sweets baked in small batches for every order.</div>
+            <div><b data-i18n="badge1_h">Home bakery, made fresh</b><span data-i18n="badge1_p">Custom cakes, pastries &amp; Persian sweets baked in small batches for every order.</span></div>
           </li>
           <li>
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#bd9440" stroke-width="1.8"><path d="M12 21c4.4-4 7-7.6 7-11a7 7 0 1 0-14 0c0 3.4 2.6 7 7 11z"/><circle cx="12" cy="10" r="2.4"/></svg>
-            <div><b>Based in Katy, TX</b>Pickup only, right here in Katy — no delivery, just fresh from our kitchen.</div>
+            <div><b data-i18n="badge2_h">Based in Katy, TX</b><span data-i18n="badge2_p">Pickup only, right here in Katy — no delivery, just fresh from our kitchen.</span></div>
           </li>
           <li>
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#bd9440" stroke-width="1.8"><path d="M21 11.5a8.38 8.38 0 0 1-8.5 8.4A8.5 8.5 0 1 1 21 11.5z"/><path d="M8 12l2.5 2.5L16 9"/></svg>
-            <div><b>Text or DM to order</b>No online checkout — just message us your order and pickup time.</div>
+            <div><b data-i18n="badge3_h">Text or DM to order</b><span data-i18n="badge3_p">No online checkout — just message us your order and pickup time.</span></div>
           </li>
         </ul>
       </div>
@@ -524,23 +549,23 @@
         <img src="birthday-cake-strawberry.jpg" alt="Fresh cake from Elly's Bakery" style="width:100%;height:100%;object-fit:cover;border-radius:24px;">
       </div>
       <div>
-        <div class="eyebrow">Our Story</div>
-        <h2>Two kitchens, one table</h2>
+        <div class="eyebrow" data-i18n="about_eyebrow">Our Story</div>
+        <h2 data-i18n="about_h2">Two kitchens, one table</h2>
         <p style="margin-top:16px;color:var(--ink-soft);font-size:17.5px;font-weight:500;">
-          Elly's Bakery started as a home kitchen in Katy filling orders one cake at a time. Today we bake celebration cakes, cookies, and rolled pastries alongside a full menu of traditional Persian dishes — from saffron rice to slow-simmered khoresht — so you can order dessert and dinner from the same place.
+          <span data-i18n="about_p">Elly's Bakery started as a home kitchen in Katy filling orders one cake at a time. Today we bake celebration cakes, cookies, and rolled pastries alongside a full menu of traditional Persian dishes — from saffron rice to slow-simmered khoresht — so you can order dessert and dinner from the same place.</span>
         </p>
         <div class="about-list">
           <div class="row">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
-            <div><b>Made to order</b> — every cake, tray, and pot is baked or cooked after you order, not sitting on a shelf.</div>
+            <div><b data-i18n="feat1_h">Made to order</b> <span data-i18n="feat1_p">— every cake, tray, and pot is baked or cooked after you order, not sitting on a shelf.</span></div>
           </div>
           <div class="row">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
-            <div><b>Two menus, one kitchen</b> — Western-style bakery favorites and traditional Persian home cooking.</div>
+            <div><b data-i18n="feat2_h">Two menus, one kitchen</b> <span data-i18n="feat2_p">— Western-style bakery favorites and traditional Persian home cooking.</span></div>
           </div>
           <div class="row">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
-            <div><b>Simple ordering</b> — text us or DM us on Instagram, then swing by Katy to pick it up.</div>
+            <div><b data-i18n="feat3_h">Simple ordering</b> <span data-i18n="feat3_p">— text us or DM us on Instagram, then swing by Katy to pick it up.</span></div>
           </div>
         </div>
       </div>
@@ -557,14 +582,14 @@
   <section id="menu" style="background:#fff;">
     <div class="wrap">
       <div class="section-head">
-        <div class="eyebrow">What We Make</div>
-        <h2>Our Menu</h2>
-        <p>Everything is made fresh to order in small batches — bakery favorites and a full traditional Persian menu for catering.</p>
+        <div class="eyebrow" data-i18n="menu_eyebrow">What We Make</div>
+        <h2 data-i18n="menu_h2">Our Menu</h2>
+        <p data-i18n="menu_p">Everything is made fresh to order in small batches — bakery favorites and a full traditional Persian menu for catering.</p>
       </div>
 
       <div class="menu-tabs">
-        <button class="menu-tab active" data-tab="bakery">Bakery &amp; Sweets</button>
-        <button class="menu-tab" data-tab="persian">Traditional Persian Menu</button>
+        <button class="menu-tab active" data-tab="bakery" data-i18n="tab_bakery">Bakery &amp; Sweets</button>
+        <button class="menu-tab" data-tab="persian" data-i18n="tab_persian">Traditional Persian Menu</button>
       </div>
 
       <!-- BAKERY PANEL -->
@@ -572,30 +597,30 @@
         <div class="menu-cat">
           <div class="menu-cat-head"><h3>Cakes &amp; Rolls</h3><span class="fa fa-text">کیک و رولت</span></div>
           <div class="menu-items">
-            <div class="menu-item"><div><div class="name">Swiss Roll <span class="unit">(tray)</span></div><div class="name-fa fa-text">رولت سوئیسی</div></div><div class="price">$35</div></div>
-            <div class="menu-item"><div><div class="name">Medium Birthday Cake</div><div class="name-fa fa-text">کیک تولد متوسط</div></div><div class="price">$50</div></div>
-            <div class="menu-item"><div><div class="name">Breakfast Cake</div><div class="name-fa fa-text">کیک صبحانه</div></div><div class="price">$25</div></div>
+            <div class="menu-card"><div class="photo" style="background-image:url('swiss-roll-strawberry.jpg');"></div><div class="info"><div class="name-fa fa-text">رولت سوئیسی</div><div class="name">Swiss Roll<span class="unit">(tray)</span></div><div class="price">$35</div></div></div>
+            <div class="menu-card"><div class="photo" style="background-image:url('birthday-cake-strawberry.jpg');"></div><div class="info"><div class="name-fa fa-text">کیک تولد متوسط</div><div class="name">Medium Birthday Cake</div><div class="price">$50</div></div></div>
+            <div class="menu-card"><div class="photo no-photo"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#9c4f56" stroke-width="1.5"><path d="M4 19h16M4 19c0-4 2-6 8-6s8 2 8 6M9 13V7a3 3 0 0 1 6 0v6"/></svg></div><div class="info"><div class="name-fa fa-text">کیک صبحانه</div><div class="name">Breakfast Cake</div><div class="price">$25</div></div></div>
           </div>
         </div>
         <div class="menu-cat">
           <div class="menu-cat-head"><h3>Persian &amp; Middle Eastern Pastries</h3><span class="fa fa-text">شیرینی سنتی</span></div>
           <div class="menu-items">
-            <div class="menu-item"><div><div class="name">Baklava <span class="unit">(tray)</span></div><div class="name-fa fa-text">باقلوا</div></div><div class="price">$35</div></div>
-            <div class="menu-item"><div><div class="name">Persian Rice Cookies <span class="unit">(lbs)</span></div><div class="name-fa fa-text">نان برنجی</div></div><div class="price">$25</div></div>
-            <div class="menu-item"><div><div class="name">Chickpea Flour Cookies <span class="unit">(lbs)</span></div><div class="name-fa fa-text">نان نخودچی</div></div><div class="price">$25</div></div>
-            <div class="menu-item"><div><div class="name">Latifeh Cookies <span class="unit">(lbs)</span></div><div class="name-fa fa-text">شیرینی لطیفه</div></div><div class="price">$35</div></div>
-            <div class="menu-item"><div><div class="name">Tabriz Ghorabiyeh <span class="unit">(lbs)</span></div><div class="name-fa fa-text">قرابیه تبریز</div></div><div class="price">$30</div></div>
-            <div class="menu-item"><div><div class="name">Coconut Cookies <span class="unit">(lbs)</span></div><div class="name-fa fa-text">شیرینی نارگیلی</div></div><div class="price">$25</div></div>
+            <div class="menu-card"><div class="photo" style="background-image:url('baklava-rolls.jpg');"></div><div class="info"><div class="name-fa fa-text">باقلوا</div><div class="name">Baklava<span class="unit">(tray)</span></div><div class="price">$35</div></div></div>
+            <div class="menu-card"><div class="photo no-photo"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#9c4f56" stroke-width="1.5"><path d="M4 19h16M4 19c0-4 2-6 8-6s8 2 8 6M9 13V7a3 3 0 0 1 6 0v6"/></svg></div><div class="info"><div class="name-fa fa-text">نان برنجی</div><div class="name">Persian Rice Cookies<span class="unit">(lbs)</span></div><div class="price">$25</div></div></div>
+            <div class="menu-card"><div class="photo" style="background-image:url('flower-jam-cookies.jpg');"></div><div class="info"><div class="name-fa fa-text">نان نخودچی</div><div class="name">Chickpea Flour Cookies<span class="unit">(lbs)</span></div><div class="price">$25</div></div></div>
+            <div class="menu-card"><div class="photo" style="background-image:url('latifeh-cake.jpg');"></div><div class="info"><div class="name-fa fa-text">شیرینی لطیفه</div><div class="name">Latifeh Cookies<span class="unit">(lbs)</span></div><div class="price">$35</div></div></div>
+            <div class="menu-card"><div class="photo" style="background-image:url('pistachio-cookies.jpg');"></div><div class="info"><div class="name-fa fa-text">قرابیه تبریز</div><div class="name">Tabriz Ghorabiyeh<span class="unit">(lbs)</span></div><div class="price">$30</div></div></div>
+            <div class="menu-card"><div class="photo no-photo"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#9c4f56" stroke-width="1.5"><path d="M4 19h16M4 19c0-4 2-6 8-6s8 2 8 6M9 13V7a3 3 0 0 1 6 0v6"/></svg></div><div class="info"><div class="name-fa fa-text">شیرینی نارگیلی</div><div class="name">Coconut Cookies<span class="unit">(lbs)</span></div><div class="price">$25</div></div></div>
           </div>
         </div>
         <div class="menu-cat">
           <div class="menu-cat-head"><h3>Cookies &amp; Everyday Treats</h3><span class="fa fa-text">کلوچه</span></div>
           <div class="menu-items">
-            <div class="menu-item"><div><div class="name">Thumbprint Cookies <span class="unit">(lbs)</span></div><div class="name-fa fa-text">کوکی مربایی</div></div><div class="price">$25</div></div>
-            <div class="menu-item"><div><div class="name">Butter Cookies, Chocolate Dipped <span class="unit">(lbs)</span></div><div class="name-fa fa-text">کوکی کره‌ای با روکش شکلات</div></div><div class="price">$25</div></div>
-            <div class="menu-item"><div><div class="name">Napoleon Cookies <span class="unit">(each, min. order 5)</span></div><div class="name-fa fa-text">شیرینی ناپلئون</div></div><div class="price">$6</div></div>
-            <div class="menu-item"><div><div class="name">Shirini Khamei <span class="unit">(lbs)</span></div><div class="name-fa fa-text">شیرینی خامه‌ای</div></div><div class="price">$35</div></div>
-            <div class="menu-item"><div><div class="name">Piroshki <span class="unit">(each, min. order 5)</span></div><div class="name-fa fa-text">پیراشکی</div></div><div class="price">$5</div></div>
+            <div class="menu-card"><div class="photo" style="background-image:url('thumbprint-cookies.jpg');"></div><div class="info"><div class="name-fa fa-text">کوکی مربایی</div><div class="name">Thumbprint Cookies<span class="unit">(lbs)</span></div><div class="price">$25</div></div></div>
+            <div class="menu-card"><div class="photo" style="background-image:url('butter-cookies-chocolate.jpg');"></div><div class="info"><div class="name-fa fa-text">کوکی کره‌ای با روکش شکلات</div><div class="name">Butter Cookies, Chocolate Dipped<span class="unit">(lbs)</span></div><div class="price">$25</div></div></div>
+            <div class="menu-card"><div class="photo" style="background-image:url('napoleon-cream-puff.jpg');"></div><div class="info"><div class="name-fa fa-text">شیرینی ناپلئون</div><div class="name">Napoleon Cookies<span class="unit">(each, min. order 5)</span></div><div class="price">$6</div></div></div>
+            <div class="menu-card"><div class="photo no-photo"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#9c4f56" stroke-width="1.5"><path d="M4 19h16M4 19c0-4 2-6 8-6s8 2 8 6M9 13V7a3 3 0 0 1 6 0v6"/></svg></div><div class="info"><div class="name-fa fa-text">شیرینی خامه‌ای</div><div class="name">Shirini Khamei<span class="unit">(lbs)</span></div><div class="price">$35</div></div></div>
+            <div class="menu-card"><div class="photo" style="background-image:url('sesame-pastry.jpg');"></div><div class="info"><div class="name-fa fa-text">پیراشکی</div><div class="name">Piroshki<span class="unit">(each, min. order 5)</span></div><div class="price">$5</div></div></div>
           </div>
         </div>
         <div class="menu-note">Text us a photo of what you have in mind. Text to order: <a href="sms:+18327998204" style="color:var(--rose-deep);font-weight:600;">(832) 799-8204</a></div>
@@ -606,46 +631,46 @@
         <div class="menu-cat">
           <div class="menu-cat-head"><h3>Khoresht — Stews</h3><span class="fa fa-text">خورش</span></div>
           <div class="menu-items">
-            <div class="menu-item"><div><div class="name">Gheymeh <span class="unit">(Bademjan or Potatoes)</span></div><div class="name-fa fa-text">قیمه (بادمجان یا سیب‌زمینی)</div></div><div class="price">$16</div></div>
-            <div class="menu-item"><div><div class="name">Ghormeh Sabzi</div><div class="name-fa fa-text">قورمه سبزی</div></div><div class="price">$16</div></div>
-            <div class="menu-item"><div><div class="name">Fesenjan</div><div class="name-fa fa-text">فسنجان</div></div><div class="price">$16</div></div>
-            <div class="menu-item"><div><div class="name">Khoresht Karafs</div><div class="name-fa fa-text">خورش کرفس</div></div><div class="price">$16</div></div>
-            <div class="menu-item"><div><div class="name">Khoresht Bademjan</div><div class="name-fa fa-text">خورش بادمجان</div></div><div class="price">$16</div></div>
+            <div class="menu-card"><div class="photo no-photo"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#9c4f56" stroke-width="1.5"><path d="M4 19h16M4 19c0-4 2-6 8-6s8 2 8 6M9 13V7a3 3 0 0 1 6 0v6"/></svg></div><div class="info"><div class="name-fa fa-text">قیمه (بادمجان یا سیب‌زمینی)</div><div class="name">Gheymeh<span class="unit">(Bademjan or Potatoes)</span></div><div class="price">$16</div></div></div>
+            <div class="menu-card"><div class="photo" style="background-image:url('ghormeh-sabzi.jpg');"></div><div class="info"><div class="name-fa fa-text">قورمه سبزی</div><div class="name">Ghormeh Sabzi</div><div class="price">$16</div></div></div>
+            <div class="menu-card"><div class="photo" style="background-image:url('fesenjan.jpg');"></div><div class="info"><div class="name-fa fa-text">فسنجان</div><div class="name">Fesenjan</div><div class="price">$16</div></div></div>
+            <div class="menu-card"><div class="photo no-photo"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#9c4f56" stroke-width="1.5"><path d="M4 19h16M4 19c0-4 2-6 8-6s8 2 8 6M9 13V7a3 3 0 0 1 6 0v6"/></svg></div><div class="info"><div class="name-fa fa-text">خورش کرفس</div><div class="name">Khoresht Karafs</div><div class="price">$16</div></div></div>
+            <div class="menu-card"><div class="photo" style="background-image:url('khoresht-bademjan.jpg');"></div><div class="info"><div class="name-fa fa-text">خورش بادمجان</div><div class="name">Khoresht Bademjan</div><div class="price">$16</div></div></div>
           </div>
         </div>
         <div class="menu-cat">
           <div class="menu-cat-head"><h3>Polo — Rice Dishes</h3><span class="fa fa-text">پلو</span></div>
           <div class="menu-items">
-            <div class="menu-item"><div><div class="name">Baghali Polo ba Mahicheh</div><div class="name-fa fa-text">باقالی پلو با ماهیچه</div></div><div class="price">$22</div></div>
-            <div class="menu-item"><div><div class="name">Baghali Polo ba Morgh</div><div class="name-fa fa-text">باقالی پلو با مرغ</div></div><div class="price">$15</div></div>
-            <div class="menu-item"><div><div class="name">Havij Polo ba Morgh</div><div class="name-fa fa-text">هویج پلو با مرغ</div></div><div class="price">$16</div></div>
-            <div class="menu-item"><div><div class="name">Zereshk Polo</div><div class="name-fa fa-text">زرشک پلو</div></div><div class="price">$14</div></div>
-            <div class="menu-item"><div><div class="name">Lobia Polo</div><div class="name-fa fa-text">لوبیا پلو</div></div><div class="price">$15</div></div>
-            <div class="menu-item"><div><div class="name">Adas Polo</div><div class="name-fa fa-text">عدس پلو</div></div><div class="price">$12</div></div>
+            <div class="menu-card"><div class="photo" style="background-image:url('baghali-polo-mahicheh.jpg');"></div><div class="info"><div class="name-fa fa-text">باقالی پلو با ماهیچه</div><div class="name">Baghali Polo ba Mahicheh</div><div class="price">$22</div></div></div>
+            <div class="menu-card"><div class="photo no-photo"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#9c4f56" stroke-width="1.5"><path d="M4 19h16M4 19c0-4 2-6 8-6s8 2 8 6M9 13V7a3 3 0 0 1 6 0v6"/></svg></div><div class="info"><div class="name-fa fa-text">باقالی پلو با مرغ</div><div class="name">Baghali Polo ba Morgh</div><div class="price">$15</div></div></div>
+            <div class="menu-card"><div class="photo no-photo"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#9c4f56" stroke-width="1.5"><path d="M4 19h16M4 19c0-4 2-6 8-6s8 2 8 6M9 13V7a3 3 0 0 1 6 0v6"/></svg></div><div class="info"><div class="name-fa fa-text">هویج پلو با مرغ</div><div class="name">Havij Polo ba Morgh</div><div class="price">$16</div></div></div>
+            <div class="menu-card"><div class="photo" style="background-image:url('zereshk-polo-morgh.jpg');"></div><div class="info"><div class="name-fa fa-text">زرشک پلو</div><div class="name">Zereshk Polo</div><div class="price">$14</div></div></div>
+            <div class="menu-card"><div class="photo no-photo"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#9c4f56" stroke-width="1.5"><path d="M4 19h16M4 19c0-4 2-6 8-6s8 2 8 6M9 13V7a3 3 0 0 1 6 0v6"/></svg></div><div class="info"><div class="name-fa fa-text">لوبیا پلو</div><div class="name">Lobia Polo</div><div class="price">$15</div></div></div>
+            <div class="menu-card"><div class="photo no-photo"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#9c4f56" stroke-width="1.5"><path d="M4 19h16M4 19c0-4 2-6 8-6s8 2 8 6M9 13V7a3 3 0 0 1 6 0v6"/></svg></div><div class="info"><div class="name-fa fa-text">عدس پلو</div><div class="name">Adas Polo</div><div class="price">$12</div></div></div>
           </div>
         </div>
         <div class="menu-cat">
           <div class="menu-cat-head"><h3>Entrées</h3><span class="fa fa-text">غذای اصلی</span></div>
           <div class="menu-items">
-            <div class="menu-item"><div><div class="name">Kofteh Tabrizi</div><div class="name-fa fa-text">کوفته تبریزی</div></div><div class="price">$18</div></div>
-            <div class="menu-item"><div><div class="name">Lasagna</div><div class="name-fa fa-text">لازانیا</div></div><div class="price">$18</div></div>
+            <div class="menu-card"><div class="photo" style="background-image:url('kofteh-tabrizi.jpg');"></div><div class="info"><div class="name-fa fa-text">کوفته تبریزی</div><div class="name">Kofteh Tabrizi</div><div class="price">$18</div></div></div>
+            <div class="menu-card"><div class="photo no-photo"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#9c4f56" stroke-width="1.5"><path d="M4 19h16M4 19c0-4 2-6 8-6s8 2 8 6M9 13V7a3 3 0 0 1 6 0v6"/></svg></div><div class="info"><div class="name-fa fa-text">لازانیا</div><div class="name">Lasagna</div><div class="price">$18</div></div></div>
           </div>
         </div>
         <div class="menu-cat">
           <div class="menu-cat-head"><h3>Appetizers</h3><span class="fa fa-text">پیش‌غذا</span></div>
           <div class="menu-items">
-            <div class="menu-item"><div><div class="name">Dolmeh Barg <span class="unit">(8 pcs)</span></div><div class="name-fa fa-text">دلمه برگ مو</div></div><div class="price">$10</div></div>
-            <div class="menu-item"><div><div class="name">Kashkeh Bademjan</div><div class="name-fa fa-text">کشک بادمجان</div></div><div class="price">$12</div></div>
-            <div class="menu-item"><div><div class="name">Mirza Ghasemi</div><div class="name-fa fa-text">میرزا قاسمی</div></div><div class="price">$12</div></div>
-            <div class="menu-item"><div><div class="name">Salad Olivier</div><div class="name-fa fa-text">سالاد الویه</div></div><div class="price">$10</div></div>
-            <div class="menu-item"><div><div class="name">Zeytoon Parvardeh <span class="unit">(1 lb)</span></div><div class="name-fa fa-text">زیتون پرورده</div></div><div class="price">$16</div></div>
+            <div class="menu-card"><div class="photo no-photo"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#9c4f56" stroke-width="1.5"><path d="M4 19h16M4 19c0-4 2-6 8-6s8 2 8 6M9 13V7a3 3 0 0 1 6 0v6"/></svg></div><div class="info"><div class="name-fa fa-text">دلمه برگ مو</div><div class="name">Dolmeh Barg<span class="unit">(8 pcs)</span></div><div class="price">$10</div></div></div>
+            <div class="menu-card"><div class="photo no-photo"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#9c4f56" stroke-width="1.5"><path d="M4 19h16M4 19c0-4 2-6 8-6s8 2 8 6M9 13V7a3 3 0 0 1 6 0v6"/></svg></div><div class="info"><div class="name-fa fa-text">کشک بادمجان</div><div class="name">Kashkeh Bademjan</div><div class="price">$12</div></div></div>
+            <div class="menu-card"><div class="photo" style="background-image:url('mirza-ghasemi.jpg');"></div><div class="info"><div class="name-fa fa-text">میرزا قاسمی</div><div class="name">Mirza Ghasemi</div><div class="price">$12</div></div></div>
+            <div class="menu-card"><div class="photo" style="background-image:url('salad-olivier.jpg');"></div><div class="info"><div class="name-fa fa-text">سالاد الویه</div><div class="name">Salad Olivier</div><div class="price">$10</div></div></div>
+            <div class="menu-card"><div class="photo" style="background-image:url('kashke-bademjan.jpg');"></div><div class="info"><div class="name-fa fa-text">زیتون پرورده</div><div class="name">Zeytoon Parvardeh<span class="unit">(1 lb)</span></div><div class="price">$16</div></div></div>
           </div>
         </div>
         <div class="menu-cat">
           <div class="menu-cat-head"><h3>Soup</h3><span class="fa fa-text">آش و سوپ</span></div>
           <div class="menu-items">
-            <div class="menu-item"><div><div class="name">Ash Reshteh</div><div class="name-fa fa-text">آش رشته</div></div><div class="price">$7</div></div>
-            <div class="menu-item"><div><div class="name">Soup</div><div class="name-fa fa-text">سوپ</div></div><div class="price">$5</div></div>
+            <div class="menu-card"><div class="photo" style="background-image:url('ash-reshteh.jpg');"></div><div class="info"><div class="name-fa fa-text">آش رشته</div><div class="name">Ash Reshteh</div><div class="price">$7</div></div></div>
+            <div class="menu-card"><div class="photo no-photo"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#9c4f56" stroke-width="1.5"><path d="M4 19h16M4 19c0-4 2-6 8-6s8 2 8 6M9 13V7a3 3 0 0 1 6 0v6"/></svg></div><div class="info"><div class="name-fa fa-text">سوپ</div><div class="name">Soup</div><div class="price">$5</div></div></div>
           </div>
         </div>
         <div class="menu-note" id="catering">Booking for a gathering or event? Message us with your headcount and date and we'll help you build a full Persian menu.</div>
@@ -664,9 +689,9 @@
   <section class="gallery" id="gallery" style="background:#fff;">
     <div class="wrap">
       <div class="section-head">
-        <div class="eyebrow">From Our Kitchen</div>
-        <h2>A Look at Our Baking</h2>
-        <p>Browse a selection of our freshly baked cakes, pastries, and sweet creations made with love.</p>
+        <div class="eyebrow" data-i18n="gallery_eyebrow">From Our Kitchen</div>
+        <h2 data-i18n="gallery_h2">A Look at Our Baking</h2>
+        <p data-i18n="gallery_p">Browse a selection of our freshly baked cakes, pastries, and sweet creations made with love.</p>
       </div>
       <div class="gallery-grid">
         <div class="g-card g-photo" style="background-image:url('swiss-roll-strawberry.jpg');"><span>Swiss Roll</span></div>
@@ -716,8 +741,8 @@
   <section id="reviews" style="background:#fff;">
     <div class="wrap">
       <div class="section-head">
-        <div class="eyebrow">What Customers Say</div>
-        <h2>Reviews</h2>
+        <div class="eyebrow" data-i18n="reviews_eyebrow">What Customers Say</div>
+        <h2 data-i18n="reviews_h2">Reviews</h2>
         <p>Real words from real customers on Google.</p>
       </div>
       <div class="review-grid">
@@ -773,24 +798,24 @@
   <section id="order" style="background:#fff;">
     <div class="wrap">
       <div class="section-head">
-        <div class="eyebrow">Simple &amp; Direct</div>
-        <h2>How to Order</h2>
+        <div class="eyebrow" data-i18n="order_eyebrow">Simple &amp; Direct</div>
+        <h2 data-i18n="order_h2">How to Order</h2>
       </div>
       <div class="steps">
         <div class="step">
           <div class="num">1</div>
-          <h3>Message us</h3>
-          <p>Text us or DM us on Instagram with what you'd like and when you need it.</p>
+          <h3 data-i18n="step1_h">Message us</h3>
+          <p data-i18n="step1_p">Text us or DM us on Instagram with what you'd like and when you need it.</p>
         </div>
         <div class="step">
           <div class="num">2</div>
-          <h3>We confirm details</h3>
-          <p>We'll confirm your order, any custom design or dishes, and your pickup date.</p>
+          <h3 data-i18n="step2_h">We confirm details</h3>
+          <p data-i18n="step2_p">We'll confirm your order, any custom design or dishes, and your pickup date.</p>
         </div>
         <div class="step">
           <div class="num">3</div>
-          <h3>Pick up in Katy, TX</h3>
-          <p>Swing by to pick up your order fresh — we don't currently offer delivery.</p>
+          <h3 data-i18n="step3_h">Pick up in Katy, TX</h3>
+          <p data-i18n="step3_p">Swing by to pick up your order fresh — we don't currently offer delivery.</p>
         </div>
       </div>
     </div>
@@ -806,13 +831,13 @@
   <section class="contact" id="contact">
     <div class="wrap">
       <div>
-        <div class="eyebrow" style="color:#f1d9d6;">Get In Touch</div>
-        <h2>Ready to order?</h2>
-        <p>Text us your order, or send a DM on Instagram. We'll confirm details and a pickup time in Katy, TX.</p>
+        <div class="eyebrow" style="color:#f1d9d6;" data-i18n="contact_eyebrow">Get In Touch</div>
+        <h2 data-i18n="contact_h2">Ready to order?</h2>
+        <p data-i18n="contact_p">Text us your order, or send a DM on Instagram. We'll confirm details and a pickup time in Katy, TX.</p>
         <div class="contact-ctas">
-          <a class="btn btn-primary" href="https://www.instagram.com/ellysbakery_tx/" target="_blank" rel="noopener">DM on Instagram</a>
-          <a class="btn btn-ghost" href="sms:+18327998204">Text (832) 799-8204</a>
-          <a class="btn btn-ghost" href="tel:+18327998204">Call (832) 799-8204</a>
+          <a class="btn btn-primary" href="https://www.instagram.com/ellysbakery_tx/" target="_blank" rel="noopener" data-i18n="cta_dm">DM on Instagram</a>
+          <a class="btn btn-ghost" href="sms:+18327998204" data-i18n="cta_text">Text (832) 799-8204</a>
+          <a class="btn btn-ghost" href="tel:+18327998204" data-i18n="cta_call">Call (832) 799-8204</a>
         </div>
       </div>
       <div class="contact-card">
@@ -870,5 +895,164 @@
   });
 </script>
 
+<script>
+const translations = {
+  en: {
+    nav_menu:"Menu", nav_gallery:"Gallery", nav_reviews:"Reviews", nav_order2:"How to Order", nav_order:"Order Now",
+    hero_h1:'Home-baked treats &amp; <span>Persian</span> feasts, made in Katy',
+    hero_sub:"Elly's Bakery is a home bakery &amp; catering kitchen in Katy, Texas — custom cakes and pastries alongside full traditional Persian meals, made fresh to order. We make it, you pick it up.",
+    badge1_h:"Home bakery, made fresh", badge1_p:"Custom cakes, pastries &amp; Persian sweets baked in small batches for every order.",
+    badge2_h:"Based in Katy, TX", badge2_p:"Pickup only, right here in Katy — no delivery, just fresh from our kitchen.",
+    badge3_h:"Text or DM to order", badge3_p:"No online checkout — just message us your order and pickup time.",
+    cta_dm:"DM on Instagram", cta_text:"Text (832) 799-8204", cta_call:"Call (832) 799-8204",
+    about_eyebrow:"Our Story", about_h2:"Two kitchens, one table",
+    about_p:"Elly's Bakery started as a home kitchen in Katy filling orders one cake at a time. Today we bake celebration cakes, cookies, and rolled pastries alongside a full menu of traditional Persian dishes — from saffron rice to slow-simmered khoresht — so you can order dessert and dinner from the same place.",
+    feat1_h:"Made to order", feat1_p:"— every cake, tray, and pot is baked or cooked after you order, not sitting on a shelf.",
+    feat2_h:"Two menus, one kitchen", feat2_p:"— Western-style bakery favorites and traditional Persian home cooking.",
+    feat3_h:"Simple ordering", feat3_p:"— text us or DM us on Instagram, then swing by Katy to pick it up.",
+    menu_eyebrow:"What We Make", menu_h2:"Our Menu",
+    menu_p:"Everything is made fresh to order in small batches — bakery favorites and a full traditional Persian menu for catering.",
+    tab_bakery:"Bakery &amp; Sweets", tab_persian:"Traditional Persian Menu",
+    gallery_eyebrow:"From Our Kitchen", gallery_h2:"A Look at Our Baking",
+    gallery_p:"Browse a selection of our freshly baked cakes, pastries, and sweet creations made with love.",
+    reviews_eyebrow:"What Customers Say", reviews_h2:"Reviews",
+    order_eyebrow:"Simple &amp; Direct", order_h2:"How to Order",
+    step1_h:"Message us", step1_p:"Text us or DM us on Instagram with what you'd like and when you need it.",
+    step2_h:"We confirm details", step2_p:"We'll confirm your order, any custom design or dishes, and your pickup date.",
+    step3_h:"Pick up in Katy, TX", step3_p:"Swing by to pick up your order fresh — we don't currently offer delivery.",
+    contact_eyebrow:"Get In Touch", contact_h2:"Ready to order?",
+    contact_p:"Text us your order, or send a DM on Instagram. We'll confirm details and a pickup time in Katy, TX."
+  },
+  fa: {
+    nav_menu:"منو", nav_gallery:"گالری", nav_reviews:"نظرات", nav_order2:"نحوهٔ سفارش", nav_order:"سفارش دهید",
+    hero_h1:'شیرینی‌های خانگی و غذاهای <span>ایرانی</span>، ساخته‌شده در کتی',
+    hero_sub:"الیز بیکری یک آشپزخانهٔ خانگی و کترینگ در کتی، تگزاس است — کیک و شیرینی سفارشی در کنار غذاهای کامل سنتی ایرانی، تازه و به‌سفارش پخته می‌شود. ما آماده می‌کنیم، شما تحویل می‌گیرید.",
+    badge1_h:"بیکری خانگی، تازه‌پخت", badge1_p:"کیک، شیرینی و شیرینی‌های ایرانی در دسته‌های کوچک برای هر سفارش پخته می‌شوند.",
+    badge2_h:"مستقر در کتی، تگزاس", badge2_p:"فقط تحویل حضوری، همین‌جا در کتی — بدون ارسال، فقط تازه از آشپزخانهٔ ما.",
+    badge3_h:"سفارش با پیامک یا دایرکت", badge3_p:"بدون پرداخت آنلاین — فقط سفارش و زمان تحویل را پیامک کنید.",
+    cta_dm:"دایرکت اینستاگرام", cta_text:"پیامک: 8204-799 (832)", cta_call:"تماس: 8204-799 (832)",
+    about_eyebrow:"داستان ما", about_h2:"دو آشپزخانه، یک سفره",
+    about_p:"الیز بیکری از یک آشپزخانهٔ خانگی در کتی شروع شد و سفارش‌ها را یکی‌یکی آماده می‌کرد. امروز کیک‌های جشن، کوکی و رول‌های شیرینی را در کنار منوی کامل غذاهای سنتی ایرانی — از برنج زعفرانی تا خورش‌های آرام‌پز — می‌پزیم؛ یعنی می‌توانید دسر و شام را از یک‌جا سفارش دهید.",
+    feat1_h:"ساخته‌شده به‌سفارش", feat1_p:"— هر کیک، سینی و قابلمه بعد از سفارش شما پخته یا آماده می‌شود، نه از قبل روی قفسه.",
+    feat2_h:"دو منو، یک آشپزخانه", feat2_p:"— شیرینی‌های سبک غربی و غذاهای خانگی سنتی ایرانی.",
+    feat3_h:"سفارش ساده", feat3_p:"— پیامک بدهید یا در اینستاگرام دایرکت کنید، بعد به کتی بیایید و تحویل بگیرید.",
+    menu_eyebrow:"چه می‌پزیم", menu_h2:"منوی ما",
+    menu_p:"همه‌چیز تازه و به‌سفارش در دسته‌های کوچک پخته می‌شود — شیرینی‌های محبوب و یک منوی کامل سنتی ایرانی برای کترینگ.",
+    tab_bakery:"شیرینی و بیکری", tab_persian:"منوی سنتی ایرانی",
+    gallery_eyebrow:"از آشپزخانهٔ ما", gallery_h2:"نگاهی به پخت‌های ما",
+    gallery_p:"مجموعه‌ای از کیک‌ها، شیرینی‌ها و خلاقیت‌های شیرین تازه‌پخت‌شدهٔ ما را با عشق ببینید.",
+    reviews_eyebrow:"نظر مشتریان", reviews_h2:"نظرات",
+    order_eyebrow:"ساده و مستقیم", order_h2:"نحوهٔ سفارش",
+    step1_h:"پیام بدهید", step1_p:"آنچه می‌خواهید و زمان لازم را پیامک یا در اینستاگرام دایرکت کنید.",
+    step2_h:"ما جزئیات را تأیید می‌کنیم", step2_p:"سفارش، طرح یا غذای خاص، و تاریخ تحویل را تأیید می‌کنیم.",
+    step3_h:"تحویل در کتی، تگزاس", step3_p:"برای گرفتن سفارش تازه به کتی سر بزنید — فعلاً ارسال نداریم.",
+    contact_eyebrow:"در تماس باشید", contact_h2:"آمادهٔ سفارش هستید؟",
+    contact_p:"سفارشتان را پیامک کنید یا در اینستاگرام دایرکت بدهید. جزئیات و زمان تحویل در کتی را تأیید می‌کنیم."
+  },
+  prs: {
+    nav_menu:"مینو", nav_gallery:"گالری", nav_reviews:"نظریات", nav_order2:"طرز سفارش", nav_order:"سفارش ورکړئ",
+    hero_h1:'شیرینی های کورنی او خوراکونه د <span>ایرانی</span>، جوړ شوي په کتي کې',
+    hero_sub:"الیز بیکری یوه کورنۍ نانوایی او کیټرینګ پخلنځی دی په کتي، ټیکساس کې — د سفارش سره تازه کیک، شیرینی او بشپړ دودیز ایرانی خواړه. موږ چمتو کوو، تاسو یې اخلئ.",
+    badge1_h:"کورنی نانوایی، تازه", badge1_p:"کیکونه، شیرینۍ او د ایران خواږه په کوچنیو مقدارونو کې د هر سفارش لپاره جوړیږي.",
+    badge2_h:"په کتي، ټیکساس کې", badge2_p:"یوازې د لاسه اخیستل، همدلته په کتي کې — هیڅ رسول نشته، یوازې تازه.",
+    badge3_h:"د پیغام یا DM لخوا سفارش", badge3_p:"آنلاین تادیه نشته — یوازې خپل سفارش او د اخیستلو وخت راولیږئ.",
+    cta_dm:"انسټاګرام ته پیغام", cta_text:"پیغام: 8204-799 (832)", cta_call:"زنګ: 8204-799 (832)",
+    about_eyebrow:"زموږ کیسه", about_h2:"دوه پخلنځي، یوه دسترخوان",
+    about_p:"الیز بیکری د کتي په یوه کورني پخلنځي کې پیل شو. نن ورځ موږ د جشن کیکونه، کوکیز او رول شیرینۍ سره یوځای د دودیزو ایرانی خواړو بشپړ مینو پخو — د زعفرانو وریجو څخه تر آرامه خوارشونو پورې.",
+    feat1_h:"د سفارش سره جوړ شوی", feat1_p:"— هر کیک، سینی او لوښی ستاسو له سفارش وروسته پخیږي.",
+    feat2_h:"دوه مینوګانې، یو پخلنځی", feat2_p:"— لویدیز ډوله شیرینۍ او دودیز ایرانی کورنی خواړه.",
+    feat3_h:"ساده سفارش", feat3_p:"— پیغام یا DM راولیږئ، بیا کتي ته راشئ او واخلئ.",
+    menu_eyebrow:"موږ څه پخو", menu_h2:"زموږ مینو",
+    menu_p:"هرڅه د سفارش سره تازه او په کوچنیو ډلو کې جوړیږي — د نانوایی خوښې شوې توکي او د کیټرینګ لپاره بشپړ دودیز ایرانی مینو.",
+    tab_bakery:"نانوایی او خواږه", tab_persian:"دودیز ایرانی مینو",
+    gallery_eyebrow:"زموږ له پخلنځي څخه", gallery_h2:"زموږ پخلو ته یوه کتنه",
+    gallery_p:"زموږ تازه پخو شوي کیکونه، شیرینۍ او خوږې رامنځته کونې وګورئ چې د مینې سره جوړ شوي.",
+    reviews_eyebrow:"د پیرودونکو نظر", reviews_h2:"نظریات",
+    order_eyebrow:"ساده او مستقیم", order_h2:"طرز سفارش",
+    step1_h:"موږ ته پیغام راولیږئ", step1_p:"هغه څه چې غواړئ او کله یې ته اړتیا لرئ راولیږئ.",
+    step2_h:"موږ توضیحات تایید کوو", step2_p:"ستاسو سفارش، هر ډول ډیزاین یا خواړه، او د اخیستلو نیټه تایید کوو.",
+    step3_h:"په کتي، ټیکساس کې تحویل", step3_p:"د تازه سفارش اخیستلو لپاره راشئ — اوس مهال رسول نه کوو.",
+    contact_eyebrow:"اړیکه ونیسئ", contact_h2:"د سفارش لپاره چمتو یاست؟",
+    contact_p:"خپل سفارش راولیږئ یا انسټاګرام ته DM ورکړئ. موږ به توضیحات او د کتي کې اخیستلو وخت تایید کړو."
+  },
+  ar: {
+    nav_menu:"القائمة", nav_gallery:"معرض الصور", nav_reviews:"التقييمات", nav_order2:"طريقة الطلب", nav_order:"اطلب الآن",
+    hero_h1:'حلويات منزلية ووجبات <span>فارسية</span>، صُنعت في كاتي',
+    hero_sub:"إيلي بيكري هي مخبز منزلي ومطبخ تموين في كاتي، تكساس — كعكات وحلويات مخصصة إلى جانب وجبات فارسية تقليدية كاملة، تُحضَّر طازجة عند الطلب. نحن نُحضّرها، وأنتم تستلمونها.",
+    badge1_h:"مخبز منزلي، طازج دائمًا", badge1_p:"كعكات وحلويات وحلويات فارسية تُخبز بكميات صغيرة لكل طلب.",
+    badge2_h:"موجودون في كاتي، تكساس", badge2_p:"الاستلام فقط، هنا في كاتي — لا يوجد توصيل، طازج من مطبخنا فقط.",
+    badge3_h:"اطلب عبر رسالة نصية أو دايركت", badge3_p:"لا يوجد دفع إلكتروني — فقط أرسل لنا طلبك ووقت الاستلام.",
+    cta_dm:"مراسلة عبر إنستغرام", cta_text:"رسالة: 8204-799 (832)", cta_call:"اتصال: 8204-799 (832)",
+    about_eyebrow:"قصتنا", about_h2:"مطبخان، مائدة واحدة",
+    about_p:"بدأت إيلي بيكري كمطبخ منزلي في كاتي، تُلبّي الطلبات كعكة واحدة تلو الأخرى. اليوم نخبز كعكات الاحتفالات والكوكيز والمعجنات الملفوفة إلى جانب قائمة كاملة من الأطباق الفارسية التقليدية — من الأرز بالزعفران إلى اليخنات المطهوة ببطء.",
+    feat1_h:"يُحضَّر عند الطلب", feat1_p:"— كل كعكة وصينية وقدر يُخبز أو يُطهى بعد طلبك، وليس جاهزًا على الرف.",
+    feat2_h:"قائمتان، مطبخ واحد", feat2_p:"— حلويات غربية الطراز وأطباق فارسية منزلية تقليدية.",
+    feat3_h:"طلب بسيط", feat3_p:"— أرسل رسالة نصية أو دايركت عبر إنستغرام، ثم مرّ بكاتي لاستلام طلبك.",
+    menu_eyebrow:"ماذا نصنع", menu_h2:"قائمتنا",
+    menu_p:"كل شيء يُحضَّر طازجًا عند الطلب بكميات صغيرة — حلويات مخبزنا المفضلة وقائمة فارسية تقليدية كاملة للتموين.",
+    tab_bakery:"المخبوزات والحلويات", tab_persian:"القائمة الفارسية التقليدية",
+    gallery_eyebrow:"من مطبخنا", gallery_h2:"نظرة على مخبوزاتنا",
+    gallery_p:"تصفّح مجموعة من الكعكات والحلويات والإبداعات الحلوة المخبوزة طازجة بحب.",
+    reviews_eyebrow:"ماذا يقول عملاؤنا", reviews_h2:"التقييمات",
+    order_eyebrow:"بسيط ومباشر", order_h2:"طريقة الطلب",
+    step1_h:"راسلنا", step1_p:"أرسل رسالة نصية أو دايركت عبر إنستغرام بما تريده والوقت الذي تحتاجه.",
+    step2_h:"نؤكد التفاصيل", step2_p:"سنؤكد طلبك وأي تصميم أو أطباق خاصة وتاريخ الاستلام.",
+    step3_h:"استلم من كاتي، تكساس", step3_p:"مرّ لاستلام طلبك طازجًا — لا نقدم التوصيل حاليًا.",
+    contact_eyebrow:"تواصل معنا", contact_h2:"هل أنت جاهز للطلب؟",
+    contact_p:"أرسل لنا طلبك برسالة نصية أو دايركت عبر إنستغرام. سنؤكد التفاصيل ووقت الاستلام في كاتي."
+  },
+  es: {
+    nav_menu:"Menú", nav_gallery:"Galería", nav_reviews:"Reseñas", nav_order2:"Cómo Pedir", nav_order:"Pedir Ahora",
+    hero_h1:'Dulces caseros y banquetes <span>persas</span>, hechos en Katy',
+    hero_sub:"Elly's Bakery es una panadería casera y cocina de catering en Katy, Texas — pasteles y repostería a medida junto con comidas persas tradicionales completas, hechas frescas al pedido. Nosotros lo preparamos, tú lo recoges.",
+    badge1_h:"Panadería casera, siempre fresca", badge1_p:"Pasteles, repostería y dulces persas horneados en pequeños lotes para cada pedido.",
+    badge2_h:"Ubicados en Katy, TX", badge2_p:"Solo para recoger, aquí mismo en Katy — sin entregas, solo fresco de nuestra cocina.",
+    badge3_h:"Pide por mensaje o DM", badge3_p:"Sin pago en línea — solo envíanos tu pedido y hora de recogida.",
+    cta_dm:"Mensaje por Instagram", cta_text:"Mensaje: (832) 799-8204", cta_call:"Llamar: (832) 799-8204",
+    about_eyebrow:"Nuestra Historia", about_h2:"Dos cocinas, una mesa",
+    about_p:"Elly's Bakery comenzó como una cocina casera en Katy, preparando pedidos un pastel a la vez. Hoy horneamos pasteles de celebración, galletas y repostería enrollada junto con un menú completo de platillos persas tradicionales — desde arroz con azafrán hasta guisos de cocción lenta — para que puedas pedir el postre y la cena en un solo lugar.",
+    feat1_h:"Hecho al pedido", feat1_p:"— cada pastel, bandeja y olla se hornea o cocina después de tu pedido, no está esperando en un estante.",
+    feat2_h:"Dos menús, una cocina", feat2_p:"— favoritos de panadería estilo occidental y cocina casera persa tradicional.",
+    feat3_h:"Pedido simple", feat3_p:"— envíanos un mensaje o DM por Instagram, luego pasa por Katy para recogerlo.",
+    menu_eyebrow:"Lo Que Hacemos", menu_h2:"Nuestro Menú",
+    menu_p:"Todo se hace fresco al pedido en pequeños lotes — favoritos de panadería y un menú persa tradicional completo para catering.",
+    tab_bakery:"Panadería y Dulces", tab_persian:"Menú Persa Tradicional",
+    gallery_eyebrow:"De Nuestra Cocina", gallery_h2:"Un Vistazo a Nuestros Horneados",
+    gallery_p:"Explora una selección de nuestros pasteles, repostería y creaciones dulces horneadas con amor.",
+    reviews_eyebrow:"Lo Que Dicen Nuestros Clientes", reviews_h2:"Reseñas",
+    order_eyebrow:"Simple y Directo", order_h2:"Cómo Pedir",
+    step1_h:"Envíanos un mensaje", step1_p:"Escríbenos o mándanos un DM por Instagram con lo que quieres y cuándo lo necesitas.",
+    step2_h:"Confirmamos los detalles", step2_p:"Confirmaremos tu pedido, cualquier diseño o platillo especial, y tu fecha de recogida.",
+    step3_h:"Recoge en Katy, TX", step3_p:"Pasa a recoger tu pedido fresco — actualmente no ofrecemos entrega.",
+    contact_eyebrow:"Contáctanos", contact_h2:"¿Listo para pedir?",
+    contact_p:"Envíanos tu pedido por mensaje o mándanos un DM por Instagram. Confirmaremos los detalles y la hora de recogida en Katy, TX."
+  }
+};
+
+function setLang(lang){
+  const dict = translations[lang] || translations.en;
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if(dict[key] !== undefined){ el.innerHTML = dict[key]; }
+  });
+  const rtlLangs = ['fa','ar','prs'];
+  if(rtlLangs.includes(lang)){
+    document.documentElement.setAttribute('dir','rtl');
+    document.documentElement.setAttribute('lang', lang);
+  } else {
+    document.documentElement.setAttribute('dir','ltr');
+    document.documentElement.setAttribute('lang', lang);
+  }
+  try{ localStorage.setItem('ellysLang', lang); }catch(e){}
+}
+
+document.addEventListener('DOMContentLoaded', function(){
+  let saved = 'en';
+  try{ saved = localStorage.getItem('ellysLang') || 'en'; }catch(e){}
+  const sel = document.getElementById('langSwitch');
+  if(sel){ sel.value = saved; }
+  setLang(saved);
+});
+</script>
 </body>
 </html>
