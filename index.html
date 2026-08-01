@@ -4,11 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Elly's Bakery — Home Bakery &amp; Persian Catering | Katy, TX</title>
-<meta name="description" content="Elly's Bakery — a home bakery in Katy, Texas making custom cakes, Persian pastries, and full traditional Persian meals for pickup. Text or DM to order.">
+<meta name="description" content="Elly's Bakery — a 100% Halal home bakery in Katy, Texas making custom cakes, Persian pastries, and full traditional Persian meals for pickup. Text or DM to order.">
 <link rel="icon" type="image/png" href="logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500;1,9..144,600&family=Inter:wght@400;500;600;700&family=Noto+Naskh+Arabic:wght@400;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500;1,9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<!-- Vazirmatn: Persian / Dari / Arabic web font -->
+<link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet">
 <style>
   :root{
     --rose-deep:#9c4f56;
@@ -50,10 +53,101 @@
     font-weight:600;
   }
   .fa-text{
-    font-family:'Noto Naskh Arabic','Fraunces',serif;
+    font-family:'Vazirmatn',Tahoma,sans-serif;
     direction:rtl;
     unicode-bidi:isolate;
   }
+
+  /* ---------- RTL typography: Persian / Dari / Arabic ---------- */
+  html[lang="fa"] body,
+  html[lang="prs"] body,
+  html[lang="ar"] body{
+    font-family:'Vazirmatn',Tahoma,sans-serif;
+  }
+  html[lang="fa"] h1, html[lang="fa"] h2, html[lang="fa"] h3, html[lang="fa"] .display,
+  html[lang="prs"] h1, html[lang="prs"] h2, html[lang="prs"] h3, html[lang="prs"] .display,
+  html[lang="ar"] h1, html[lang="ar"] h2, html[lang="ar"] h3, html[lang="ar"] .display{
+    font-family:'Vazirmatn',Tahoma,sans-serif;
+    font-weight:700;
+    font-style:normal;          /* Vazirmatn has no true italic — never fake-slant Arabic script */
+    letter-spacing:0;           /* letter-spacing breaks Arabic letter joining */
+  }
+  html[lang="fa"] .hero h1,
+  html[lang="prs"] .hero h1,
+  html[lang="ar"] .hero h1{
+    font-size:clamp(28px,4.2vw,46px);
+    line-height:1.55;
+    font-style:normal;
+  }
+  html[lang="fa"] .eyebrow,
+  html[lang="prs"] .eyebrow,
+  html[lang="ar"] .eyebrow{
+    font-family:'Vazirmatn',Tahoma,sans-serif;
+    letter-spacing:0;
+    text-transform:none;        /* uppercase does nothing useful for Arabic script */
+    font-size:13.5px;
+  }
+  html[lang="fa"] .hero p.sub,
+  html[lang="prs"] .hero p.sub,
+  html[lang="ar"] .hero p.sub{
+    font-family:'Vazirmatn',Tahoma,sans-serif;
+    line-height:1.95;
+    max-width:540px;
+  }
+  html[lang="fa"] .hero-badge li b, html[lang="fa"] .about-list b,
+  html[lang="fa"] .review-name, html[lang="fa"] .contact-row b,
+  html[lang="prs"] .hero-badge li b, html[lang="prs"] .about-list b,
+  html[lang="prs"] .review-name, html[lang="prs"] .contact-row b,
+  html[lang="ar"] .hero-badge li b, html[lang="ar"] .about-list b,
+  html[lang="ar"] .review-name, html[lang="ar"] .contact-row b{
+    font-family:'Vazirmatn',Tahoma,sans-serif;
+    font-style:normal;
+  }
+  html[lang="fa"] .menu-tab, html[lang="prs"] .menu-tab, html[lang="ar"] .menu-tab,
+  html[lang="fa"] .menu-cat-head .fa, html[lang="prs"] .menu-cat-head .fa, html[lang="ar"] .menu-cat-head .fa{
+    font-family:'Vazirmatn',Tahoma,sans-serif;
+  }
+  html[lang="fa"] .hero .farsi,
+  html[lang="prs"] .hero .farsi,
+  html[lang="ar"] .hero .farsi{
+    font-style:normal;
+    letter-spacing:0;
+  }
+  /* the Persian tagline is always Persian, whatever the page language */
+  .hero .farsi{font-family:'Vazirmatn',Tahoma,sans-serif !important;}
+
+  /* ---------- 100% Halal badge ---------- */
+  .halal-strip{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    margin-top:26px;
+  }
+  @media (max-width:900px){.halal-strip{justify-content:center;}}
+  .halal-strip svg{flex-shrink:0;width:62px;height:62px;}
+  .halal-strip .halal-label{
+    font-size:15px;
+    font-weight:600;
+    color:var(--cream);
+    letter-spacing:.01em;
+  }
+  html[lang="fa"] .halal-strip .halal-label,
+  html[lang="prs"] .halal-strip .halal-label,
+  html[lang="ar"] .halal-strip .halal-label{
+    font-family:'Vazirmatn',Tahoma,sans-serif;
+    letter-spacing:0;
+  }
+  @media (max-width:600px){
+    .halal-strip svg{width:50px;height:50px;}
+    .halal-strip .halal-label{font-size:14px;}
+  }
+  .halal-footer{
+    display:inline-flex;
+    align-items:center;
+    gap:7px;
+    margin-top:10px;
+  }
+  .halal-footer svg{width:34px;height:34px;}
 
   /* ---------- Paisley / termeh divider (signature element) ---------- */
   .termeh-divider{
@@ -516,6 +610,17 @@
           <a class="btn btn-ghost" href="sms:+18327998204" data-i18n="cta_text">Text (832) 799-8204</a>
           <a class="btn btn-ghost" href="tel:+18327998204" data-i18n="cta_call">Call (832) 799-8204</a>
         </div>
+        <div class="halal-strip">
+          <svg viewBox="0 0 100 100" role="img" aria-label="100% Halal">
+            <circle cx="50" cy="50" r="47" fill="#5cbf3a"/>
+            <circle cx="50" cy="50" r="41" fill="none" stroke="#fff" stroke-width="2.4"/>
+            <text x="50" y="52" text-anchor="middle" fill="#fff" font-size="30"
+                  font-family="Vazirmatn, Tahoma, sans-serif" direction="rtl">حلال</text>
+            <text x="50" y="73" text-anchor="middle" fill="#fff" font-size="13"
+                  font-family="Inter, sans-serif" font-weight="600" letter-spacing="2.5">HALAL</text>
+          </svg>
+          <span class="halal-label" data-i18n="halal_label">100% Halal</span>
+        </div>
       </div>
       <div class="hero-badge">
         <ul>
@@ -875,6 +980,17 @@
 <footer>
   <div class="wrap">
     Elly's Bakery LLC &middot; Katy, Texas &middot; <a href="tel:+18327998204">(832) 799-8204</a> &middot; <a href="https://www.instagram.com/ellysbakery_tx/" target="_blank" rel="noopener">@ellysbakery_tx</a>
+    <div class="halal-footer">
+      <svg viewBox="0 0 100 100" role="img" aria-label="100% Halal">
+        <circle cx="50" cy="50" r="47" fill="#5cbf3a"/>
+        <circle cx="50" cy="50" r="41" fill="none" stroke="#fff" stroke-width="2.4"/>
+        <text x="50" y="52" text-anchor="middle" fill="#fff" font-size="30"
+              font-family="Vazirmatn, Tahoma, sans-serif" direction="rtl">حلال</text>
+        <text x="50" y="73" text-anchor="middle" fill="#fff" font-size="13"
+              font-family="Inter, sans-serif" font-weight="600" letter-spacing="2.5">HALAL</text>
+      </svg>
+      <span data-i18n="halal_label">100% Halal</span>
+    </div>
     <div style="margin-top:6px;opacity:.7;">&copy; <span id="year"></span> Elly's Bakery. Home bakery &amp; Persian catering.</div>
   </div>
 </footer>
@@ -926,11 +1042,12 @@ const translations = {
     step2_h:"We confirm details", step2_p:"We'll confirm your order, any custom design or dishes, and your pickup date.",
     step3_h:"Pick up in Katy, TX", step3_p:"Swing by to pick up your order fresh — we don't currently offer delivery.",
     contact_eyebrow:"Get In Touch", contact_h2:"Ready to order?",
-    contact_p:"Text us your order, or send a DM on Instagram. We'll confirm details and a pickup time in Katy, TX."
+    contact_p:"Text us your order, or send a DM on Instagram. We'll confirm details and a pickup time in Katy, TX.",
+    halal_label:"100% Halal"
   },
   fa: {
     nav_menu:"منو", nav_gallery:"گالری", nav_reviews:"نظرات", nav_order2:"نحوهٔ سفارش", nav_order:"سفارش دهید",
-    hero_h1:'شیرینی‌های خانگی و غذاهای <span>ایرانی</span>، ساخته‌شده در کتی',
+    hero_h1:'سفارش آنلاین و تازه؛ شیرینی‌های خانگی و کترینگ اصیل غذای <span>ایرانی</span> در کیتی، تگزاس',
     hero_sub:"الیز بیکری یک آشپزخانهٔ خانگی و کترینگ در کتی، تگزاس است — کیک و شیرینی سفارشی در کنار غذاهای کامل سنتی ایرانی، تازه و به‌سفارش پخته می‌شود. ما آماده می‌کنیم، شما تحویل می‌گیرید.",
     badge1_h:"بیکری خانگی، تازه‌پخت", badge1_p:"کیک، شیرینی و شیرینی‌های ایرانی در دسته‌های کوچک برای هر سفارش پخته می‌شوند.",
     badge2_h:"مستقر در کتی، تگزاس", badge2_p:"فقط تحویل حضوری، همین‌جا در کتی — بدون ارسال، فقط تازه از آشپزخانهٔ ما.",
@@ -952,37 +1069,39 @@ const translations = {
     step2_h:"ما جزئیات را تأیید می‌کنیم", step2_p:"سفارش، طرح یا غذای خاص، و تاریخ تحویل را تأیید می‌کنیم.",
     step3_h:"تحویل در کتی، تگزاس", step3_p:"برای گرفتن سفارش تازه به کتی سر بزنید — فعلاً ارسال نداریم.",
     contact_eyebrow:"در تماس باشید", contact_h2:"آمادهٔ سفارش هستید؟",
-    contact_p:"سفارشتان را پیامک کنید یا در اینستاگرام دایرکت بدهید. جزئیات و زمان تحویل در کتی را تأیید می‌کنیم."
+    contact_p:"سفارشتان را پیامک کنید یا در اینستاگرام دایرکت بدهید. جزئیات و زمان تحویل در کیتی را تأیید می‌کنیم.",
+    halal_label:"۱۰۰٪ حلال"
   },
   prs: {
-    nav_menu:"مینو", nav_gallery:"گالری", nav_reviews:"نظریات", nav_order2:"طرز سفارش", nav_order:"سفارش ورکړئ",
-    hero_h1:'شیرینی های کورنی او خوراکونه د <span>ایرانی</span>، جوړ شوي په کتي کې',
-    hero_sub:"الیز بیکری یوه کورنۍ نانوایی او کیټرینګ پخلنځی دی په کتي، ټیکساس کې — د سفارش سره تازه کیک، شیرینی او بشپړ دودیز ایرانی خواړه. موږ چمتو کوو، تاسو یې اخلئ.",
-    badge1_h:"کورنی نانوایی، تازه", badge1_p:"کیکونه، شیرینۍ او د ایران خواږه په کوچنیو مقدارونو کې د هر سفارش لپاره جوړیږي.",
-    badge2_h:"په کتي، ټیکساس کې", badge2_p:"یوازې د لاسه اخیستل، همدلته په کتي کې — هیڅ رسول نشته، یوازې تازه.",
-    badge3_h:"د پیغام یا DM لخوا سفارش", badge3_p:"آنلاین تادیه نشته — یوازې خپل سفارش او د اخیستلو وخت راولیږئ.",
-    cta_dm:"انسټاګرام ته پیغام", cta_text:"پیغام: 8204-799 (832)", cta_call:"زنګ: 8204-799 (832)",
-    about_eyebrow:"زموږ کیسه", about_h2:"دوه پخلنځي، یوه دسترخوان",
-    about_p:"الیز بیکری د کتي په یوه کورني پخلنځي کې پیل شو. نن ورځ موږ د جشن کیکونه، کوکیز او رول شیرینۍ سره یوځای د دودیزو ایرانی خواړو بشپړ مینو پخو — د زعفرانو وریجو څخه تر آرامه خوارشونو پورې.",
-    feat1_h:"د سفارش سره جوړ شوی", feat1_p:"— هر کیک، سینی او لوښی ستاسو له سفارش وروسته پخیږي.",
-    feat2_h:"دوه مینوګانې، یو پخلنځی", feat2_p:"— لویدیز ډوله شیرینۍ او دودیز ایرانی کورنی خواړه.",
-    feat3_h:"ساده سفارش", feat3_p:"— پیغام یا DM راولیږئ، بیا کتي ته راشئ او واخلئ.",
-    menu_eyebrow:"موږ څه پخو", menu_h2:"زموږ مینو",
-    menu_p:"هرڅه د سفارش سره تازه او په کوچنیو ډلو کې جوړیږي — د نانوایی خوښې شوې توکي او د کیټرینګ لپاره بشپړ دودیز ایرانی مینو.",
-    tab_bakery:"نانوایی او خواږه", tab_persian:"دودیز ایرانی مینو",
-    gallery_eyebrow:"زموږ له پخلنځي څخه", gallery_h2:"زموږ پخلو ته یوه کتنه",
-    gallery_p:"زموږ تازه پخو شوي کیکونه، شیرینۍ او خوږې رامنځته کونې وګورئ چې د مینې سره جوړ شوي.",
-    reviews_eyebrow:"د پیرودونکو نظر", reviews_h2:"نظریات",
-    order_eyebrow:"ساده او مستقیم", order_h2:"طرز سفارش",
-    step1_h:"موږ ته پیغام راولیږئ", step1_p:"هغه څه چې غواړئ او کله یې ته اړتیا لرئ راولیږئ.",
-    step2_h:"موږ توضیحات تایید کوو", step2_p:"ستاسو سفارش، هر ډول ډیزاین یا خواړه، او د اخیستلو نیټه تایید کوو.",
-    step3_h:"په کتي، ټیکساس کې تحویل", step3_p:"د تازه سفارش اخیستلو لپاره راشئ — اوس مهال رسول نه کوو.",
-    contact_eyebrow:"اړیکه ونیسئ", contact_h2:"د سفارش لپاره چمتو یاست؟",
-    contact_p:"خپل سفارش راولیږئ یا انسټاګرام ته DM ورکړئ. موږ به توضیحات او د کتي کې اخیستلو وخت تایید کړو."
+    nav_menu:"منو", nav_gallery:"گالری", nav_reviews:"نظریات", nav_order2:"طرز سفارش", nav_order:"سفارش بدهید",
+    hero_h1:'سفارش آنلاین و تازه؛ شیرینی‌های خانگی و کترینگ اصیل غذای <span>ایرانی</span> در کیتی، تکساس',
+    hero_sub:"الیز بیکری یک نانوایی خانگی و آشپزخانهٔ کترینگ در کیتی، تکساس است — کیک و شیرینی سفارشی در کنار غذاهای کامل سنتی ایرانی که تازه و بعد از سفارش شما تهیه می‌شود. ما آماده می‌کنیم، شما تسلیم می‌شوید.",
+    badge1_h:"نانوایی خانگی، تازه‌پخت", badge1_p:"کیک، شیرینی و شیرینی‌های ایرانی برای هر سفارش در مقدار کم و تازه پخته می‌شود.",
+    badge2_h:"موقعیت در کیتی، تکساس", badge2_p:"تنها تسلیمی حضوری، همین‌جا در کیتی — رسانیدن نداریم، تنها تازه از آشپزخانهٔ ما.",
+    badge3_h:"سفارش از طریق پیام یا دایرکت", badge3_p:"پرداخت آنلاین نداریم — تنها سفارش و وقت تسلیمی خود را برای ما پیام کنید.",
+    cta_dm:"پیام در انستاگرام", cta_text:"پیام: 8204-799 (832)", cta_call:"تماس: 8204-799 (832)",
+    about_eyebrow:"داستان ما", about_h2:"دو آشپزخانه، یک دسترخوان",
+    about_p:"الیز بیکری از یک آشپزخانهٔ خانگی در کیتی آغاز شد و سفارش‌ها را یکی‌یکی آماده می‌کرد. امروز کیک‌های محفل، کلچه و شیرینی‌های رول‌شده را در کنار یک منوی کامل از غذاهای سنتی ایرانی می‌پزیم — از پلو زعفرانی تا قورمه‌های آهسته‌پز — تا بتوانید دسر و نان چاشت را از یک جا سفارش دهید.",
+    feat1_h:"تهیه بعد از سفارش", feat1_p:"— هر کیک، تبنگ و دیگ بعد از سفارش شما پخته می‌شود، نه از پیش روی الماری.",
+    feat2_h:"دو منو، یک آشپزخانه", feat2_p:"— شیرینی‌های سبک غربی و غذاهای خانگی سنتی ایرانی.",
+    feat3_h:"سفارش ساده", feat3_p:"— برای ما پیام بفرستید یا در انستاگرام دایرکت کنید، بعد به کیتی بیایید و تسلیم شوید.",
+    menu_eyebrow:"چه می‌پزیم", menu_h2:"منوی ما",
+    menu_p:"همه چیز تازه و بعد از سفارش در مقدار کم تهیه می‌شود — شیرینی‌های محبوب نانوایی و یک منوی کامل سنتی ایرانی برای کترینگ.",
+    tab_bakery:"نانوایی و شیرینی", tab_persian:"منوی سنتی ایرانی",
+    gallery_eyebrow:"از آشپزخانهٔ ما", gallery_h2:"نگاهی به پخت‌های ما",
+    gallery_p:"مجموعه‌ای از کیک‌ها، شیرینی‌ها و ساخته‌های شیرین تازهٔ ما را که با محبت پخته شده ببینید.",
+    reviews_eyebrow:"نظر مشتریان", reviews_h2:"نظریات",
+    order_eyebrow:"ساده و مستقیم", order_h2:"طرز سفارش",
+    step1_h:"برای ما پیام بفرستید", step1_p:"آنچه می‌خواهید و وقتی که ضرورت دارید را پیام کنید یا در انستاگرام دایرکت بفرستید.",
+    step2_h:"جزئیات را تأیید می‌کنیم", step2_p:"سفارش شما، هر طرح یا غذای خاص، و تاریخ تسلیمی را تأیید می‌کنیم.",
+    step3_h:"تسلیمی در کیتی، تکساس", step3_p:"برای گرفتن سفارش تازهٔ خود تشریف بیاورید — فعلاً خدمات رسانیدن نداریم.",
+    contact_eyebrow:"در تماس شوید", contact_h2:"آمادهٔ سفارش هستید؟",
+    contact_p:"سفارش خود را پیام کنید یا در انستاگرام دایرکت بفرستید. جزئیات و وقت تسلیمی در کیتی را تأیید می‌کنیم.",
+    halal_label:"۱۰۰٪ حلال"
   },
   ar: {
     nav_menu:"القائمة", nav_gallery:"معرض الصور", nav_reviews:"التقييمات", nav_order2:"طريقة الطلب", nav_order:"اطلب الآن",
-    hero_h1:'حلويات منزلية ووجبات <span>فارسية</span>، صُنعت في كاتي',
+    hero_h1:'اطلب أونلاين: حلويات منزلية طازجة وتموين أطعمة <span>إيرانية</span> أصيلة في كاتي، تكساس',
     hero_sub:"إيلي بيكري هي مخبز منزلي ومطبخ تموين في كاتي، تكساس — كعكات وحلويات مخصصة إلى جانب وجبات فارسية تقليدية كاملة، تُحضَّر طازجة عند الطلب. نحن نُحضّرها، وأنتم تستلمونها.",
     badge1_h:"مخبز منزلي، طازج دائمًا", badge1_p:"كعكات وحلويات وحلويات فارسية تُخبز بكميات صغيرة لكل طلب.",
     badge2_h:"موجودون في كاتي، تكساس", badge2_p:"الاستلام فقط، هنا في كاتي — لا يوجد توصيل، طازج من مطبخنا فقط.",
@@ -1004,7 +1123,8 @@ const translations = {
     step2_h:"نؤكد التفاصيل", step2_p:"سنؤكد طلبك وأي تصميم أو أطباق خاصة وتاريخ الاستلام.",
     step3_h:"استلم من كاتي، تكساس", step3_p:"مرّ لاستلام طلبك طازجًا — لا نقدم التوصيل حاليًا.",
     contact_eyebrow:"تواصل معنا", contact_h2:"هل أنت جاهز للطلب؟",
-    contact_p:"أرسل لنا طلبك برسالة نصية أو دايركت عبر إنستغرام. سنؤكد التفاصيل ووقت الاستلام في كاتي."
+    contact_p:"أرسل لنا طلبك برسالة نصية أو دايركت عبر إنستغرام. سنؤكد التفاصيل ووقت الاستلام في كاتي.",
+    halal_label:"حلال ۱۰۰٪"
   },
   es: {
     nav_menu:"Menú", nav_gallery:"Galería", nav_reviews:"Reseñas", nav_order2:"Cómo Pedir", nav_order:"Pedir Ahora",
@@ -1030,7 +1150,8 @@ const translations = {
     step2_h:"Confirmamos los detalles", step2_p:"Confirmaremos tu pedido, cualquier diseño o platillo especial, y tu fecha de recogida.",
     step3_h:"Recoge en Katy, TX", step3_p:"Pasa a recoger tu pedido fresco — actualmente no ofrecemos entrega.",
     contact_eyebrow:"Contáctanos", contact_h2:"¿Listo para pedir?",
-    contact_p:"Envíanos tu pedido por mensaje o mándanos un DM por Instagram. Confirmaremos los detalles y la hora de recogida en Katy, TX."
+    contact_p:"Envíanos tu pedido por mensaje o mándanos un DM por Instagram. Confirmaremos los detalles y la hora de recogida en Katy, TX.",
+    halal_label:"100% Halal"
   }
 };
 
@@ -1041,13 +1162,8 @@ function setLang(lang){
     if(dict[key] !== undefined){ el.innerHTML = dict[key]; }
   });
   const rtlLangs = ['fa','ar','prs'];
-  if(rtlLangs.includes(lang)){
-    document.documentElement.setAttribute('dir','rtl');
-    document.documentElement.setAttribute('lang', lang);
-  } else {
-    document.documentElement.setAttribute('dir','ltr');
-    document.documentElement.setAttribute('lang', lang);
-  }
+  document.documentElement.setAttribute('dir', rtlLangs.includes(lang) ? 'rtl' : 'ltr');
+  document.documentElement.setAttribute('lang', lang);
   try{ localStorage.setItem('ellysLang', lang); }catch(e){}
 }
 
