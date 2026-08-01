@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Elly's Bakery — Home Bakery &amp; Persian Catering | Katy, TX</title>
-<meta name="description" content="Elly's Bakery — a 100% Halal home bakery in Katy, Texas making custom cakes, Persian pastries, and full traditional Persian meals for pickup. Text or DM to order.">
+<meta name="description" content="Elly's Bakery — a home bakery in Katy, Texas making custom cakes, Persian pastries, and full traditional Persian meals for pickup. Text or DM to order.">
 <link rel="icon" type="image/png" href="logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -115,39 +115,6 @@
   }
   /* the Persian tagline is always Persian, whatever the page language */
   .hero .farsi{font-family:'Vazirmatn',Tahoma,sans-serif !important;}
-
-  /* ---------- 100% Halal badge ---------- */
-  .halal-strip{
-    display:flex;
-    align-items:center;
-    gap:12px;
-    margin-top:26px;
-  }
-  @media (max-width:900px){.halal-strip{justify-content:center;}}
-  .halal-strip svg{flex-shrink:0;width:62px;height:62px;}
-  .halal-strip .halal-label{
-    font-size:15px;
-    font-weight:600;
-    color:var(--cream);
-    letter-spacing:.01em;
-  }
-  html[lang="fa"] .halal-strip .halal-label,
-  html[lang="prs"] .halal-strip .halal-label,
-  html[lang="ar"] .halal-strip .halal-label{
-    font-family:'Vazirmatn',Tahoma,sans-serif;
-    letter-spacing:0;
-  }
-  @media (max-width:600px){
-    .halal-strip svg{width:50px;height:50px;}
-    .halal-strip .halal-label{font-size:14px;}
-  }
-  .halal-footer{
-    display:inline-flex;
-    align-items:center;
-    gap:7px;
-    margin-top:10px;
-  }
-  .halal-footer svg{width:34px;height:34px;}
 
   /* ---------- Paisley / termeh divider (signature element) ---------- */
   .termeh-divider{
@@ -610,17 +577,6 @@
           <a class="btn btn-ghost" href="sms:+18327998204" data-i18n="cta_text">Text (832) 799-8204</a>
           <a class="btn btn-ghost" href="tel:+18327998204" data-i18n="cta_call">Call (832) 799-8204</a>
         </div>
-        <div class="halal-strip">
-          <svg viewBox="0 0 100 100" role="img" aria-label="100% Halal">
-            <circle cx="50" cy="50" r="47" fill="#5cbf3a"/>
-            <circle cx="50" cy="50" r="41" fill="none" stroke="#fff" stroke-width="2.4"/>
-            <text x="50" y="52" text-anchor="middle" fill="#fff" font-size="30"
-                  font-family="Vazirmatn, Tahoma, sans-serif" direction="rtl">حلال</text>
-            <text x="50" y="73" text-anchor="middle" fill="#fff" font-size="13"
-                  font-family="Inter, sans-serif" font-weight="600" letter-spacing="2.5">HALAL</text>
-          </svg>
-          <span class="halal-label" data-i18n="halal_label">100% Halal</span>
-        </div>
       </div>
       <div class="hero-badge">
         <ul>
@@ -980,17 +936,6 @@
 <footer>
   <div class="wrap">
     Elly's Bakery LLC &middot; Katy, Texas &middot; <a href="tel:+18327998204">(832) 799-8204</a> &middot; <a href="https://www.instagram.com/ellysbakery_tx/" target="_blank" rel="noopener">@ellysbakery_tx</a>
-    <div class="halal-footer">
-      <svg viewBox="0 0 100 100" role="img" aria-label="100% Halal">
-        <circle cx="50" cy="50" r="47" fill="#5cbf3a"/>
-        <circle cx="50" cy="50" r="41" fill="none" stroke="#fff" stroke-width="2.4"/>
-        <text x="50" y="52" text-anchor="middle" fill="#fff" font-size="30"
-              font-family="Vazirmatn, Tahoma, sans-serif" direction="rtl">حلال</text>
-        <text x="50" y="73" text-anchor="middle" fill="#fff" font-size="13"
-              font-family="Inter, sans-serif" font-weight="600" letter-spacing="2.5">HALAL</text>
-      </svg>
-      <span data-i18n="halal_label">100% Halal</span>
-    </div>
     <div style="margin-top:6px;opacity:.7;">&copy; <span id="year"></span> Elly's Bakery. Home bakery &amp; Persian catering.</div>
   </div>
 </footer>
@@ -1042,8 +987,7 @@ const translations = {
     step2_h:"We confirm details", step2_p:"We'll confirm your order, any custom design or dishes, and your pickup date.",
     step3_h:"Pick up in Katy, TX", step3_p:"Swing by to pick up your order fresh — we don't currently offer delivery.",
     contact_eyebrow:"Get In Touch", contact_h2:"Ready to order?",
-    contact_p:"Text us your order, or send a DM on Instagram. We'll confirm details and a pickup time in Katy, TX.",
-    halal_label:"100% Halal"
+    contact_p:"Text us your order, or send a DM on Instagram. We'll confirm details and a pickup time in Katy, TX."
   },
   fa: {
     nav_menu:"منو", nav_gallery:"گالری", nav_reviews:"نظرات", nav_order2:"نحوهٔ سفارش", nav_order:"سفارش دهید",
@@ -1069,8 +1013,7 @@ const translations = {
     step2_h:"ما جزئیات را تأیید می‌کنیم", step2_p:"سفارش، طرح یا غذای خاص، و تاریخ تحویل را تأیید می‌کنیم.",
     step3_h:"تحویل در کتی، تگزاس", step3_p:"برای گرفتن سفارش تازه به کتی سر بزنید — فعلاً ارسال نداریم.",
     contact_eyebrow:"در تماس باشید", contact_h2:"آمادهٔ سفارش هستید؟",
-    contact_p:"سفارشتان را پیامک کنید یا در اینستاگرام دایرکت بدهید. جزئیات و زمان تحویل در کیتی را تأیید می‌کنیم.",
-    halal_label:"۱۰۰٪ حلال"
+    contact_p:"سفارشتان را پیامک کنید یا در اینستاگرام دایرکت بدهید. جزئیات و زمان تحویل در کیتی را تأیید می‌کنیم."
   },
   prs: {
     nav_menu:"منو", nav_gallery:"گالری", nav_reviews:"نظریات", nav_order2:"طرز سفارش", nav_order:"سفارش بدهید",
@@ -1096,8 +1039,7 @@ const translations = {
     step2_h:"جزئیات را تأیید می‌کنیم", step2_p:"سفارش شما، هر طرح یا غذای خاص، و تاریخ تسلیمی را تأیید می‌کنیم.",
     step3_h:"تسلیمی در کیتی، تکساس", step3_p:"برای گرفتن سفارش تازهٔ خود تشریف بیاورید — فعلاً خدمات رسانیدن نداریم.",
     contact_eyebrow:"در تماس شوید", contact_h2:"آمادهٔ سفارش هستید؟",
-    contact_p:"سفارش خود را پیام کنید یا در انستاگرام دایرکت بفرستید. جزئیات و وقت تسلیمی در کیتی را تأیید می‌کنیم.",
-    halal_label:"۱۰۰٪ حلال"
+    contact_p:"سفارش خود را پیام کنید یا در انستاگرام دایرکت بفرستید. جزئیات و وقت تسلیمی در کیتی را تأیید می‌کنیم."
   },
   ar: {
     nav_menu:"القائمة", nav_gallery:"معرض الصور", nav_reviews:"التقييمات", nav_order2:"طريقة الطلب", nav_order:"اطلب الآن",
@@ -1123,8 +1065,7 @@ const translations = {
     step2_h:"نؤكد التفاصيل", step2_p:"سنؤكد طلبك وأي تصميم أو أطباق خاصة وتاريخ الاستلام.",
     step3_h:"استلم من كاتي، تكساس", step3_p:"مرّ لاستلام طلبك طازجًا — لا نقدم التوصيل حاليًا.",
     contact_eyebrow:"تواصل معنا", contact_h2:"هل أنت جاهز للطلب؟",
-    contact_p:"أرسل لنا طلبك برسالة نصية أو دايركت عبر إنستغرام. سنؤكد التفاصيل ووقت الاستلام في كاتي.",
-    halal_label:"حلال ۱۰۰٪"
+    contact_p:"أرسل لنا طلبك برسالة نصية أو دايركت عبر إنستغرام. سنؤكد التفاصيل ووقت الاستلام في كاتي."
   },
   es: {
     nav_menu:"Menú", nav_gallery:"Galería", nav_reviews:"Reseñas", nav_order2:"Cómo Pedir", nav_order:"Pedir Ahora",
@@ -1150,8 +1091,7 @@ const translations = {
     step2_h:"Confirmamos los detalles", step2_p:"Confirmaremos tu pedido, cualquier diseño o platillo especial, y tu fecha de recogida.",
     step3_h:"Recoge en Katy, TX", step3_p:"Pasa a recoger tu pedido fresco — actualmente no ofrecemos entrega.",
     contact_eyebrow:"Contáctanos", contact_h2:"¿Listo para pedir?",
-    contact_p:"Envíanos tu pedido por mensaje o mándanos un DM por Instagram. Confirmaremos los detalles y la hora de recogida en Katy, TX.",
-    halal_label:"100% Halal"
+    contact_p:"Envíanos tu pedido por mensaje o mándanos un DM por Instagram. Confirmaremos los detalles y la hora de recogida en Katy, TX."
   }
 };
 
