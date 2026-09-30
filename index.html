@@ -547,7 +547,37 @@
   /* ---------- Fit on small screens ---------- */
   .menu-cat-head{flex-wrap:wrap;row-gap:2px;}
   .menu-cat-head h3{white-space:normal;min-width:0;}
-  nav ul.links select{max-width:100%;}
+  /* ---------- Language picker: always visible in header ---------- */
+  .nav-right{display:flex;align-items:center;gap:10px;flex-shrink:0;}
+  .lang-pick{display:inline-flex;align-items:center;gap:4px;background:#fff;border:1.5px solid var(--rose-deep);border-radius:20px;padding:6px 10px;box-shadow:0 2px 7px rgba(156,79,86,.25);cursor:pointer;}
+  .lang-globe{font-size:16px;line-height:1;}
+  #langSwitch{border:0;background:transparent;color:var(--ink);font:600 15px 'Inter',sans-serif;cursor:pointer;padding:2px 0;max-width:100px;-webkit-appearance:menulist;}
+  #langSwitch:focus-visible{outline:2px solid var(--gold);outline-offset:2px;}
+  @media (max-width:980px){
+    nav ul.links.open{max-height:80vh;overflow-y:auto;}
+    /* thinner menu buttons on phones */
+    nav ul.links a{padding:8px 22px;font-size:16px;}
+    nav ul.links li + li{margin-top:3px;}
+  }
+  .lang-code{display:none;font:700 14px 'Inter',sans-serif;color:var(--ink);line-height:1;}
+  /* phones: compact globe + language code; the real picker sits invisibly on top so a tap opens it */
+  @media (max-width:600px){
+    nav.wrap{padding-right:12px;}
+    .brand{gap:8px;}
+    .brand-text{font-size:24px;}
+    .nav-toggle{padding:0 4px;}
+    .nav-right{gap:4px;}
+    .lang-pick{position:relative;padding:6px 8px;gap:3px;}
+    .lang-code{display:inline;}
+    #langSwitch{position:absolute;inset:0;width:100%;height:100%;max-width:none;opacity:0;font-size:16px;}
+  }
+  @media (max-width:360px){
+    nav.wrap{padding-left:12px;padding-right:10px;}
+    .logo-wrap{width:140px;height:140px;margin:-10px 0;}
+    .brand-text{font-size:21px;}
+    .lang-pick{padding:6px 7px;}
+    .lang-globe{font-size:14px;}
+  }
 
   /* ---------- Digital business card ---------- */
   .ecard{background:var(--rose-pale);}
@@ -614,7 +644,6 @@
     <a href="#top" class="brand">
       <span class="logo-wrap"><img src="logo.webp" alt="Elly's Bakery logo" class="logo-spin"></span> <span class="brand-text">Elly's Bakery</span>
     </a>
-    <button class="nav-toggle" aria-label="Toggle menu" onclick="document.querySelector('.links').classList.toggle('open')">☰</button>
     <ul class="links">
       <li><a href="#menu" data-i18n="nav_menu">Menu</a></li>
       <li><a href="#gallery" data-i18n="nav_gallery">Gallery</a></li>
@@ -622,17 +651,20 @@
       <li><a href="#order" data-i18n="nav_order2">How to Order</a></li>
       <li><a href="card.html" data-i18n="nav_card">Card</a></li>
       <li><a href="#contact" class="nav-cta" data-i18n="nav_order">Order Now</a></li>
-      <li>
-        <select id="langSwitch" onchange="setLang(this.value)" style="border-radius:20px;padding:8px 12px;border:1.5px solid var(--rose-deep);background:#fff;color:var(--ink);font-weight:600;font-size:15px;cursor:pointer;">
-          <option value="en">English</option>
-          <option value="fa">فارسی</option>
-          <option value="prs">دری</option>
-          <option value="ar">العربية</option>
-          <option value="es">Español</option>
-          <option value="hi">हिन्दी</option>
-        </select>
-      </li>
     </ul>
+    <div class="nav-right">
+      <label class="lang-pick"><span class="lang-globe" aria-hidden="true">🌐</span><span class="lang-code" aria-hidden="true">EN</span>
+        <select id="langSwitch" onchange="setLang(this.value)" aria-label="Language / زبان">
+            <option value="en">English</option>
+            <option value="fa">فارسی</option>
+            <option value="prs">دری</option>
+            <option value="ar">العربية</option>
+            <option value="es">Español</option>
+            <option value="hi">हिन्दी</option>
+          </select>
+      </label>
+      <button class="nav-toggle" aria-label="Toggle menu" onclick="document.querySelector('.links').classList.toggle('open')">☰</button>
+    </div>
   </nav>
 </header>
 
@@ -1252,7 +1284,9 @@ const translations = {
   }
 };
 
+var LANG_CODES={en:'EN',fa:'FA',prs:'DA',ar:'AR',es:'ES',hi:'HI'};
 function setLang(lang){
+  try{ var lc=document.querySelector('.lang-code'); if(lc) lc.textContent=LANG_CODES[lang]||'EN'; }catch(e){}
   const dict = translations[lang] || translations.en;
   document.querySelectorAll('[data-i18n]').forEach(el => {
     const key = el.getAttribute('data-i18n');
