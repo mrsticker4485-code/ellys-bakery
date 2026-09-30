@@ -8,6 +8,11 @@
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Elly's Bakery">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
 <link rel="canonical" href="https://ellysbakery.com/">
 <meta name="theme-color" content="#9c4f56">
 <meta property="og:type" content="website">
@@ -24,7 +29,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500;1,9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500;1,9..144,600&family=Inter:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;600;700&display=swap" rel="stylesheet">
 <!-- Vazirmatn: Persian / Dari / Arabic web font -->
 <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet">
 <style>
@@ -315,7 +320,7 @@
     text-shadow:0 1px 0 rgba(255,255,255,.7), 0 2px 3px rgba(156,79,86,.35);
   }
 
-  @media (max-width:760px){
+  @media (max-width:980px){
     nav ul.links{
       position:absolute;top:100%;left:0;right:0;
       background:var(--cream);
@@ -527,37 +532,53 @@
   .menu-more a{text-decoration:none;font-weight:600;font-size:15px;padding:10px 18px;border-radius:30px;border:1.5px solid var(--rose-deep);color:var(--rose-deep);background:#fff;}
   .menu-more a:hover{background:var(--rose-deep);color:#fff;}
   .footer-links{margin-top:8px;display:flex;flex-wrap:wrap;justify-content:center;gap:4px 14px;}
+
+  /* ---------- Hindi typography ---------- */
+  html[lang="hi"] body, html[lang="hi"] h1, html[lang="hi"] h2, html[lang="hi"] h3, html[lang="hi"] .display{ font-family:'Noto Sans Devanagari','Inter',sans-serif; font-style:normal; }
+  html[lang="hi"] .eyebrow{ letter-spacing:0; text-transform:none; }
+
+  /* ---------- Install app ---------- */
+  footer .app{margin-top:12px;display:flex;flex-direction:column;align-items:center;gap:8px;}
+  .install-btn{font:600 14px 'Inter',sans-serif;color:var(--ink);background:#f9c9cf;border:0;border-radius:30px;padding:10px 18px;cursor:pointer;}
+  html[lang="fa"] .install-btn, html[lang="prs"] .install-btn, html[lang="ar"] .install-btn{font-family:'Vazirmatn',Tahoma,sans-serif;}
+  html[lang="hi"] .install-btn{font-family:'Noto Sans Devanagari','Inter',sans-serif;}
+  .ios-hint{margin:0;font-size:13px;max-width:36ch;opacity:.9;}
+
+  /* ---------- Fit on small screens ---------- */
+  .menu-cat-head{flex-wrap:wrap;row-gap:2px;}
+  .menu-cat-head h3{white-space:normal;min-width:0;}
+  nav ul.links select{max-width:100%;}
 </style>
 </head>
 <body>
 
 <header>
   <div class="header-strip"><div class="track">
-    <img src="baklava-rolls.webp" alt="">
-    <img src="swiss-roll-strawberry.webp" alt="">
-    <img src="ghormeh-sabzi.webp" alt="">
-    <img src="birthday-cake-strawberry.webp" alt="">
-    <img src="baghali-polo-mahicheh.webp" alt="">
-    <img src="chocolate-cake.webp" alt="">
-    <img src="fesenjan.webp" alt="" loading="lazy" decoding="async">
-    <img src="latifeh-cookies.webp" alt="Latifeh cookies with pistachio cream" loading="lazy" decoding="async">
-    <img src="pistachio-cookies.webp" alt="" loading="lazy" decoding="async">
-    <img src="kofteh-tabrizi.webp" alt="" loading="lazy" decoding="async">
-    <img src="thumbprint-cookies.webp" alt="" loading="lazy" decoding="async">
-    <img src="zereshk-polo-morgh.webp" alt="" loading="lazy" decoding="async">
+    <img src="strip-baklava-rolls.webp" alt="">
+    <img src="strip-swiss-roll-strawberry.webp" alt="">
+    <img src="strip-ghormeh-sabzi.webp" alt="">
+    <img src="strip-birthday-cake-strawberry.webp" alt="">
+    <img src="strip-baghali-polo-mahicheh.webp" alt="">
+    <img src="strip-chocolate-cake.webp" alt="">
+    <img src="strip-fesenjan.webp" alt="" loading="lazy" decoding="async">
+    <img src="strip-latifeh-cookies.webp" alt="Latifeh cookies with pistachio cream" loading="lazy" decoding="async">
+    <img src="strip-pistachio-cookies.webp" alt="" loading="lazy" decoding="async">
+    <img src="strip-kofteh-tabrizi.webp" alt="" loading="lazy" decoding="async">
+    <img src="strip-thumbprint-cookies.webp" alt="" loading="lazy" decoding="async">
+    <img src="strip-zereshk-polo-morgh.webp" alt="" loading="lazy" decoding="async">
     <!-- duplicate set for seamless loop -->
-    <img src="baklava-rolls.webp" alt="" loading="lazy" decoding="async">
-    <img src="swiss-roll-strawberry.webp" alt="" loading="lazy" decoding="async">
-    <img src="ghormeh-sabzi.webp" alt="" loading="lazy" decoding="async">
-    <img src="birthday-cake-strawberry.webp" alt="" loading="lazy" decoding="async">
-    <img src="baghali-polo-mahicheh.webp" alt="" loading="lazy" decoding="async">
-    <img src="chocolate-cake.webp" alt="" loading="lazy" decoding="async">
-    <img src="fesenjan.webp" alt="" loading="lazy" decoding="async">
-    <img src="latifeh-cookies.webp" alt="Latifeh cookies with pistachio cream" loading="lazy" decoding="async">
-    <img src="pistachio-cookies.webp" alt="" loading="lazy" decoding="async">
-    <img src="kofteh-tabrizi.webp" alt="" loading="lazy" decoding="async">
-    <img src="thumbprint-cookies.webp" alt="" loading="lazy" decoding="async">
-    <img src="zereshk-polo-morgh.webp" alt="" loading="lazy" decoding="async">
+    <img src="strip-baklava-rolls.webp" alt="" loading="lazy" decoding="async">
+    <img src="strip-swiss-roll-strawberry.webp" alt="" loading="lazy" decoding="async">
+    <img src="strip-ghormeh-sabzi.webp" alt="" loading="lazy" decoding="async">
+    <img src="strip-birthday-cake-strawberry.webp" alt="" loading="lazy" decoding="async">
+    <img src="strip-baghali-polo-mahicheh.webp" alt="" loading="lazy" decoding="async">
+    <img src="strip-chocolate-cake.webp" alt="" loading="lazy" decoding="async">
+    <img src="strip-fesenjan.webp" alt="" loading="lazy" decoding="async">
+    <img src="strip-latifeh-cookies.webp" alt="Latifeh cookies with pistachio cream" loading="lazy" decoding="async">
+    <img src="strip-pistachio-cookies.webp" alt="" loading="lazy" decoding="async">
+    <img src="strip-kofteh-tabrizi.webp" alt="" loading="lazy" decoding="async">
+    <img src="strip-thumbprint-cookies.webp" alt="" loading="lazy" decoding="async">
+    <img src="strip-zereshk-polo-morgh.webp" alt="" loading="lazy" decoding="async">
   </div></div>
   <nav class="wrap">
     <a href="#top" class="brand">
@@ -577,6 +598,7 @@
           <option value="prs">دری</option>
           <option value="ar">العربية</option>
           <option value="es">Español</option>
+          <option value="hi">हिन्दी</option>
         </select>
       </li>
     </ul>
@@ -679,31 +701,31 @@
         <div class="menu-cat">
           <div class="menu-cat-head"><h3>Cakes &amp; Rolls</h3><span class="fa fa-text">کیک و رولت</span></div>
           <div class="menu-items">
-            <div class="menu-card"><div class="photo" style="background-image:url('swiss-roll-strawberry.webp');"></div><div class="info"><div class="name-fa fa-text">رولت سوئیسی</div><div class="name">Swiss Roll<span class="unit">(tray)</span></div><div class="price">$35</div></div></div>
-            <div class="menu-card"><div class="photo" style="background-image:url('birthday-cake-strawberry.webp');"></div><div class="info"><div class="name-fa fa-text">کیک تولد متوسط</div><div class="name">Medium Birthday Cake</div><div class="price">$50</div></div></div>
-            <div class="menu-card"><div class="photo" style="background-image:url('breakfast-cake.webp');"></div><div class="info"><div class="name-fa fa-text">کیک صبحانه</div><div class="name">Breakfast Cake</div><div class="price">$25</div></div></div>
-            <div class="menu-card"><div class="photo" style="background-image:url('apple-pie.webp');"></div><div class="info"><div class="name-fa fa-text">پای سیب</div><div class="name">Apple Pie<span class="unit">(each)</span></div><div class="price">$3</div></div></div>
+            <div class="menu-card"><div class="photo" data-bg="swiss-roll-strawberry.webp"></div><div class="info"><div class="name-fa fa-text">رولت سوئیسی</div><div class="name">Swiss Roll<span class="unit">(tray)</span></div><div class="price">$35</div></div></div>
+            <div class="menu-card"><div class="photo" data-bg="birthday-cake-strawberry.webp"></div><div class="info"><div class="name-fa fa-text">کیک تولد متوسط</div><div class="name">Medium Birthday Cake</div><div class="price">$50</div></div></div>
+            <div class="menu-card"><div class="photo" data-bg="breakfast-cake.webp"></div><div class="info"><div class="name-fa fa-text">کیک صبحانه</div><div class="name">Breakfast Cake</div><div class="price">$25</div></div></div>
+            <div class="menu-card"><div class="photo" data-bg="apple-pie.webp"></div><div class="info"><div class="name-fa fa-text">پای سیب</div><div class="name">Apple Pie<span class="unit">(each)</span></div><div class="price">$3</div></div></div>
           </div>
         </div>
         <div class="menu-cat">
           <div class="menu-cat-head"><h3>Persian &amp; Middle Eastern Pastries</h3><span class="fa fa-text">شیرینی سنتی</span></div>
           <div class="menu-items">
-            <div class="menu-card"><div class="photo" style="background-image:url('baklava-rolls.webp');"></div><div class="info"><div class="name-fa fa-text">باقلوا</div><div class="name">Baklava<span class="unit">(tray)</span></div><div class="price">$35</div></div></div>
-            <div class="menu-card"><div class="photo" style="background-image:url('rice-cookies.webp');"></div><div class="info"><div class="name-fa fa-text">نان برنجی</div><div class="name">Persian Rice Cookies<span class="unit">(lbs)</span></div><div class="price">$25</div></div></div>
-            <div class="menu-card"><div class="photo" style="background-image:url('flower-jam-cookies.webp');"></div><div class="info"><div class="name-fa fa-text">نان نخودچی</div><div class="name">Chickpea Flour Cookies<span class="unit">(lbs)</span></div><div class="price">$25</div></div></div>
-            <div class="menu-card"><div class="photo" style="background-image:url('latifeh-cookies.webp');"></div><div class="info"><div class="name-fa fa-text">شیرینی لطیفه</div><div class="name">Latifeh Cookies<span class="unit">(lbs)</span></div><div class="price">$35</div></div></div>
-            <div class="menu-card"><div class="photo" style="background-image:url('pistachio-cookies.webp');"></div><div class="info"><div class="name-fa fa-text">قرابیه تبریز</div><div class="name">Tabriz Ghorabiyeh<span class="unit">(lbs)</span></div><div class="price">$30</div></div></div>
-            <div class="menu-card"><div class="photo" style="background-image:url('coconut-cookies.webp');"></div><div class="info"><div class="name-fa fa-text">شیرینی نارگیلی</div><div class="name">Coconut Cookies<span class="unit">(lbs)</span></div><div class="price">$25</div></div></div>
+            <div class="menu-card"><div class="photo" data-bg="baklava-rolls.webp"></div><div class="info"><div class="name-fa fa-text">باقلوا</div><div class="name">Baklava<span class="unit">(tray)</span></div><div class="price">$35</div></div></div>
+            <div class="menu-card"><div class="photo" data-bg="rice-cookies.webp"></div><div class="info"><div class="name-fa fa-text">نان برنجی</div><div class="name">Persian Rice Cookies<span class="unit">(lbs)</span></div><div class="price">$25</div></div></div>
+            <div class="menu-card"><div class="photo" data-bg="flower-jam-cookies.webp"></div><div class="info"><div class="name-fa fa-text">نان نخودچی</div><div class="name">Chickpea Flour Cookies<span class="unit">(lbs)</span></div><div class="price">$25</div></div></div>
+            <div class="menu-card"><div class="photo" data-bg="latifeh-cookies.webp"></div><div class="info"><div class="name-fa fa-text">شیرینی لطیفه</div><div class="name">Latifeh Cookies<span class="unit">(lbs)</span></div><div class="price">$35</div></div></div>
+            <div class="menu-card"><div class="photo" data-bg="pistachio-cookies.webp"></div><div class="info"><div class="name-fa fa-text">قرابیه تبریز</div><div class="name">Tabriz Ghorabiyeh<span class="unit">(lbs)</span></div><div class="price">$30</div></div></div>
+            <div class="menu-card"><div class="photo" data-bg="coconut-cookies.webp"></div><div class="info"><div class="name-fa fa-text">شیرینی نارگیلی</div><div class="name">Coconut Cookies<span class="unit">(lbs)</span></div><div class="price">$25</div></div></div>
           </div>
         </div>
         <div class="menu-cat">
           <div class="menu-cat-head"><h3>Cookies &amp; Everyday Treats</h3><span class="fa fa-text">کلوچه</span></div>
           <div class="menu-items">
-            <div class="menu-card"><div class="photo" style="background-image:url('thumbprint-cookies.webp');"></div><div class="info"><div class="name-fa fa-text">کوکی مربایی</div><div class="name">Thumbprint Cookies<span class="unit">(lbs)</span></div><div class="price">$25</div></div></div>
-            <div class="menu-card"><div class="photo" style="background-image:url('butter-cookies-chocolate.webp');"></div><div class="info"><div class="name-fa fa-text">کوکی کره‌ای با روکش شکلات</div><div class="name">Butter Cookies, Chocolate Dipped<span class="unit">(lbs)</span></div><div class="price">$25</div></div></div>
-            <div class="menu-card"><div class="photo" style="background-image:url('napoleon-pastry.webp');"></div><div class="info"><div class="name-fa fa-text">شیرینی ناپلئون</div><div class="name">Napoleon Cookies<span class="unit">(each, min. order 5)</span></div><div class="price">$6</div></div></div>
-            <div class="menu-card"><div class="photo" style="background-image:url('cream-puffs.webp');"></div><div class="info"><div class="name-fa fa-text">شیرینی خامه‌ای</div><div class="name">Shirini Khamei<span class="unit">(lbs)</span></div><div class="price">$35</div></div></div>
-            <div class="menu-card"><div class="photo" style="background-image:url('piroshki.webp');"></div><div class="info"><div class="name-fa fa-text">پیراشکی</div><div class="name">Piroshki<span class="unit">(each, min. order 5)</span></div><div class="price">$5</div></div></div>
+            <div class="menu-card"><div class="photo" data-bg="thumbprint-cookies.webp"></div><div class="info"><div class="name-fa fa-text">کوکی مربایی</div><div class="name">Thumbprint Cookies<span class="unit">(lbs)</span></div><div class="price">$25</div></div></div>
+            <div class="menu-card"><div class="photo" data-bg="butter-cookies-chocolate.webp"></div><div class="info"><div class="name-fa fa-text">کوکی کره‌ای با روکش شکلات</div><div class="name">Butter Cookies, Chocolate Dipped<span class="unit">(lbs)</span></div><div class="price">$25</div></div></div>
+            <div class="menu-card"><div class="photo" data-bg="napoleon-pastry.webp"></div><div class="info"><div class="name-fa fa-text">شیرینی ناپلئون</div><div class="name">Napoleon Cookies<span class="unit">(each, min. order 5)</span></div><div class="price">$6</div></div></div>
+            <div class="menu-card"><div class="photo" data-bg="cream-puffs.webp"></div><div class="info"><div class="name-fa fa-text">شیرینی خامه‌ای</div><div class="name">Shirini Khamei<span class="unit">(lbs)</span></div><div class="price">$35</div></div></div>
+            <div class="menu-card"><div class="photo" data-bg="piroshki.webp"></div><div class="info"><div class="name-fa fa-text">پیراشکی</div><div class="name">Piroshki<span class="unit">(each, min. order 5)</span></div><div class="price">$5</div></div></div>
           </div>
         </div>
         <div class="menu-note">Text us a photo of what you have in mind. Text to order: <a href="sms:+18327998204" style="color:var(--rose-deep);font-weight:600;">(832) 799-8204</a></div>
@@ -715,19 +737,19 @@
           <div class="menu-cat-head"><h3>Khoresht — Stews</h3><span class="fa fa-text">خورش</span></div>
           <div class="menu-items">
             <div class="menu-card"><div class="photo no-photo"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#9c4f56" stroke-width="1.5"><path d="M4 19h16M4 19c0-4 2-6 8-6s8 2 8 6M9 13V7a3 3 0 0 1 6 0v6"/></svg></div><div class="info"><div class="name-fa fa-text">قیمه (بادمجان یا سیب‌زمینی)</div><div class="name">Gheymeh<span class="unit">(Bademjan or Potatoes)</span></div><div class="price">$16</div></div></div>
-            <div class="menu-card"><div class="photo" style="background-image:url('ghormeh-sabzi.webp');"></div><div class="info"><div class="name-fa fa-text">قورمه سبزی</div><div class="name">Ghormeh Sabzi</div><div class="price">$16</div></div></div>
-            <div class="menu-card"><div class="photo" style="background-image:url('fesenjan.webp');"></div><div class="info"><div class="name-fa fa-text">فسنجان</div><div class="name">Fesenjan</div><div class="price">$16</div></div></div>
+            <div class="menu-card"><div class="photo" data-bg="ghormeh-sabzi.webp"></div><div class="info"><div class="name-fa fa-text">قورمه سبزی</div><div class="name">Ghormeh Sabzi</div><div class="price">$16</div></div></div>
+            <div class="menu-card"><div class="photo" data-bg="fesenjan.webp"></div><div class="info"><div class="name-fa fa-text">فسنجان</div><div class="name">Fesenjan</div><div class="price">$16</div></div></div>
             <div class="menu-card"><div class="photo no-photo"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#9c4f56" stroke-width="1.5"><path d="M4 19h16M4 19c0-4 2-6 8-6s8 2 8 6M9 13V7a3 3 0 0 1 6 0v6"/></svg></div><div class="info"><div class="name-fa fa-text">خورش کرفس</div><div class="name">Khoresht Karafs</div><div class="price">$16</div></div></div>
-            <div class="menu-card"><div class="photo" style="background-image:url('khoresht-bademjan.webp');"></div><div class="info"><div class="name-fa fa-text">خورش بادمجان</div><div class="name">Khoresht Bademjan</div><div class="price">$16</div></div></div>
+            <div class="menu-card"><div class="photo" data-bg="khoresht-bademjan.webp"></div><div class="info"><div class="name-fa fa-text">خورش بادمجان</div><div class="name">Khoresht Bademjan</div><div class="price">$16</div></div></div>
           </div>
         </div>
         <div class="menu-cat">
           <div class="menu-cat-head"><h3>Polo — Rice Dishes</h3><span class="fa fa-text">پلو</span></div>
           <div class="menu-items">
-            <div class="menu-card"><div class="photo" style="background-image:url('baghali-polo-mahicheh.webp');"></div><div class="info"><div class="name-fa fa-text">باقالی پلو با ماهیچه</div><div class="name">Baghali Polo ba Mahicheh</div><div class="price">$22</div></div></div>
+            <div class="menu-card"><div class="photo" data-bg="baghali-polo-mahicheh.webp"></div><div class="info"><div class="name-fa fa-text">باقالی پلو با ماهیچه</div><div class="name">Baghali Polo ba Mahicheh</div><div class="price">$22</div></div></div>
             <div class="menu-card"><div class="photo no-photo"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#9c4f56" stroke-width="1.5"><path d="M4 19h16M4 19c0-4 2-6 8-6s8 2 8 6M9 13V7a3 3 0 0 1 6 0v6"/></svg></div><div class="info"><div class="name-fa fa-text">باقالی پلو با مرغ</div><div class="name">Baghali Polo ba Morgh</div><div class="price">$15</div></div></div>
             <div class="menu-card"><div class="photo no-photo"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#9c4f56" stroke-width="1.5"><path d="M4 19h16M4 19c0-4 2-6 8-6s8 2 8 6M9 13V7a3 3 0 0 1 6 0v6"/></svg></div><div class="info"><div class="name-fa fa-text">هویج پلو با مرغ</div><div class="name">Havij Polo ba Morgh</div><div class="price">$16</div></div></div>
-            <div class="menu-card"><div class="photo" style="background-image:url('zereshk-polo-morgh.webp');"></div><div class="info"><div class="name-fa fa-text">زرشک پلو</div><div class="name">Zereshk Polo</div><div class="price">$14</div></div></div>
+            <div class="menu-card"><div class="photo" data-bg="zereshk-polo-morgh.webp"></div><div class="info"><div class="name-fa fa-text">زرشک پلو</div><div class="name">Zereshk Polo</div><div class="price">$14</div></div></div>
             <div class="menu-card"><div class="photo no-photo"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#9c4f56" stroke-width="1.5"><path d="M4 19h16M4 19c0-4 2-6 8-6s8 2 8 6M9 13V7a3 3 0 0 1 6 0v6"/></svg></div><div class="info"><div class="name-fa fa-text">لوبیا پلو</div><div class="name">Lobia Polo</div><div class="price">$15</div></div></div>
             <div class="menu-card"><div class="photo no-photo"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#9c4f56" stroke-width="1.5"><path d="M4 19h16M4 19c0-4 2-6 8-6s8 2 8 6M9 13V7a3 3 0 0 1 6 0v6"/></svg></div><div class="info"><div class="name-fa fa-text">عدس پلو</div><div class="name">Adas Polo</div><div class="price">$12</div></div></div>
           </div>
@@ -735,7 +757,7 @@
         <div class="menu-cat">
           <div class="menu-cat-head"><h3>Entrées</h3><span class="fa fa-text">غذای اصلی</span></div>
           <div class="menu-items">
-            <div class="menu-card"><div class="photo" style="background-image:url('kofteh-tabrizi.webp');"></div><div class="info"><div class="name-fa fa-text">کوفته تبریزی</div><div class="name">Kofteh Tabrizi</div><div class="price">$18</div></div></div>
+            <div class="menu-card"><div class="photo" data-bg="kofteh-tabrizi.webp"></div><div class="info"><div class="name-fa fa-text">کوفته تبریزی</div><div class="name">Kofteh Tabrizi</div><div class="price">$18</div></div></div>
             <div class="menu-card"><div class="photo no-photo"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#9c4f56" stroke-width="1.5"><path d="M4 19h16M4 19c0-4 2-6 8-6s8 2 8 6M9 13V7a3 3 0 0 1 6 0v6"/></svg></div><div class="info"><div class="name-fa fa-text">لازانیا</div><div class="name">Lasagna</div><div class="price">$18</div></div></div>
           </div>
         </div>
@@ -744,15 +766,15 @@
           <div class="menu-items">
             <div class="menu-card"><div class="photo no-photo"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#9c4f56" stroke-width="1.5"><path d="M4 19h16M4 19c0-4 2-6 8-6s8 2 8 6M9 13V7a3 3 0 0 1 6 0v6"/></svg></div><div class="info"><div class="name-fa fa-text">دلمه برگ مو</div><div class="name">Dolmeh Barg<span class="unit">(8 pcs)</span></div><div class="price">$10</div></div></div>
             <div class="menu-card"><div class="photo no-photo"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#9c4f56" stroke-width="1.5"><path d="M4 19h16M4 19c0-4 2-6 8-6s8 2 8 6M9 13V7a3 3 0 0 1 6 0v6"/></svg></div><div class="info"><div class="name-fa fa-text">کشک بادمجان</div><div class="name">Kashkeh Bademjan</div><div class="price">$12</div></div></div>
-            <div class="menu-card"><div class="photo" style="background-image:url('mirza-ghasemi.webp');"></div><div class="info"><div class="name-fa fa-text">میرزا قاسمی</div><div class="name">Mirza Ghasemi</div><div class="price">$12</div></div></div>
-            <div class="menu-card"><div class="photo" style="background-image:url('salad-olivier.webp');"></div><div class="info"><div class="name-fa fa-text">سالاد الویه</div><div class="name">Salad Olivier</div><div class="price">$10</div></div></div>
-            <div class="menu-card"><div class="photo" style="background-image:url('kashke-bademjan.webp');"></div><div class="info"><div class="name-fa fa-text">زیتون پرورده</div><div class="name">Zeytoon Parvardeh<span class="unit">(1 lb)</span></div><div class="price">$16</div></div></div>
+            <div class="menu-card"><div class="photo" data-bg="mirza-ghasemi.webp"></div><div class="info"><div class="name-fa fa-text">میرزا قاسمی</div><div class="name">Mirza Ghasemi</div><div class="price">$12</div></div></div>
+            <div class="menu-card"><div class="photo" data-bg="salad-olivier.webp"></div><div class="info"><div class="name-fa fa-text">سالاد الویه</div><div class="name">Salad Olivier</div><div class="price">$10</div></div></div>
+            <div class="menu-card"><div class="photo" data-bg="kashke-bademjan.webp"></div><div class="info"><div class="name-fa fa-text">زیتون پرورده</div><div class="name">Zeytoon Parvardeh<span class="unit">(1 lb)</span></div><div class="price">$16</div></div></div>
           </div>
         </div>
         <div class="menu-cat">
           <div class="menu-cat-head"><h3>Soup</h3><span class="fa fa-text">آش و سوپ</span></div>
           <div class="menu-items">
-            <div class="menu-card"><div class="photo" style="background-image:url('ash-reshteh.webp');"></div><div class="info"><div class="name-fa fa-text">آش رشته</div><div class="name">Ash Reshteh</div><div class="price">$7</div></div></div>
+            <div class="menu-card"><div class="photo" data-bg="ash-reshteh.webp"></div><div class="info"><div class="name-fa fa-text">آش رشته</div><div class="name">Ash Reshteh</div><div class="price">$7</div></div></div>
             <div class="menu-card"><div class="photo no-photo"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#9c4f56" stroke-width="1.5"><path d="M4 19h16M4 19c0-4 2-6 8-6s8 2 8 6M9 13V7a3 3 0 0 1 6 0v6"/></svg></div><div class="info"><div class="name-fa fa-text">سوپ</div><div class="name">Soup</div><div class="price">$5</div></div></div>
           </div>
         </div>
@@ -783,25 +805,25 @@
         <p data-i18n="gallery_p">Browse a selection of our freshly baked cakes, pastries, and sweet creations made with love.</p>
       </div>
       <div class="gallery-grid">
-        <div class="g-card g-photo" style="background-image:url('swiss-roll-strawberry.webp');"><span>Swiss Roll</span></div>
-        <div class="g-card g-photo" style="background-image:url('birthday-cake-strawberry.webp');"><span>Celebration Cake</span></div>
-        <div class="g-card g-photo" style="background-image:url('pistachio-cookies.webp');"><span>Ghorabiyeh Tabrizi</span></div>
-        <div class="g-card g-photo" style="background-image:url('butter-cookies-chocolate.webp');"><span>Chocolate-Dipped Butter Cookies</span></div>
-        <div class="g-card g-photo" style="background-image:url('chocolate-cake.webp');"><span>Custom Cakes</span></div>
-        <div class="g-card g-photo" style="background-image:url('baklava-rolls.webp');"><span>Baklava</span></div>
-        <div class="g-card g-photo" style="background-image:url('pistachio-cream-cookies.webp');"><span>Pistachio Cream Cookies</span></div>
-        <div class="g-card g-photo" style="background-image:url('cake-berry-drip.webp');"><span>Blueberry Cake</span></div>
-        <div class="g-card g-photo" style="background-image:url('cake-blue-ombre-raspberry.webp');"><span>Raspberry Ombre Cake</span></div>
-        <div class="g-card g-photo" style="background-image:url('cake-raspberry-cone.webp');"><span>Raspberry Cone Cake</span></div>
-        <div class="g-card g-photo" style="background-image:url('chocolate-roulade.webp');"><span>Chocolate Roulade</span></div>
-        <div class="g-card g-photo" style="background-image:url('cookie-assortment.webp');"><span>Cookie Assortment</span></div>
-        <div class="g-card g-photo" style="background-image:url('cream-roll.webp');"><span>Cream Roll</span></div>
-        <div class="g-card g-photo" style="background-image:url('flower-jam-cookies.webp');"><span>Shirini Nokhodi</span></div>
-        <div class="g-card g-photo" style="background-image:url('napoleon-cream-puff.webp');"><span>Napoleon &amp; Cream Puffs</span></div>
-        <div class="g-card g-photo" style="background-image:url('cream-puffs.webp');"><span>Shirini Khamei</span></div>
-        <div class="g-card g-photo" style="background-image:url('napoleon-pastry.webp');"><span>Napoleon Pastry</span></div>
-        <div class="g-card g-photo" style="background-image:url('rice-cookies.webp');"><span>Nan Berenji &amp; Nan Nokhodchi</span></div>
-        <div class="g-card g-photo" style="background-image:url('piroshki.webp');"><span>Piroshki</span></div>
+        <div class="g-card g-photo" data-bg="swiss-roll-strawberry.webp"><span>Swiss Roll</span></div>
+        <div class="g-card g-photo" data-bg="birthday-cake-strawberry.webp"><span>Celebration Cake</span></div>
+        <div class="g-card g-photo" data-bg="pistachio-cookies.webp"><span>Ghorabiyeh Tabrizi</span></div>
+        <div class="g-card g-photo" data-bg="butter-cookies-chocolate.webp"><span>Chocolate-Dipped Butter Cookies</span></div>
+        <div class="g-card g-photo" data-bg="chocolate-cake.webp"><span>Custom Cakes</span></div>
+        <div class="g-card g-photo" data-bg="baklava-rolls.webp"><span>Baklava</span></div>
+        <div class="g-card g-photo" data-bg="pistachio-cream-cookies.webp"><span>Pistachio Cream Cookies</span></div>
+        <div class="g-card g-photo" data-bg="cake-berry-drip.webp"><span>Blueberry Cake</span></div>
+        <div class="g-card g-photo" data-bg="cake-blue-ombre-raspberry.webp"><span>Raspberry Ombre Cake</span></div>
+        <div class="g-card g-photo" data-bg="cake-raspberry-cone.webp"><span>Raspberry Cone Cake</span></div>
+        <div class="g-card g-photo" data-bg="chocolate-roulade.webp"><span>Chocolate Roulade</span></div>
+        <div class="g-card g-photo" data-bg="cookie-assortment.webp"><span>Cookie Assortment</span></div>
+        <div class="g-card g-photo" data-bg="cream-roll.webp"><span>Cream Roll</span></div>
+        <div class="g-card g-photo" data-bg="flower-jam-cookies.webp"><span>Shirini Nokhodi</span></div>
+        <div class="g-card g-photo" data-bg="napoleon-cream-puff.webp"><span>Napoleon &amp; Cream Puffs</span></div>
+        <div class="g-card g-photo" data-bg="cream-puffs.webp"><span>Shirini Khamei</span></div>
+        <div class="g-card g-photo" data-bg="napoleon-pastry.webp"><span>Napoleon Pastry</span></div>
+        <div class="g-card g-photo" data-bg="rice-cookies.webp"><span>Nan Berenji &amp; Nan Nokhodchi</span></div>
+        <div class="g-card g-photo" data-bg="piroshki.webp"><span>Piroshki</span></div>
       </div>
 
       <div class="section-head" style="margin-top:54px;">
@@ -809,16 +831,16 @@
         <h2 style="font-size:clamp(24px,3.4vw,32px);">From Our Catering Kitchen</h2>
       </div>
       <div class="gallery-grid">
-        <div class="g-card g-photo" style="background-image:url('ghormeh-sabzi.webp');"><span>Ghormeh Sabzi</span></div>
-        <div class="g-card g-photo" style="background-image:url('zereshk-polo-morgh.webp');"><span>Zereshk Polo ba Morgh</span></div>
-        <div class="g-card g-photo" style="background-image:url('fesenjan.webp');"><span>Fesenjan</span></div>
-        <div class="g-card g-photo" style="background-image:url('khoresht-bademjan.webp');"><span>Khoresht Bademjan</span></div>
-        <div class="g-card g-photo" style="background-image:url('baghali-polo-mahicheh.webp');"><span>Baghali Polo ba Mahicheh</span></div>
-        <div class="g-card g-photo" style="background-image:url('kofteh-tabrizi.webp');"><span>Kofteh Tabrizi</span></div>
-        <div class="g-card g-photo" style="background-image:url('mirza-ghasemi.webp');"><span>Mirza Ghasemi</span></div>
-        <div class="g-card g-photo" style="background-image:url('kashke-bademjan.webp');"><span>Zeytoon Parvardeh</span></div>
-        <div class="g-card g-photo" style="background-image:url('ash-reshteh.webp');"><span>Ash Reshteh</span></div>
-        <div class="g-card g-photo" style="background-image:url('salad-olivier.webp');"><span>Salad Olivier</span></div>
+        <div class="g-card g-photo" data-bg="ghormeh-sabzi.webp"><span>Ghormeh Sabzi</span></div>
+        <div class="g-card g-photo" data-bg="zereshk-polo-morgh.webp"><span>Zereshk Polo ba Morgh</span></div>
+        <div class="g-card g-photo" data-bg="fesenjan.webp"><span>Fesenjan</span></div>
+        <div class="g-card g-photo" data-bg="khoresht-bademjan.webp"><span>Khoresht Bademjan</span></div>
+        <div class="g-card g-photo" data-bg="baghali-polo-mahicheh.webp"><span>Baghali Polo ba Mahicheh</span></div>
+        <div class="g-card g-photo" data-bg="kofteh-tabrizi.webp"><span>Kofteh Tabrizi</span></div>
+        <div class="g-card g-photo" data-bg="mirza-ghasemi.webp"><span>Mirza Ghasemi</span></div>
+        <div class="g-card g-photo" data-bg="kashke-bademjan.webp"><span>Zeytoon Parvardeh</span></div>
+        <div class="g-card g-photo" data-bg="ash-reshteh.webp"><span>Ash Reshteh</span></div>
+        <div class="g-card g-photo" data-bg="salad-olivier.webp"><span>Salad Olivier</span></div>
       </div>
       <div class="gallery-note">Follow <a href="https://www.instagram.com/ellysbakery_tx/" target="_blank" rel="noopener" style="color:var(--rose-deep);font-weight:600;">@ellysbakery_tx</a> on Instagram for our latest bakes and daily orders.</div>
     </div>
@@ -964,6 +986,7 @@
   <div class="wrap">
     Elly's Bakery LLC &middot; Katy, Texas &middot; <a href="tel:+18327998204">(832) 799-8204</a> &middot; <a href="https://www.instagram.com/ellysbakery_tx/" target="_blank" rel="noopener">@ellysbakery_tx</a>
     <div class="footer-links"><a href="custom-cakes-katy.html" data-i18n="more_cakes">Custom Cakes →</a><a href="persian-catering-katy.html" data-i18n="more_catering">Persian Catering →</a><a href="persian-pastries-katy.html" data-i18n="more_pastries">Persian Pastries →</a><a href="card.html">Card</a></div>
+    <div class="app"><button id="installApp" class="install-btn" type="button" hidden data-i18n="install_app">Install our app</button><p id="iosHint" class="ios-hint" hidden data-i18n="install_ios">On iPhone: tap the Share button, then “Add to Home Screen”.</p></div>
     <div style="margin-top:6px;opacity:.7;">&copy; <span id="year"></span> Elly's Bakery. Home bakery &amp; Persian catering.</div>
   </div>
 </footer>
@@ -992,6 +1015,7 @@
 <script>
 const translations = {
   en: {
+    install_app:"Install our app", install_ios:"On iPhone: tap the Share button, then “Add to Home Screen”.",
     more_cakes:"Custom Cakes →", more_catering:"Persian Catering →", more_pastries:"Persian Pastries →",
     nav_menu:"Menu", nav_gallery:"Gallery", nav_reviews:"Reviews", nav_order2:"How to Order", nav_order:"Order Now",
     hero_h1:'Home-baked treats &amp; <span>Persian</span> feasts, made in Katy',
@@ -1019,6 +1043,7 @@ const translations = {
     contact_p:"Text us your order, or send a DM on Instagram. We'll confirm details and a pickup time in Katy, TX."
   },
   fa: {
+    install_app:"نصب اپ الیز بیکری", install_ios:"در آیفون: دکمهٔ Share را بزنید، بعد «Add to Home Screen» را انتخاب کنید.",
     more_cakes:"کیک سفارشی ←", more_catering:"کترینگ ایرانی ←", more_pastries:"شیرینی ایرانی ←",
     nav_menu:"منو", nav_gallery:"گالری", nav_reviews:"نظرات", nav_order2:"نحوهٔ سفارش", nav_order:"سفارش دهید",
     hero_h1:'سفارش آنلاین و تازه؛ شیرینی‌های خانگی و کترینگ اصیل غذای <span>ایرانی</span> در کیتی، تگزاس',
@@ -1046,10 +1071,11 @@ const translations = {
     contact_p:"سفارشتان را پیامک کنید یا در اینستاگرام دایرکت بدهید. جزئیات و زمان تحویل در کیتی را تأیید می‌کنیم."
   },
   prs: {
+    install_app:"نصب اپ الیز بیکری", install_ios:"در آیفون: دکمهٔ Share را بزنید، بعد «Add to Home Screen» را انتخاب کنید.",
     more_cakes:"کیک فرمایشی ←", more_catering:"کترینگ ایرانی ←", more_pastries:"شیرینی ایرانی ←",
     nav_menu:"منو", nav_gallery:"گالری", nav_reviews:"نظریات", nav_order2:"طرز سفارش", nav_order:"سفارش بدهید",
     hero_h1:'سفارش آنلاین و تازه؛ شیرینی‌های خانگی و کترینگ اصیل غذای <span>ایرانی</span> در کیتی، تکساس',
-    hero_sub:"الیز بیکری یک نانوایی خانگی و آشپزخانهٔ کترینگ در کیتی، تکساس است — کیک و شیرینی سفارشی در کنار غذاهای کامل سنتی ایرانی که تازه و بعد از سفارش شما تهیه می‌شود. ما آماده می‌کنیم، شما تسلیم می‌شوید.",
+    hero_sub:"الیز بیکری یک نانوایی خانگی و آشپزخانهٔ کترینگ در کیتی، تکساس است — کیک و شیرینی سفارشی در کنار غذاهای کامل سنتی ایرانی که تازه و بعد از سفارش شما تهیه می‌شود. ما آماده می‌کنیم، شما تسلیم می‌گیرید.",
     badge1_h:"نانوایی خانگی، تازه‌پخت", badge1_p:"کیک، شیرینی و شیرینی‌های ایرانی برای هر سفارش در مقدار کم و تازه پخته می‌شود.",
     badge2_h:"موقعیت در کیتی، تکساس", badge2_p:"تنها تسلیمی حضوری، همین‌جا در کیتی — رسانیدن نداریم، تنها تازه از آشپزخانهٔ ما.",
     badge3_h:"سفارش از طریق پیام یا دایرکت", badge3_p:"پرداخت آنلاین نداریم — تنها سفارش و وقت تسلیمی خود را برای ما پیام کنید.",
@@ -1058,7 +1084,7 @@ const translations = {
     about_p:"الیز بیکری از یک آشپزخانهٔ خانگی در کیتی آغاز شد و سفارش‌ها را یکی‌یکی آماده می‌کرد. امروز کیک‌های محفل، کلچه و شیرینی‌های رول‌شده را در کنار یک منوی کامل از غذاهای سنتی ایرانی می‌پزیم — از پلو زعفرانی تا قورمه‌های آهسته‌پز — تا بتوانید دسر و نان چاشت را از یک جا سفارش دهید.",
     feat1_h:"تهیه بعد از سفارش", feat1_p:"— هر کیک، تبنگ و دیگ بعد از سفارش شما پخته می‌شود، نه از پیش روی الماری.",
     feat2_h:"دو منو، یک آشپزخانه", feat2_p:"— شیرینی‌های سبک غربی و غذاهای خانگی سنتی ایرانی.",
-    feat3_h:"سفارش ساده", feat3_p:"— برای ما پیام بفرستید یا در انستاگرام دایرکت کنید، بعد به کیتی بیایید و تسلیم شوید.",
+    feat3_h:"سفارش ساده", feat3_p:"— برای ما پیام بفرستید یا در انستاگرام دایرکت کنید، بعد به کیتی بیایید و سفارش خود را تسلیم بگیرید.",
     menu_eyebrow:"چه می‌پزیم", menu_h2:"منوی ما",
     menu_p:"همه چیز تازه و بعد از سفارش در مقدار کم تهیه می‌شود — شیرینی‌های محبوب نانوایی و یک منوی کامل سنتی ایرانی برای کترینگ.",
     tab_bakery:"نانوایی و شیرینی", tab_persian:"منوی سنتی ایرانی",
@@ -1073,6 +1099,7 @@ const translations = {
     contact_p:"سفارش خود را پیام کنید یا در انستاگرام دایرکت بفرستید. جزئیات و وقت تسلیمی در کیتی را تأیید می‌کنیم."
   },
   ar: {
+    install_app:"ثبّت تطبيقنا", install_ios:"على الآيفون: اضغط زر المشاركة ثم «إضافة إلى الشاشة الرئيسية».",
     more_cakes:"كعك حسب الطلب ←", more_catering:"تموين فارسي ←", more_pastries:"حلويات فارسية ←",
     nav_menu:"القائمة", nav_gallery:"معرض الصور", nav_reviews:"التقييمات", nav_order2:"طريقة الطلب", nav_order:"اطلب الآن",
     hero_h1:'اطلب أونلاين: حلويات منزلية طازجة وتموين أطعمة <span>إيرانية</span> أصيلة في كاتي، تكساس',
@@ -1100,6 +1127,7 @@ const translations = {
     contact_p:"أرسل لنا طلبك برسالة نصية أو دايركت عبر إنستغرام. سنؤكد التفاصيل ووقت الاستلام في كاتي."
   },
   es: {
+    install_app:"Instala nuestra app", install_ios:"En iPhone: toca Compartir y luego “Agregar a inicio”.",
     more_cakes:"Pasteles personalizados →", more_catering:"Catering persa →", more_pastries:"Pastelitos persas →",
     nav_menu:"Menú", nav_gallery:"Galería", nav_reviews:"Reseñas", nav_order2:"Cómo Pedir", nav_order:"Pedir Ahora",
     hero_h1:'Dulces caseros y banquetes <span>persas</span>, hechos en Katy',
@@ -1125,6 +1153,34 @@ const translations = {
     step3_h:"Recoge en Katy, TX", step3_p:"Pasa a recoger tu pedido fresco — actualmente no ofrecemos entrega.",
     contact_eyebrow:"Contáctanos", contact_h2:"¿Listo para pedir?",
     contact_p:"Envíanos tu pedido por mensaje o mándanos un DM por Instagram. Confirmaremos los detalles y la hora de recogida en Katy, TX."
+  },
+  hi: {
+    install_app:"हमारा ऐप इंस्टॉल करें", install_ios:"iPhone पर: Share बटन दबाएं, फिर “Add to Home Screen” चुनें।",
+    more_cakes:"कस्टम केक →", more_catering:"फ़ारसी केटरिंग →", more_pastries:"फ़ारसी मिठाइयाँ →",
+    nav_menu:"मेन्यू", nav_gallery:"गैलरी", nav_reviews:"रिव्यू", nav_order2:"ऑर्डर कैसे करें", nav_order:"अभी ऑर्डर करें",
+    hero_h1:'घर पर बनी मिठाइयाँ और <span>फ़ारसी</span> दावत, केटी में',
+    hero_sub:"Elly's Bakery केटी, टेक्सास में एक होम बेकरी और केटरिंग रसोई है — कस्टम केक और पेस्ट्री के साथ पूरा पारंपरिक फ़ारसी खाना, ऑर्डर पर ताज़ा बनाया जाता है। हम बनाते हैं, आप पिकअप करते हैं।",
+    badge1_h:"होम बेकरी, ताज़ा बना", badge1_p:"कस्टम केक, पेस्ट्री और फ़ारसी मिठाइयाँ हर ऑर्डर के लिए थोड़ी मात्रा में बनाई जाती हैं।",
+    badge2_h:"केटी, टेक्सास में", badge2_p:"केवल पिकअप, यहीं केटी में — डिलीवरी नहीं, बस हमारी रसोई से ताज़ा।",
+    badge3_h:"मैसेज या DM से ऑर्डर", badge3_p:"ऑनलाइन पेमेंट नहीं — बस अपना ऑर्डर और पिकअप का समय मैसेज करें।",
+    cta_dm:"Instagram पर मैसेज करें", cta_text:"मैसेज (832) 799-8204", cta_call:"कॉल करें (832) 799-8204",
+    about_eyebrow:"हमारी कहानी", about_h2:"दो रसोई, एक दस्तरख़्वान",
+    about_p:"Elly's Bakery की शुरुआत केटी की एक घरेलू रसोई से हुई, जहाँ एक-एक केक का ऑर्डर पूरा किया जाता था। आज हम जश्न के केक, कुकीज़ और रोल पेस्ट्री के साथ पारंपरिक फ़ारसी व्यंजनों का पूरा मेन्यू बनाते हैं — केसर वाले चावल से लेकर धीमी आंच पर पके खोरेश तक — ताकि आप मीठा और खाना एक ही जगह से ऑर्डर कर सकें।",
+    feat1_h:"ऑर्डर पर बना", feat1_p:"— हर केक, ट्रे और बर्तन आपके ऑर्डर के बाद बनाया या पकाया जाता है, पहले से रखा हुआ नहीं।",
+    feat2_h:"दो मेन्यू, एक रसोई", feat2_p:"— पश्चिमी बेकरी की पसंदीदा चीज़ें और पारंपरिक फ़ारसी घर का खाना।",
+    feat3_h:"आसान ऑर्डर", feat3_p:"— हमें मैसेज करें या Instagram पर DM करें, फिर केटी आकर पिकअप करें।",
+    menu_eyebrow:"हम क्या बनाते हैं", menu_h2:"हमारा मेन्यू",
+    menu_p:"सब कुछ ऑर्डर पर थोड़ी मात्रा में ताज़ा बनाया जाता है — बेकरी की पसंदीदा चीज़ें और केटरिंग के लिए पूरा पारंपरिक फ़ारसी मेन्यू।",
+    tab_bakery:"बेकरी और मिठाइयाँ", tab_persian:"पारंपरिक फ़ारसी मेन्यू",
+    gallery_eyebrow:"हमारी रसोई से", gallery_h2:"हमारी बेकिंग की एक झलक",
+    gallery_p:"प्यार से बनाए गए हमारे ताज़ा केक, पेस्ट्री और मिठाइयों की कुछ तस्वीरें देखें।",
+    reviews_eyebrow:"ग्राहक क्या कहते हैं", reviews_h2:"रिव्यू",
+    order_eyebrow:"आसान और सीधा", order_h2:"ऑर्डर कैसे करें",
+    step1_h:"हमें मैसेज करें", step1_p:"मैसेज या Instagram DM में बताएं कि आपको क्या चाहिए और कब।",
+    step2_h:"हम विवरण पक्का करते हैं", step2_p:"हम आपका ऑर्डर, कोई खास डिज़ाइन या व्यंजन, और पिकअप की तारीख पक्की करते हैं।",
+    step3_h:"केटी, टेक्सास में पिकअप", step3_p:"अपना ताज़ा ऑर्डर लेने आएं — अभी हम डिलीवरी नहीं करते।",
+    contact_eyebrow:"संपर्क करें", contact_h2:"ऑर्डर के लिए तैयार?",
+    contact_p:"अपना ऑर्डर मैसेज करें या Instagram पर DM भेजें। हम विवरण और केटी में पिकअप का समय पक्का करेंगे।"
   }
 };
 
@@ -1148,5 +1204,17 @@ document.addEventListener('DOMContentLoaded', function(){
   setLang(saved);
 });
 </script>
+
+<script>
+/* Load menu and gallery photos only when they come near the screen */
+(function(){
+  var els=[].slice.call(document.querySelectorAll('[data-bg]'));
+  function show(el){el.style.backgroundImage="url('"+el.getAttribute('data-bg')+"')";el.removeAttribute('data-bg');}
+  if(!('IntersectionObserver' in window)){els.forEach(show);return;}
+  var io=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){show(e.target);io.unobserve(e.target);}});},{rootMargin:'400px 0px'});
+  els.forEach(function(el){io.observe(el);});
+})();
+</script>
+<script src="app.js" defer></script>
 </body>
 </html>
