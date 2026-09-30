@@ -579,6 +579,17 @@
     .lang-globe{font-size:14px;}
   }
 
+  /* ---------- Katy bakery FAQ ---------- */
+  .faq-intro{color:var(--ink-soft);font-size:17px;font-weight:500;line-height:1.7;margin-top:14px;}
+  .faq-list{max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:12px;}
+  .faq-item{background:var(--rose-pale,#fbeff0);border-radius:16px;padding:0 20px;}
+  .faq-item summary{cursor:pointer;list-style:none;font-weight:700;font-size:17px;color:var(--ink);padding:16px 28px 16px 0;position:relative;}
+  .faq-item summary::-webkit-details-marker{display:none;}
+  .faq-item summary::after{content:"+";position:absolute;right:0;top:50%;transform:translateY(-50%);font-size:22px;color:var(--rose-deep);}
+  html[dir="rtl"] .faq-item summary{padding:16px 0 16px 28px;}
+  html[dir="rtl"] .faq-item summary::after{right:auto;left:0;}
+  .faq-item[open] summary::after{content:"–";}
+  .faq-item p{margin:0 0 18px;color:var(--ink-soft);font-size:16px;line-height:1.7;}
   /* ---------- Digital business card ---------- */
   .ecard{background:var(--rose-pale);}
   .ecard .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center;}
@@ -609,6 +620,7 @@
   @media (max-width:420px){.ecard-app{grid-template-columns:minmax(0,1fr);justify-items:center;text-align:center;}}
   @media (prefers-reduced-motion:reduce){.ecard-phone{transform:none;transition:none;}}
 </style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How do I order a custom birthday cake in Katy?", "acceptedAnswer": {"@type": "Answer", "text": "Text a photo or idea of the cake you want to (832) 799-8204, or DM @ellysbakery_tx on Instagram, with your date and number of guests. We confirm the design and price, bake it fresh, and you pick it up in Katy. Medium birthday cakes start at $50."}}, {"@type": "Question", "name": "Where can I buy baklava and Persian sweets near Katy?", "acceptedAnswer": {"@type": "Answer", "text": "Right here. We bake baklava by the tray ($35) and Persian cookies by the pound: nan-e berenji (rice cookies), nan-e nokhodchi (chickpea cookies), latifeh, Tabriz ghorabiyeh, coconut cookies and shirini khamei (Persian cream puffs). Popular for Nowruz, Yalda, Eid, weddings and tea with guests."}}, {"@type": "Question", "name": "Do you cater Persian food for parties?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. We cook traditional Persian dishes for gatherings: ghormeh sabzi, fesenjan, gheymeh, zereshk polo, baghali polo ba mahicheh, kofteh Tabrizi, ash reshteh, kashk-e bademjan, mirza ghasemi, dolmeh and more. Tell us how many guests and we'll help you plan the trays."}}, {"@type": "Question", "name": "Do you deliver?", "acceptedAnswer": {"@type": "Answer", "text": "Not at this time. All orders are picked up in Katy, TX, and we send the pickup details when we confirm your order."}}, {"@type": "Question", "name": "How far ahead should I order?", "acceptedAnswer": {"@type": "Answer", "text": "The earlier the better, especially for custom cakes, large catering orders, weekends and holidays. Text us your date and we'll tell you right away if it's available."}}]}</script>
 </head>
 <body>
 
@@ -999,6 +1011,39 @@
     </div>
   </section>
 
+  <!-- KATY BAKERY FAQ (search-friendly text) -->
+  <section id="faq" class="faq" style="background:#fff;">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow" data-i18n="faq_eyebrow">Bakery in Katy, TX</div>
+        <h2 data-i18n="faq_h2">Cakes, Persian pastries &amp; Persian food in Katy</h2>
+        <p class="faq-intro" data-i18n="faq_intro">Looking for a bakery near you in Katy, Texas? Elly's Bakery is a small home bakery making custom birthday cakes, Swiss rolls, baklava and Persian cookies, plus traditional Persian food for family dinners and parties. Everything is made fresh to order for pickup in Katy — an easy drive from Cinco Ranch, Fulshear, Richmond, Brookshire and west Houston.</p>
+      </div>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary data-i18n="q1">How do I order a custom birthday cake in Katy?</summary>
+          <p data-i18n="a1">Text a photo or idea of the cake you want to (832) 799-8204, or DM @ellysbakery_tx on Instagram, with your date and number of guests. We confirm the design and price, bake it fresh, and you pick it up in Katy. Medium birthday cakes start at $50.</p>
+        </details>
+        <details class="faq-item">
+          <summary data-i18n="q2">Where can I buy baklava and Persian sweets near Katy?</summary>
+          <p data-i18n="a2">Right here. We bake baklava by the tray ($35) and Persian cookies by the pound: nan-e berenji (rice cookies), nan-e nokhodchi (chickpea cookies), latifeh, Tabriz ghorabiyeh, coconut cookies and shirini khamei (Persian cream puffs). Popular for Nowruz, Yalda, Eid, weddings and tea with guests.</p>
+        </details>
+        <details class="faq-item">
+          <summary data-i18n="q3">Do you cater Persian food for parties?</summary>
+          <p data-i18n="a3">Yes. We cook traditional Persian dishes for gatherings: ghormeh sabzi, fesenjan, gheymeh, zereshk polo, baghali polo ba mahicheh, kofteh Tabrizi, ash reshteh, kashk-e bademjan, mirza ghasemi, dolmeh and more. Tell us how many guests and we'll help you plan the trays.</p>
+        </details>
+        <details class="faq-item">
+          <summary data-i18n="q4">Do you deliver?</summary>
+          <p data-i18n="a4">Not at this time. All orders are picked up in Katy, TX, and we send the pickup details when we confirm your order.</p>
+        </details>
+        <details class="faq-item">
+          <summary data-i18n="q5">How far ahead should I order?</summary>
+          <p data-i18n="a5">The earlier the better, especially for custom cakes, large catering orders, weekends and holidays. Text us your date and we'll tell you right away if it's available.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
   <div class="termeh-divider">
     <div class="line"></div>
     <svg viewBox="0 0 24 24" fill="none" stroke="#bd9440" stroke-width="1.4"><path d="M12 3c4 3 4 9 0 15-4-6-4-12 0-15z"/><circle cx="12" cy="4.5" r="1"/></svg>
@@ -1109,6 +1154,7 @@
 <script>
 const translations = {
   en: {
+    faq_eyebrow:"Bakery in Katy, TX", faq_h2:"Cakes, Persian pastries &amp; Persian food in Katy", faq_intro:"Looking for a bakery near you in Katy, Texas? Elly's Bakery is a small home bakery making custom birthday cakes, Swiss rolls, baklava and Persian cookies, plus traditional Persian food for family dinners and parties. Everything is made fresh to order for pickup in Katy — an easy drive from Cinco Ranch, Fulshear, Richmond, Brookshire and west Houston.", q1:"How do I order a custom birthday cake in Katy?", a1:"Text a photo or idea of the cake you want to (832) 799-8204, or DM @ellysbakery_tx on Instagram, with your date and number of guests. We confirm the design and price, bake it fresh, and you pick it up in Katy. Medium birthday cakes start at $50.", q2:"Where can I buy baklava and Persian sweets near Katy?", a2:"Right here. We bake baklava by the tray ($35) and Persian cookies by the pound: nan-e berenji (rice cookies), nan-e nokhodchi (chickpea cookies), latifeh, Tabriz ghorabiyeh, coconut cookies and shirini khamei (Persian cream puffs). Popular for Nowruz, Yalda, Eid, weddings and tea with guests.", q3:"Do you cater Persian food for parties?", a3:"Yes. We cook traditional Persian dishes for gatherings: ghormeh sabzi, fesenjan, gheymeh, zereshk polo, baghali polo ba mahicheh, kofteh Tabrizi, ash reshteh, kashk-e bademjan, mirza ghasemi, dolmeh and more. Tell us how many guests and we'll help you plan the trays.", q4:"Do you deliver?", a4:"Not at this time. All orders are picked up in Katy, TX, and we send the pickup details when we confirm your order.", q5:"How far ahead should I order?", a5:"The earlier the better, especially for custom cakes, large catering orders, weekends and holidays. Text us your date and we'll tell you right away if it's available.",
     card_eyebrow:"Digital Business Card", card_h2:"Elly's Bakery in your pocket", card_p:"Our digital card has everything in one place: text, call or DM us, see our menus and prices, save our number to your phone and share it with friends.", card_open:"Open the card →", card_app_h:"Put the card on your phone", card_app_p:"Open the card and tap “Add card to phone” at the bottom. On iPhone: in Safari tap Share, then “Add to Home Screen”.", card_scan:"Scan to open the card", nav_card:"Card",
     install_app:"Install our app", install_ios:"On iPhone: tap the Share button, then “Add to Home Screen”.",
     more_cakes:"Custom Cakes →", more_catering:"Persian Catering →", more_pastries:"Persian Pastries →",
@@ -1138,6 +1184,7 @@ const translations = {
     contact_p:"Text us your order, or send a DM on Instagram. We'll confirm details and a pickup time in Katy, TX."
   },
   fa: {
+    faq_eyebrow:"بیکری در کیتی، تگزاس", faq_h2:"کیک، شیرینی ایرانی و غذای ایرانی در کیتی", faq_intro:"دنبال یک بیکری نزدیک خود در کیتی تگزاس هستید؟ الیز بیکری یک شیرینی‌پزی خانگی است که کیک تولد سفارشی، رولت، باقلوا و شیرینی‌های ایرانی درست می‌کند و غذای سنتی ایرانی برای شام خانوادگی و مهمانی می‌پزد. همه‌چیز پس از سفارش، تازه آماده می‌شود و در کیتی تحویل می‌گیرید — نزدیک سینکو رنچ، فولشیر، ریچموند، بروکشایر و غرب هیوستون.", q1:"چطور کیک تولد سفارشی در کیتی سفارش بدهم؟", a1:"عکس یا ایدهٔ کیکی که می‌خواهید را به همراه تاریخ و تعداد مهمان‌ها به <span dir=\"ltr\">(832) 799-8204</span> پیامک کنید یا در اینستاگرام به @ellysbakery_tx دایرکت بدهید. طرح و قیمت را تأیید می‌کنیم، کیک را تازه می‌پزیم و شما در کیتی تحویل می‌گیرید. کیک تولد متوسط از ۵۰ دلار.", q2:"باقلوا و شیرینی ایرانی نزدیک کیتی از کجا بخرم؟", a2:"همین‌جا. باقلوا را سینی‌ای (۳۵ دلار) و شیرینی‌های ایرانی را کیلویی (پوندی) می‌پزیم: نان برنجی، نان نخودچی، لطیفه، قرابیهٔ تبریز، شیرینی نارگیلی و شیرینی خامه‌ای. مناسب نوروز، یلدا، عید، عروسی و پذیرایی از مهمان.", q3:"برای مهمانی غذای ایرانی می‌پزید؟", a3:"بله. غذاهای سنتی ایرانی برای مهمانی می‌پزیم: قورمه‌سبزی، فسنجان، قیمه، زرشک‌پلو، باقالی‌پلو با ماهیچه، کوفته تبریزی، آش رشته، کشک بادمجان، میرزاقاسمی، دلمه و غذاهای دیگر. تعداد مهمان‌ها را بگویید تا در برنامه‌ریزی سینی‌ها کمکتان کنیم.", q4:"ارسال به منزل دارید؟", a4:"فعلاً نه. همهٔ سفارش‌ها در کیتی تگزاس تحویل داده می‌شود و هنگام تأیید سفارش، جزئیات تحویل را برایتان می‌فرستیم.", q5:"چقدر زودتر سفارش بدهم؟", a5:"هرچه زودتر بهتر، مخصوصاً برای کیک سفارشی، کترینگ بزرگ، آخر هفته‌ها و تعطیلات. تاریخ را پیامک کنید تا فوراً بگوییم آزاد است یا نه.",
     card_eyebrow:"کارت ویزیت دیجیتال", card_h2:"الیز بیکری در جیب شما", card_p:"کارت دیجیتال ما همه‌چیز را یک‌جا دارد: پیامک، تماس یا دایرکت، دیدن منوها و قیمت‌ها، ذخیرهٔ شمارهٔ ما در گوشی و فرستادن آن برای دوستان.", card_open:"باز کردن کارت ←", card_app_h:"کارت را روی گوشی خود بگذارید", card_app_p:"کارت را باز کنید و پایین آن «افزودن کارت به گوشی» را بزنید. در آیفون: در Safari دکمهٔ Share و بعد «Add to Home Screen» را بزنید.", card_scan:"برای باز کردن کارت اسکن کنید", nav_card:"کارت",
     install_app:"نصب اپ الیز بیکری", install_ios:"در آیفون: دکمهٔ Share را بزنید، بعد «Add to Home Screen» را انتخاب کنید.",
     more_cakes:"کیک سفارشی ←", more_catering:"کترینگ ایرانی ←", more_pastries:"شیرینی ایرانی ←",
@@ -1167,6 +1214,7 @@ const translations = {
     contact_p:"سفارشتان را پیامک کنید یا در اینستاگرام دایرکت بدهید. جزئیات و زمان تحویل در کیتی را تأیید می‌کنیم."
   },
   prs: {
+    faq_eyebrow:"نانوایی و شیرینی‌پزی در کیتی، تگزاس", faq_h2:"کیک، شیرینی ایرانی و غذای ایرانی در کیتی", faq_intro:"در کیتی تگزاس دنبال یک شیرینی‌پزی نزدیک خود هستید؟ الیز بیکری یک شیرینی‌پزی خانگی است که کیک تولد فرمایشی، رولت، بقلاوه و کلچه‌های ایرانی می‌پزد و غذای عنعنوی ایرانی برای نان شب فامیلی و مهمانی آماده می‌کند. همه‌چیز پس از فرمایش، تازه آماده می‌شود و در کیتی تسلیم می‌گیرید — نزدیک سینکو رنچ، فولشیر، ریچموند، بروکشایر و غرب هیوستون.", q1:"چطور کیک تولد فرمایشی در کیتی فرمایش بدهم؟", a1:"عکس یا ایدهٔ کیک را همراه تاریخ و تعداد مهمانان به <span dir=\"ltr\">(832) 799-8204</span> پیام بفرستید یا در انستاگرام به @ellysbakery_tx پیام بدهید. دیزاین و قیمت را تأیید می‌کنیم، کیک را تازه می‌پزیم و شما در کیتی تسلیم می‌گیرید. کیک تولد متوسط از ۵۰ دالر.", q2:"بقلاوه و شیرینی ایرانی نزدیک کیتی از کجا بخرم؟", a2:"همین‌جا. بقلاوه را پتنوسی (۳۵ دالر) و کلچه‌های ایرانی را پوندی می‌پزیم: نان برنجی، نان نخودچی، لطیفه، قرابیهٔ تبریز، کلچهٔ نارگیلی و شیرینی خامه‌ای. مناسب نوروز، یلدا، عید، عروسی و پذیرایی از مهمان.", q3:"برای مهمانی غذای ایرانی می‌پزید؟", a3:"بلی. غذاهای عنعنوی ایرانی برای مهمانی می‌پزیم: قورمه‌سبزی، فسنجان، قیمه، زرشک‌پلو، باقلی‌پلو با ماهیچه، کوفتهٔ تبریزی، آش رشته، کشک بادنجان، میرزاقاسمی، دلمه و غذاهای دیگر. تعداد مهمانان را بگویید تا در پلان پتنوس‌ها کمک‌تان کنیم.", q4:"انتقال به خانه دارید؟", a4:"فعلاً نه. همهٔ فرمایش‌ها در کیتی تگزاس تسلیم داده می‌شود و هنگام تأیید فرمایش، جزئیات تسلیمی را برای‌تان می‌فرستیم.", q5:"چقدر پیش‌تر فرمایش بدهم؟", a5:"هرقدر زودتر بهتر، به‌خصوص برای کیک فرمایشی، کترینگ بزرگ، آخر هفته‌ها و رخصتی‌ها. تاریخ را پیام بفرستید تا فوراً بگوییم آزاد است یا نه.",
     card_eyebrow:"کارت ویزیت دیجیتل", card_h2:"الیز بیکری در جیب شما", card_p:"کارت دیجیتل ما همه‌چیز را یک‌جا دارد: پیام، تماس یا دایرکت، دیدن مینوها و قیمت‌ها، ذخیرهٔ نمبر ما در موبایل و فرستادن آن برای دوستان.", card_open:"باز کردن کارت ←", card_app_h:"کارت را روی موبایل خود بگذارید", card_app_p:"کارت را باز کنید و پایین آن «افزودن کارت به موبایل» را بزنید. در آیفون: در Safari دکمهٔ Share و بعد «Add to Home Screen» را بزنید.", card_scan:"برای باز کردن کارت اسکن کنید", nav_card:"کارت",
     install_app:"نصب اپ الیز بیکری", install_ios:"در آیفون: دکمهٔ Share را بزنید، بعد «Add to Home Screen» را انتخاب کنید.",
     more_cakes:"کیک فرمایشی ←", more_catering:"کترینگ ایرانی ←", more_pastries:"شیرینی ایرانی ←",
@@ -1196,6 +1244,7 @@ const translations = {
     contact_p:"سفارش خود را پیام کنید یا در انستاگرام دایرکت بفرستید. جزئیات و وقت تسلیمی در کیتی را تأیید می‌کنیم."
   },
   ar: {
+    faq_eyebrow:"مخبز في كاتي، تكساس", faq_h2:"كيك وحلويات فارسية وأكل فارسي في كاتي", faq_intro:"تبحث عن مخبز قريب منك في كاتي، تكساس؟ مخبز إيلي مخبز منزلي صغير يصنع كيك أعياد الميلاد حسب الطلب، والرولات، والبقلاوة، والكعك الفارسي، إلى جانب الأطباق الفارسية التقليدية للعشاء العائلي والمناسبات. كل شيء يُحضَّر طازجاً عند الطلب ويُستلم في كاتي — قريب من سينكو رانش وفولشير وريتشموند وبروكشاير وغرب هيوستن.", q1:"كيف أطلب كيك عيد ميلاد حسب الطلب في كاتي؟", a1:"أرسل صورة أو فكرة الكيك مع التاريخ وعدد الضيوف برسالة نصية إلى <span dir=\"ltr\">(832) 799-8204</span> أو رسالة على إنستغرام إلى @ellysbakery_tx. نؤكد التصميم والسعر، نخبزه طازجاً، وتستلمه في كاتي. كيك عيد الميلاد المتوسط يبدأ من 50 دولاراً.", q2:"أين أشتري البقلاوة والحلويات الفارسية قرب كاتي؟", a2:"هنا عندنا. نخبز البقلاوة بالصينية (35 دولاراً) والكعك الفارسي بالرطل: نان برنجي (كعك الأرز)، نان نخودچي (كعك الحمص)، لطيفة، غريبة تبريز، كعك جوز الهند، وشيريني خامه‌اي (بف الكريمة الفارسي). مثالية لعيد النوروز وليلة يلدا والعيد والأعراس وضيافة الضيوف.", q3:"هل تقدمون أكلاً فارسياً للحفلات والمناسبات؟", a3:"نعم. نطبخ الأطباق الفارسية التقليدية للمناسبات: قورمه سبزي، فسنجان، قيمه، زرشك بولو، باقلي بولو مع الموزة، كفتة تبريزي، آش رشته، كشك بادنجان، ميرزا قاسمي، دولمة وغيرها. أخبرنا بعدد الضيوف ونساعدك في تخطيط الصواني.", q4:"هل لديكم توصيل؟", a4:"ليس حالياً. جميع الطلبات تُستلم في كاتي، تكساس، ونرسل لك تفاصيل الاستلام عند تأكيد الطلب.", q5:"قبل كم من الوقت يجب أن أطلب؟", a5:"كلما كان أبكر كان أفضل، خاصة للكيك حسب الطلب وطلبات الضيافة الكبيرة وعطلات نهاية الأسبوع والأعياد. أرسل لنا التاريخ ونخبرك فوراً إن كان متاحاً.",
     card_eyebrow:"بطاقة العمل الرقمية", card_h2:"مخبز إيلي في جيبك", card_p:"بطاقتنا الرقمية تجمع كل شيء في مكان واحد: راسلنا أو اتصل بنا أو أرسل رسالة خاصة، وتصفح القوائم والأسعار، واحفظ رقمنا في هاتفك وشاركه مع أصدقائك.", card_open:"افتح البطاقة ←", card_app_h:"ضع البطاقة على هاتفك", card_app_p:"افتح البطاقة واضغط «أضف البطاقة إلى هاتفك» في الأسفل. على الآيفون: في Safari اضغط مشاركة ثم «إضافة إلى الشاشة الرئيسية».", card_scan:"امسح لفتح البطاقة", nav_card:"البطاقة",
     install_app:"ثبّت تطبيقنا", install_ios:"على الآيفون: اضغط زر المشاركة ثم «إضافة إلى الشاشة الرئيسية».",
     more_cakes:"كعك حسب الطلب ←", more_catering:"تموين فارسي ←", more_pastries:"حلويات فارسية ←",
@@ -1225,6 +1274,7 @@ const translations = {
     contact_p:"أرسل لنا طلبك برسالة نصية أو دايركت عبر إنستغرام. سنؤكد التفاصيل ووقت الاستلام في كاتي."
   },
   es: {
+    faq_eyebrow:"Panadería en Katy, TX", faq_h2:"Pasteles, repostería persa y comida persa en Katy", faq_intro:"¿Buscas una panadería cerca de ti en Katy, Texas? Elly's Bakery es una pequeña panadería casera que hace pasteles de cumpleaños personalizados, brazos de gitano, baklava y galletas persas, además de comida persa tradicional para cenas familiares y fiestas. Todo se prepara fresco al hacer tu pedido y se recoge en Katy, muy cerca de Cinco Ranch, Fulshear, Richmond, Brookshire y el oeste de Houston.", q1:"¿Cómo pido un pastel de cumpleaños personalizado en Katy?", a1:"Envía por mensaje de texto una foto o idea del pastel al (832) 799-8204, o escríbenos por Instagram a @ellysbakery_tx, con la fecha y el número de invitados. Confirmamos el diseño y el precio, lo horneamos fresco y lo recoges en Katy. Los pasteles de cumpleaños medianos cuestan desde $50.", q2:"¿Dónde compro baklava y dulces persas cerca de Katy?", a2:"Aquí mismo. Horneamos baklava por charola ($35) y galletas persas por libra: nan-e berenji (galletas de arroz), nan-e nokhodchi (galletas de garbanzo), latifeh, ghorabiyeh de Tabriz, galletas de coco y shirini khamei (profiteroles persas). Populares para Nowruz, Yalda, Eid, bodas y para recibir visitas.", q3:"¿Hacen catering de comida persa para fiestas?", a3:"Sí. Cocinamos platillos persas tradicionales para reuniones: ghormeh sabzi, fesenjan, gheymeh, zereshk polo, baghali polo con mahicheh, kofteh Tabrizi, ash reshteh, kashk-e bademjan, mirza ghasemi, dolmeh y más. Dinos cuántos invitados tendrás y te ayudamos a planear las charolas.", q4:"¿Hacen entregas a domicilio?", a4:"Por ahora no. Todos los pedidos se recogen en Katy, TX, y te enviamos los detalles de recogida al confirmar tu pedido.", q5:"¿Con cuánta anticipación debo pedir?", a5:"Mientras antes, mejor, sobre todo para pasteles personalizados, catering grande, fines de semana y días festivos. Envíanos la fecha y te decimos enseguida si está disponible.",
     card_eyebrow:"Tarjeta digital", card_h2:"Elly's Bakery en tu bolsillo", card_p:"Nuestra tarjeta digital lo tiene todo en un solo lugar: escríbenos, llámanos o mándanos un DM, mira nuestros menús y precios, guarda nuestro número y compártelo con tus amigos.", card_open:"Abrir la tarjeta →", card_app_h:"Pon la tarjeta en tu teléfono", card_app_p:"Abre la tarjeta y toca “Agregar tarjeta al teléfono” abajo. En iPhone: en Safari toca Compartir y luego “Agregar a inicio”.", card_scan:"Escanea para abrir la tarjeta", nav_card:"Tarjeta",
     install_app:"Instala nuestra app", install_ios:"En iPhone: toca Compartir y luego “Agregar a inicio”.",
     more_cakes:"Pasteles personalizados →", more_catering:"Catering persa →", more_pastries:"Pastelitos persas →",
@@ -1254,6 +1304,7 @@ const translations = {
     contact_p:"Envíanos tu pedido por mensaje o mándanos un DM por Instagram. Confirmaremos los detalles y la hora de recogida en Katy, TX."
   },
   hi: {
+    faq_eyebrow:"केटी, टेक्सास में बेकरी", faq_h2:"केटी में केक, फ़ारसी मिठाइयाँ और फ़ारसी खाना", faq_intro:"केटी, टेक्सास में अपने पास कोई बेकरी ढूँढ रहे हैं? Elly's Bakery एक छोटी होम बेकरी है जो ऑर्डर पर बर्थडे केक, स्विस रोल, बकलावा और फ़ारसी कुकीज़ बनाती है, साथ ही पारिवारिक डिनर और पार्टियों के लिए पारंपरिक फ़ारसी खाना भी। सब कुछ ऑर्डर के बाद ताज़ा बनता है और केटी में पिकअप होता है — सिंको रैंच, फ़ुलशियर, रिचमंड, ब्रुकशायर और पश्चिम ह्यूस्टन से पास।", q1:"केटी में कस्टम बर्थडे केक कैसे ऑर्डर करें?", a1:"जैसा केक चाहिए उसकी फ़ोटो या आइडिया, तारीख़ और मेहमानों की संख्या के साथ (832) 799-8204 पर टेक्स्ट करें, या Instagram पर @ellysbakery_tx को DM करें। हम डिज़ाइन और कीमत पक्की करते हैं, केक ताज़ा बनाते हैं और आप केटी में पिकअप करते हैं। मीडियम बर्थडे केक $50 से शुरू।", q2:"केटी के पास बकलावा और फ़ारसी मिठाइयाँ कहाँ मिलेंगी?", a2:"यहीं। हम बकलावा ट्रे में ($35) और फ़ारसी कुकीज़ पाउंड के हिसाब से बनाते हैं: नान-ए बेरेंजी (चावल की कुकीज़), नान-ए नोखोदची (बेसन की कुकीज़), लतीफ़ेह, तबरीज़ ग़ोराबियेह, नारियल कुकीज़ और शीरीनी ख़ामेई (फ़ारसी क्रीम पफ़)। नौरोज़, यल्दा, ईद, शादियों और मेहमानों के लिए बढ़िया।", q3:"क्या आप पार्टियों के लिए फ़ारसी खाने की कैटरिंग करते हैं?", a3:"हाँ। हम मेहमानों के लिए पारंपरिक फ़ारसी व्यंजन बनाते हैं: क़ोरमे सब्ज़ी, फ़ेसेंजान, क़ीमे, ज़रेश्क पोलो, बाग़ाली पोलो बा माहीचे, कोफ़्ते तबरीज़ी, आश रेश्ते, कश्क-ए बादेमजान, मिर्ज़ा ग़ासेमी, दोल्मे और भी बहुत कुछ। मेहमानों की संख्या बताइए, हम ट्रे की योजना में मदद करेंगे।", q4:"क्या आप डिलीवरी करते हैं?", a4:"अभी नहीं। सभी ऑर्डर केटी, टेक्सास में पिकअप होते हैं, और ऑर्डर पक्का करते समय हम पिकअप की जानकारी भेज देते हैं।", q5:"कितने दिन पहले ऑर्डर करना चाहिए?", a5:"जितना जल्दी उतना अच्छा, ख़ासकर कस्टम केक, बड़ी कैटरिंग, वीकेंड और त्योहारों के लिए। अपनी तारीख़ टेक्स्ट करें, हम तुरंत बता देंगे कि वह उपलब्ध है या नहीं।",
     card_eyebrow:"डिजिटल बिज़नेस कार्ड", card_h2:"Elly's Bakery आपकी जेब में", card_p:"हमारे डिजिटल कार्ड में सब कुछ एक जगह है: मैसेज, कॉल या DM करें, मेन्यू और कीमतें देखें, हमारा नंबर फ़ोन में सेव करें और दोस्तों के साथ शेयर करें।", card_open:"कार्ड खोलें →", card_app_h:"कार्ड को अपने फ़ोन पर रखें", card_app_p:"कार्ड खोलें और नीचे “कार्ड को फ़ोन में जोड़ें” दबाएँ। iPhone पर: Safari में Share दबाएँ, फिर “Add to Home Screen”।", card_scan:"कार्ड खोलने के लिए स्कैन करें", nav_card:"कार्ड",
     install_app:"हमारा ऐप इंस्टॉल करें", install_ios:"iPhone पर: Share बटन दबाएं, फिर “Add to Home Screen” चुनें।",
     more_cakes:"कस्टम केक →", more_catering:"फ़ारसी केटरिंग →", more_pastries:"फ़ारसी मिठाइयाँ →",
