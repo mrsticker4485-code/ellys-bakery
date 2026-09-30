@@ -1,7 +1,7 @@
 /* Elly's Bakery — offline support.
    Pages: network first (always fresh when online), cached copy when offline.
    Images, styles, icons: cache first (fast repeat visits). */
-const VERSION = "ellys-v1";
+const VERSION = "ellys-v2";
 const CORE = [
   "/",
   "/index.html",
@@ -12,7 +12,9 @@ const CORE = [
   "/eb-pages.css",
   "/logo.webp",
   "/manifest.webmanifest",
-  "/icon-192.png"
+  "/icon-192.png",
+  "/manifest-card.webmanifest",
+  "/icon-card-192.png"
 ];
 
 self.addEventListener("install", (event) => {
