@@ -285,6 +285,14 @@
   }
   nav ul a:hover{transform:translateY(-2px);}
   nav ul.links{gap:10px;}
+  nav ul a{white-space:nowrap;display:inline-block;}
+  @media (min-width:981px) and (max-width:1240px){
+    .brand{gap:10px;} .brand-text{font-size:24px;}
+    .logo-wrap{width:130px;height:130px;}
+    nav ul.links{gap:6px;}
+    nav ul.links a{padding:7px 12px;font-size:15px;}
+    nav ul.links a.nav-cta{padding:9px 16px;}
+  }
   .nav-cta{
     position:relative;
     background:linear-gradient(155deg,var(--rose-mid),var(--rose-deep) 60%);
@@ -549,6 +557,7 @@
   .menu-cat-head h3{white-space:normal;min-width:0;}
   /* ---------- Language picker: always visible in header ---------- */
   .nav-right{display:flex;align-items:center;gap:10px;flex-shrink:0;}
+  @media (min-width:981px){ .nav-right{margin-inline-start:14px;} }
   .lang-pick{display:inline-flex;align-items:center;gap:4px;background:#fff;border:1.5px solid var(--rose-deep);border-radius:20px;padding:6px 10px;box-shadow:0 2px 7px rgba(156,79,86,.25);cursor:pointer;}
   .lang-globe{font-size:16px;line-height:1;}
   #langSwitch{border:0;background:transparent;color:var(--ink);font:600 15px 'Inter',sans-serif;cursor:pointer;padding:2px 0;max-width:100px;-webkit-appearance:menulist;}
